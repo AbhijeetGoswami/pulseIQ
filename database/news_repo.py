@@ -8,10 +8,9 @@ def save_news(articles):
     Save normalized news articles.
 
     Returns:
-        dict:
-            inserted
-            duplicates
-            failed
+        inserted
+        duplicates
+        failed
     """
 
     conn = get_connection()
@@ -33,16 +32,18 @@ def save_news(articles):
                     source,
                     published_at,
                     link,
-                    category
+                    category,
+                    sport
                 )
-                VALUES (?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?)
                 """,
                 (
-                    article["title"],
-                    article["source"],
-                    article["published_at"],
-                    article["link"],
-                    article["category"],
+                    article.title,
+                    article.source,
+                    article.published_at,
+                    article.link,
+                    article.category,
+                    article.sport,
                 ),
             )
 
@@ -70,7 +71,7 @@ def save_news(articles):
 
 def save_collector_run(summary):
     """
-    Save one pipeline execution and return its run ID.
+    Save one pipeline execution and return its ID.
     """
 
     conn = get_connection()
@@ -116,7 +117,7 @@ def save_collector_run(summary):
 
 def save_source_metrics(run_id, metrics):
     """
-    Save metrics for every RSS source belonging to one collector run.
+    Save per-source RSS performance metrics.
     """
 
     conn = get_connection()
@@ -139,12 +140,12 @@ def save_source_metrics(run_id, metrics):
             [
                 (
                     run_id,
-                    m["source"],
-                    m["status"],
-                    m["entries"],
-                    m["duration_ms"],
+                    metric["source"],
+                    metric["status"],
+                    metric["entries"],
+                    metric["duration_ms"],
                 )
-                for m in metrics
+                for metric in metrics
             ],
         )
 

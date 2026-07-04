@@ -21,6 +21,7 @@ def initialize_database():
             published_at TEXT,
             link TEXT NOT NULL UNIQUE,
             category TEXT,
+            sport TEXT,
             collected_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
     """)

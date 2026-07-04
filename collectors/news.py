@@ -3,12 +3,13 @@ import feedparser
 
 from config import RSS_FEEDS
 from models.news_article import NewsArticle
+from intelligence.classifier import classify_sport
 
 
 def fetch_news():
 
     articles = []
-    metrics = []   # <-- Create the list here
+    metrics = []
 
     for source, url in RSS_FEEDS.items():
 
@@ -36,12 +37,17 @@ def fetch_news():
 
         for entry in feed.entries:
 
-           articles.append({
-                            "title": entry.get("title", ""),
-                            "source": source,
-                            "published_at": entry.get("published", ""),
-                            "link": entry.get("link", ""),
-                            "category": None
-                        })
+            title = entry.get("title", "")
+
+            article = NewsArticle(
+                title=title,
+                source=source,
+                published_at=entry.get("published", ""),
+                link=entry.get("link", ""),
+                sport=classify_sport(title),
+                category=None
+            )
+
+            articles.append(article)
 
     return articles, metrics

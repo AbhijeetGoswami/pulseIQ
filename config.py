@@ -1,7 +1,7 @@
 from pathlib import Path
 
-# Database
-DB_PATH = Path("data") / "pulseiq.db"
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = BASE_DIR / "data" / "pulseiq.db"
 
 # RSS Feeds
 RSS_FEEDS = {

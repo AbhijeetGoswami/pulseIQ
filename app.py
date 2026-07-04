@@ -18,21 +18,21 @@ if __name__ == "__main__":
 
     articles, metrics = fetch_news()
 
-result = save_news(articles)
+    result = save_news(articles)
 
-perf_end = perf_counter()
-run_end_time = datetime.now(timezone.utc)
+    perf_end = perf_counter()
+    run_end_time = datetime.now(timezone.utc)
 
-duration_ms = round((perf_end - perf_start) * 1000)
+    duration_ms = round((perf_end - perf_start) * 1000)
 
-run_id = save_collector_run({
-    "run_started": run_start_time.isoformat(),
-    "run_finished": run_end_time.isoformat(),
-    "total_articles": len(articles),
-    "inserted": result["inserted"],
-    "duplicates": result["duplicates"],
-    "failed": result["failed"],
-    "duration_ms": duration_ms
-})
+    run_id = save_collector_run({
+        "run_started": run_start_time.isoformat(),
+        "run_finished": run_end_time.isoformat(),
+        "total_articles": len(articles),
+        "inserted": result["inserted"],
+        "duplicates": result["duplicates"],
+        "failed": result["failed"],
+        "duration_ms": duration_ms
+    })
 
-save_source_metrics(run_id, metrics)
+    save_source_metrics(run_id, metrics)
