@@ -5,7 +5,15 @@ DB_PATH = Path("data") / "pulseiq.db"
 
 # RSS Feeds
 RSS_FEEDS = {
-    "BBC": "https://feeds.bbci.co.uk/news/rss.xml",
-    "Reuters World": "https://www.reutersagency.com/feed/?best-topics=world&post_type=best",
-    "Reuters Business": "https://www.reutersagency.com/feed/?best-topics=business-finance&post_type=best"
+    "BBC Sport": "https://feeds.bbci.co.uk/sport/rss.xml",
+
+    "BBC Football": "https://feeds.bbci.co.uk/sport/football/rss.xml",
+
+    "ESPN Top": "https://www.espn.com/espn/rss/news",
+
+    "Sky Sports": "https://www.skysports.com/rss/12040",
+
+    "Yahoo Sports": "https://sports.yahoo.com/rss/",
+
+    "Sportskeeda": "https://www.sportskeeda.com/feed"
 }

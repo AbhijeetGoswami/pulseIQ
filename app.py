@@ -1,20 +1,38 @@
 from database.schema import initialize_database
 from collectors.news import fetch_news
-from database.news_repo import save_news
+from database.news_repo import save_news, save_collector_run, save_source_metrics
+
+from time import perf_counter
+from datetime import datetime,timezone
+
 
 if __name__ == "__main__":
 
     initialize_database()
 
-    articles = fetch_news()
+    # -------------------------
+    # START PIPELINE TIMER
+    # -------------------------
+    run_start_time = datetime.now(timezone.utc)
+    perf_start = perf_counter()
 
-    result = save_news(articles)
+    articles, metrics = fetch_news()
 
-    print()
+result = save_news(articles)
 
-    print("========== PulseIQ ==========")
+perf_end = perf_counter()
+run_end_time = datetime.now(timezone.utc)
 
-    print(f"Collected : {len(articles)}")
-    print(f"Inserted : {result['inserted']}")
-    print(f"Duplicate : {result['duplicates']}")
-    print(f"Failed : {result['failed']}")
+duration_ms = round((perf_end - perf_start) * 1000)
+
+run_id = save_collector_run({
+    "run_started": run_start_time.isoformat(),
+    "run_finished": run_end_time.isoformat(),
+    "total_articles": len(articles),
+    "inserted": result["inserted"],
+    "duplicates": result["duplicates"],
+    "failed": result["failed"],
+    "duration_ms": duration_ms
+})
+
+save_source_metrics(run_id, metrics)
