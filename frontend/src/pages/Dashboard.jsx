@@ -1,8 +1,8 @@
 import useDashboard from "../hooks/useDashboard";
-import KPIGrid from "../components/KPIGrid";
-import LatestArticles from "../components/LatestArticles";
-import Loader from "../components/Loader";
-import ErrorCard from "../components/ErrorCard";
+import KPIGrid from "../components/KPIGrid/KPIGrid";
+import LatestArticles from "../components/LatestArticles/LatestArticles";
+import Loader from "../components/Loader/Loader";
+import ErrorCard from "../components/ErrorCard/ErrorCard";
 
 function Dashboard() {
 
