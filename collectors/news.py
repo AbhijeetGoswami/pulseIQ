@@ -37,13 +37,13 @@ def fetch_news():
 
         for entry in feed.entries:
 
-            title = entry.get("title", "")
+            title = getattr(entry, "title", "")
 
             article = NewsArticle(
                 title=title,
                 source=source,
-                published_at=entry.get("published", ""),
-                link=entry.get("link", ""),
+                published_at=getattr(entry, "published", ""),
+                link=getattr(entry, "link", ""),
                 sport=classify_sport(title),
                 category=None
             )

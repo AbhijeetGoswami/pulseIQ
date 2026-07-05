@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 from database.schema import initialize_database
-from api.routers import news, health, metrics, articles
+from api.routers import dashboard, news, health, metrics, articles
 
 # Initialize database on startup
 def init_db():
@@ -37,6 +37,7 @@ app.include_router(health.router, prefix="/api", tags=["Health"])
 app.include_router(news.router, prefix="/api", tags=["News"])
 app.include_router(metrics.router, prefix="/api", tags=["Metrics"])
 app.include_router(articles.router, prefix="/api", tags=["Articles"])
+app.include_router(dashboard.router, prefix="/api", tags=["Dashboard"])
 
 @app.get("/")
 async def root():
