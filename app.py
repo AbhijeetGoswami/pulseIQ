@@ -1,38 +1,56 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+
 from database.schema import initialize_database
-from collectors.news import fetch_news
-from database.news_repo import save_news, save_collector_run, save_source_metrics
+from api.routers import news, health, metrics, articles
 
-from time import perf_counter
-from datetime import datetime,timezone
-
-
-if __name__ == "__main__":
-
+# Initialize database on startup
+def init_db():
     initialize_database()
 
-    # -------------------------
-    # START PIPELINE TIMER
-    # -------------------------
-    run_start_time = datetime.now(timezone.utc)
-    perf_start = perf_counter()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup
+    init_db()
+    yield
+    # Shutdown (if needed)
 
-    articles, metrics = fetch_news()
+app = FastAPI(
+    title="PulseIQ API",
+    description="Sports news intelligence platform with real-time data collection and analysis",
+    version="1.0.0",
+    lifespan=lifespan
+)
 
-    result = save_news(articles)
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-    perf_end = perf_counter()
-    run_end_time = datetime.now(timezone.utc)
+# Include routers
+app.include_router(health.router, prefix="/api", tags=["Health"])
+app.include_router(news.router, prefix="/api", tags=["News"])
+app.include_router(metrics.router, prefix="/api", tags=["Metrics"])
+app.include_router(articles.router, prefix="/api", tags=["Articles"])
 
-    duration_ms = round((perf_end - perf_start) * 1000)
+@app.get("/")
+async def root():
+    return {
+        "message": "Welcome to PulseIQ API",
+        "version": "1.0.0",
+        "docs": "/docs"
+    }
 
-    run_id = save_collector_run({
-        "run_started": run_start_time.isoformat(),
-        "run_finished": run_end_time.isoformat(),
-        "total_articles": len(articles),
-        "inserted": result["inserted"],
-        "duplicates": result["duplicates"],
-        "failed": result["failed"],
-        "duration_ms": duration_ms
-    })
-
-    save_source_metrics(run_id, metrics)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "app:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True
+    )

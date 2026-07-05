@@ -1,5 +1,3 @@
-from sqlite3 import IntegrityError
-
 from database.db import get_connection
 
 
@@ -8,9 +6,11 @@ def save_news(articles):
     Save normalized news articles.
 
     Returns:
-        inserted
-        duplicates
-        failed
+        {
+            "inserted": int,
+            "duplicates": int,
+            "failed": int
+        }
     """
 
     conn = get_connection()
@@ -26,7 +26,7 @@ def save_news(articles):
 
             cursor.execute(
                 """
-                INSERT INTO news
+                INSERT OR IGNORE INTO news
                 (
                     title,
                     source,
@@ -47,16 +47,14 @@ def save_news(articles):
                 ),
             )
 
-            inserted += 1
-
-        except IntegrityError:
-
-            duplicates += 1
+            if cursor.rowcount == 1:
+                inserted += 1
+            else:
+                duplicates += 1
 
         except Exception as e:
 
-            print(e)
-
+            print(f"Error saving article: {e}")
             failed += 1
 
     conn.commit()
@@ -105,7 +103,6 @@ def save_collector_run(summary):
         )
 
         run_id = cursor.lastrowid
-
         conn.commit()
 
         return run_id
