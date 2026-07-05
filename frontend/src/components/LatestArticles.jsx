@@ -1,6 +1,8 @@
 function LatestArticles({ articles }) {
 
-    if (!articles) return null;
+    if (!articles || articles.length === 0) {
+        return null;
+    }
 
     return (
         <div
@@ -11,7 +13,13 @@ function LatestArticles({ articles }) {
                 boxShadow: "0 2px 10px rgba(0,0,0,.08)",
             }}
         >
-            <h2>Latest Articles</h2>
+            <h2
+                style={{
+                    marginBottom: "20px",
+                }}
+            >
+                Latest Articles
+            </h2>
 
             <table
                 style={{
@@ -28,19 +36,38 @@ function LatestArticles({ articles }) {
                 </thead>
 
                 <tbody>
-                    {articles.map(article => (
-                        <tr key={article.id}>
-                            <td style={{ padding: "10px 0" }}>
-                                {article.title}
-                            </td>
 
-                            <td>{article.source}</td>
+                    {
+                        articles.map(article => (
 
-                            <td>{article.sport}</td>
-                        </tr>
-                    ))}
+                            <tr
+                                key={article.id}
+                                style={{
+                                    borderTop: "1px solid #eee",
+                                }}
+                            >
+
+                                <td
+                                    style={{
+                                        padding: "12px 0",
+                                    }}
+                                >
+                                    {article.title}
+                                </td>
+
+                                <td>{article.source}</td>
+
+                                <td>{article.sport}</td>
+
+                            </tr>
+
+                        ))
+                    }
+
                 </tbody>
+
             </table>
+
         </div>
     );
 }

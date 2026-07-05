@@ -1,5 +1,6 @@
 import useDashboard from "../hooks/useDashboard";
 import KPIGrid from "../components/KPIGrid";
+import LatestArticles from "../components/LatestArticles";
 
 function Dashboard() {
 
@@ -29,6 +30,9 @@ function Dashboard() {
 
             <h1>PulseIQ Dashboard</h1>
         <KPIGrid dashboard={dashboard} />
+        <LatestArticles
+      articles={dashboard.latest_articles}
+       />
         </div>
 
     );
