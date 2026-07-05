@@ -1,6 +1,8 @@
 import useDashboard from "../hooks/useDashboard";
 import KPIGrid from "../components/KPIGrid";
 import LatestArticles from "../components/LatestArticles";
+import Loader from "../components/Loader";
+import ErrorCard from "../components/ErrorCard";
 
 function Dashboard() {
 
@@ -11,11 +13,11 @@ function Dashboard() {
     } = useDashboard();
 
     if (loading) {
-        return <h2>Loading...</h2>;
+        return <Loader />;
     }
 
     if (error) {
-        return <h2>Error loading dashboard.</h2>;
+        return <ErrorCard error={error} />;
     }
 
     return (
