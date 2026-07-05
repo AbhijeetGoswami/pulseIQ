@@ -1,3 +1,5 @@
+from datetime import datetime, timezone
+
 from database.db import get_connection
 from database.metrics_repo import (
     get_source_distribution,
@@ -26,6 +28,24 @@ def get_dashboard_summary():
     """)
 
     collector = cursor.fetchone()
+    status = "Unknown"
+
+    last_run = collector[1]
+
+    if last_run:
+        last_run_dt = datetime.fromisoformat(last_run)
+        now = datetime.now()
+
+        elapsed = (now - last_run_dt).total_seconds()
+
+        if elapsed < 600:
+            status = "Healthy"
+
+        elif elapsed < 3600:
+            status = "Warning"
+
+        else:
+            status = "Critical"
 
     # -------------------------
     # Article Summary
@@ -49,7 +69,7 @@ def get_dashboard_summary():
 
     return {
         "collector": {
-            "status": "Healthy",
+            "status": status,
             "total_runs": collector[0] or 0,
             "last_run": collector[1],
             "avg_duration_ms": round(collector[2]) if collector[2] else 0

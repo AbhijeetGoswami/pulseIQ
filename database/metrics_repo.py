@@ -89,8 +89,7 @@ def get_latest_articles(limit=10):
         "source": source,
         "published_at": published_at,
         "link": link,
-        "category": category,
-        "sport": sport,
+        "sport": sport
     }
     for (
         id,
