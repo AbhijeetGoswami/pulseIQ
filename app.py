@@ -5,6 +5,8 @@ from contextlib import asynccontextmanager
 from database.schema import initialize_database
 from api.routers import dashboard, news, health, metrics, articles
 
+
+
 # Initialize database on startup
 def init_db():
     initialize_database()
