@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 
 from database.schema import initialize_database
 from api.routers import dashboard, news, health, metrics, articles
+from route.articles import router as articles_router
 
 
 
@@ -40,6 +41,7 @@ app.include_router(news.router, prefix="/api", tags=["News"])
 app.include_router(metrics.router, prefix="/api", tags=["Metrics"])
 app.include_router(articles.router, prefix="/api", tags=["Articles"])
 app.include_router(dashboard.router, prefix="/api", tags=["Dashboard"])
+app.include_router(articles_router, prefix="/api", tags=["Articles"])
 
 @app.get("/")
 async def root():
