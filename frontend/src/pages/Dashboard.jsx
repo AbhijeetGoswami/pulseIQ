@@ -3,6 +3,7 @@ import KPIGrid from "../components/KPIGrid/KPIGrid";
 import LatestArticles from "../components/LatestArticles/LatestArticles";
 import Loader from "../components/Loader/Loader";
 import ErrorCard from "../components/ErrorCard/ErrorCard";
+import SourceChart from "../components/SourceChart/SourceChart";
 
 function Dashboard() {
 
@@ -32,6 +33,9 @@ function Dashboard() {
 
             <h1>PulseIQ Dashboard</h1>
         <KPIGrid dashboard={dashboard} />
+        <SourceChart
+            data={dashboard.source_distribution}
+        />
         <LatestArticles
       articles={dashboard.latest_articles}
        />
