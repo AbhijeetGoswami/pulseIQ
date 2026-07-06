@@ -59,6 +59,31 @@ def initialize_database():
         );
     """)
 
+    # -------------------------
+    # ARTICLE ENTITIES TABLE
+    # -------------------------
+
+    cursor.execute("""
+                   CREATE TABLE IF NOT EXISTS article_entities (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            article_id INTEGER NOT NULL,
+
+            entity_id TEXT NOT NULL,
+
+            matched_alias TEXT,
+
+            confidence REAL,
+
+            created_at TEXT,
+
+            FOREIGN KEY(article_id)
+                REFERENCES news(id)
+                ON DELETE CASCADE
+       );
+    """)
+
     conn.commit()
     conn.close()
 

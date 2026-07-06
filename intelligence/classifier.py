@@ -1,30 +1,20 @@
-# from intelligence.registry.football import KEYWORDS as FOOTBALL
-# from intelligence.registry.cricket.competitions import KEYWORDS as CRICKET
-# from intelligence.registry.tennis import KEYWORDS as TENNIS
-# from intelligence.registry.formula1 import KEYWORDS as FORMULA1
-# from intelligence.registry.rugby import KEYWORDS as RUGBY
-# from intelligence.registry.golf import KEYWORDS as GOLF
+from collections import Counter
+
+from intelligence.entity_matcher import resolve_entities as match_entities
+from intelligence.entity_resolver import resolve_entities
 
 
-# SPORTS = {
-#     "Football": FOOTBALL,
-#     "Cricket": CRICKET,
-#     "Tennis": TENNIS,
-#     "Formula 1": FORMULA1,
-#     "Rugby": RUGBY,
-#     "Golf": GOLF,
-# }
+def classify_sport(title: str) -> str:
 
+    candidates = match_entities(title)
+    entities = resolve_entities(candidates)
 
+    if not entities:
+        return "Unknown"
 
-# def classify_sport(title: str) -> str:
+    sport_counts = Counter()
 
-#     text = title.lower()
+    for entity in entities:
+        sport_counts[entity["sport"]] += 1
 
-#     for sport, keywords in SPORTS.items():
-
-#         if any(keyword in text for keyword in keywords):
-#             return sport
-
-#     return "Unknown"
-
+    return sport_counts.most_common(1)[0][0]

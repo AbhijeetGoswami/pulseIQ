@@ -2,19 +2,6 @@ from database.db import get_connection
 
 
 def save_news(articles):
-    """
-    Save normalized news articles.
-
-    Returns:
-        {
-            "inserted": int,
-            "duplicates": int,
-            "failed": int
-        }
-    """
-
-    conn = get_connection()
-    cursor = conn.cursor()
 
     inserted = 0
     duplicates = 0
@@ -24,45 +11,28 @@ def save_news(articles):
 
         try:
 
-            cursor.execute(
-                """
-                INSERT OR IGNORE INTO news
-                (
-                    title,
-                    source,
-                    published_at,
-                    link,
-                    category,
-                    sport
-                )
-                VALUES (?, ?, ?, ?, ?, ?)
-                """,
-                (
-                    article.title,
-                    article.source,
-                    article.published_at,
-                    article.link,
-                    article.category,
-                    article.sport,
-                ),
-            )
+            article_id = save_article(article)
 
-            if cursor.rowcount == 1:
-                inserted += 1
-            else:
+            if article_id is None:
+
                 duplicates += 1
+
+            else:
+
+                inserted += 1
 
         except Exception as e:
 
-            print(f"Error saving article: {e}")
+            print(e)
+
             failed += 1
 
-    conn.commit()
-    conn.close()
-
     return {
+
         "inserted": inserted,
+
         "duplicates": duplicates,
+
         "failed": failed,
     }
 
@@ -151,3 +121,53 @@ def save_source_metrics(run_id, metrics):
     finally:
 
         conn.close()
+
+def save_article(article):
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    try:
+
+        cursor.execute(
+            """
+            INSERT OR IGNORE INTO news
+            (
+                title,
+                source,
+                published_at,
+                link,
+                category,
+                sport
+            )
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (
+                article.title,
+                article.source,
+                article.published_at,
+                article.link,
+                article.category,
+                article.sport,
+            ),
+        )
+
+        if cursor.rowcount == 0:
+
+            conn.close()
+
+            return None
+
+        article_id = cursor.lastrowid
+
+        conn.commit()
+        conn.close()
+
+        return article_id
+
+    except Exception:
+
+        conn.rollback()
+        conn.close()
+
+        raise        
