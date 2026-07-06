@@ -169,3 +169,65 @@ def delete_entities_for_article(article_id: int):
 
     conn.commit()
     conn.close()
+
+
+def search_entities(search: str):
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(
+        """
+        SELECT
+            entity_id,
+            COUNT(*) AS mentions
+        FROM article_entities
+        WHERE entity_id LIKE ?
+        GROUP BY entity_id
+        ORDER BY mentions DESC
+        """,
+        (f"%{search}%",),
+    )
+
+    rows = cursor.fetchall()
+
+    conn.close()
+
+    return rows
+
+
+def get_articles_for_entity(entity_id: str):
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(
+        """
+        SELECT
+
+            news.id,
+
+            news.title,
+
+            news.source,
+
+            news.published_at
+
+        FROM article_entities
+
+        JOIN news
+
+        ON article_entities.article_id = news.id
+
+        WHERE entity_id = ?
+
+        ORDER BY news.published_at DESC
+        """,
+        (entity_id,),
+    )
+
+    rows = cursor.fetchall()
+
+    conn.close()
+
+    return rows
