@@ -1,17 +1,27 @@
-from intelligence.knowledge.competitions import extract_competitions
+# from intelligence.registry.football.competitions import extract_competitions
+# from intelligence.registry.football.teams import extract_teams
 
 
-def extract_entities(title: str):
+# def extract_entities(title: str) -> list[dict]:
+#     """
+#     Extract all supported entities from a news title.
+#     """
 
-    entities = []
+#     entities = []
 
-    entities.extend(
-        extract_competitions(title)
-    )
+#     # Competition entities
+#     entities.extend(
+#         extract_competitions(title)
+#     )
 
-    # Future additions
-    # entities.extend(extract_teams(title))
-    # entities.extend(extract_players(title))
-    # entities.extend(extract_venues(title))
+#     # Team entities
+#     entities.extend(
+#         extract_teams(title)
+#     )
 
-    return entities
+#     # Future
+#     # entities.extend(extract_players(title))
+#     # entities.extend(extract_venues(title))
+#     # entities.extend(extract_coaches(title))
+
+#     return entities

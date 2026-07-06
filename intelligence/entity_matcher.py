@@ -1,4 +1,13 @@
+from intelligence.registry_loader import RegistryLoader
+
+
+loader = RegistryLoader()
+
+
 def longest_match(text: str, candidates: list[str]) -> list[str]:
+    """
+    Return the longest non-overlapping matches from a list of candidates.
+    """
 
     matches = []
 
@@ -25,3 +34,35 @@ def longest_match(text: str, candidates: list[str]) -> list[str]:
             )
 
     return matches
+
+
+def resolve_entities(title: str) -> list[dict]:
+    """
+    Resolve candidate entities from a news title.
+
+    The matcher does NOT choose the final entity.
+    It only returns every possible candidate.
+    """
+
+    aliases = list(loader._alias_index.keys())
+
+    matched_aliases = longest_match(
+        title,
+        aliases
+    )
+
+    results = []
+
+    for alias in matched_aliases:
+
+        results.append(
+            {
+                "matched_alias": alias,
+
+                "candidates": loader.get_entities_by_alias(alias),
+
+                "confidence": 1.0,
+            }
+        )
+
+    return results
