@@ -37,6 +37,7 @@ function SourceChart({ data }) {
 
                     <Bar
                         dataKey="articles"
+                        fill="#2563eb"
                         radius={[6,6,0,0]}
                     />
 

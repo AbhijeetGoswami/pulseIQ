@@ -4,6 +4,7 @@ import LatestArticles from "../components/LatestArticles/LatestArticles";
 import Loader from "../components/Loader/Loader";
 import ErrorCard from "../components/ErrorCard/ErrorCard";
 import SourceChart from "../components/SourceChart/SourceChart";
+import SportChart from "../components/SportChart/SportChart";
 
 function Dashboard() {
 
@@ -24,18 +25,19 @@ function Dashboard() {
     return (
 
         <div
-            style={{
-                maxWidth: "1400px",
-                margin: "40px auto",
-                padding: "20px",
-            }}
+        style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(1fr,300px))",
+        gap: "30px",
+        marginBottom: "40px",
+                  }}
         >
 
-            <h1>PulseIQ Dashboard</h1>
+        <h1>PulseIQ Dashboard</h1>
         <KPIGrid dashboard={dashboard} />
-        <SourceChart
-            data={dashboard.source_distribution}
-        />
+        <SourceChart  data={dashboard.source_distribution} />
+        <SportChart data={dashboard.sport_distribution} />
+        
         <LatestArticles
       articles={dashboard.latest_articles}
        />
