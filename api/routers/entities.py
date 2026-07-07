@@ -116,6 +116,7 @@ def entity_articles(entity_id: str):
             "title": row[1],
             "source": row[2],
             "published_at": row[3],
+            "link": row[4],
         }
         for row in rows
     ]

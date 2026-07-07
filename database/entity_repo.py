@@ -211,7 +211,9 @@ def get_articles_for_entity(entity_id: str):
 
             news.source,
 
-            news.published_at
+            news.published_at,
+
+            news.link
 
         FROM article_entities
 
