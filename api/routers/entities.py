@@ -12,6 +12,8 @@ Endpoints:
 
 from fastapi import APIRouter
 
+from intelligence.registry_loader import registry
+
 from database.entity_repo import (
     get_top_entities,
     get_entities_for_article,
@@ -32,18 +34,35 @@ router = APIRouter(
 @router.get("/top")
 def top_entities(limit: int = 10):
     """
-    Return the most mentioned entities.
+    Return the most mentioned entities enriched with
+    registry metadata.
     """
 
     rows = get_top_entities(limit)
 
-    return [
-        {
-            "entity_id": row[0],
-            "mentions": row[1],
-        }
-        for row in rows
-    ]
+    response = []
+
+    for row in rows:
+
+        entity_id = row[0]
+        mentions = row[1]
+
+        entity = registry.get_entity_by_id(entity_id)
+
+        if entity is None:
+            continue
+
+        response.append(
+            {
+                "entity_id": entity["id"],
+                "display_name": entity["value"],
+                "sport": entity["sport"],
+                "entity_type": entity["type"],
+                "mentions": mentions,
+            }
+        )
+
+    return response
 
 
 # -----------------------------------------------------
@@ -53,30 +72,40 @@ def top_entities(limit: int = 10):
 @router.get("/article/{article_id}")
 def article_entities(article_id: int):
     """
-    Return all resolved entities for a given article.
+    Return all resolved entities for an article.
     """
 
     rows = get_entities_for_article(article_id)
 
-    return [
-        {
-            "entity_id": row[0],
-            "matched_alias": row[1],
-            "confidence": row[2],
-            "created_at": row[3],
-        }
-        for row in rows
-    ]
+    response = []
+
+    for row in rows:
+
+        entity = registry.get_entity_by_id(row[0])
+
+        response.append(
+            {
+                "entity_id": row[0],
+                "display_name": entity["value"] if entity else row[0],
+                "sport": entity["sport"] if entity else None,
+                "entity_type": entity["type"] if entity else None,
+                "matched_alias": row[1],
+                "confidence": row[2],
+                "created_at": row[3],
+            }
+        )
+
+    return response
 
 
 # -----------------------------------------------------
 # Articles mentioning an Entity
 # -----------------------------------------------------
 
-@router.get("/{entity_id}")
+@router.get("/lookup/{entity_id}")
 def entity_articles(entity_id: str):
     """
-    Return all articles mentioning an entity.
+    Return all articles mentioning a given entity.
     """
 
     rows = get_articles_for_entity(entity_id)
@@ -104,10 +133,20 @@ def search(text: str):
 
     rows = search_entities(text)
 
-    return [
-        {
-            "entity_id": row[0],
-            "mentions": row[1],
-        }
-        for row in rows
-    ]
+    response = []
+
+    for row in rows:
+
+        entity = registry.get_entity_by_id(row[0])
+
+        response.append(
+            {
+                "entity_id": row[0],
+                "display_name": entity["value"] if entity else row[0],
+                "sport": entity["sport"] if entity else None,
+                "entity_type": entity["type"] if entity else None,
+                "mentions": row[1],
+            }
+        )
+
+    return response

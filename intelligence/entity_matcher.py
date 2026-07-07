@@ -36,7 +36,7 @@ def longest_match(text: str, candidates: list[str]) -> list[str]:
     return matches
 
 
-def resolve_entities(title: str) -> list[dict]:
+def match_entities(title: str) -> list[dict]:
     """
     Resolve candidate entities from a news title.
 

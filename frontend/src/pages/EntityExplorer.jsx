@@ -1,32 +1,80 @@
 import { useEffect, useState } from "react";
 
+import EntitySearch from "../components/entities/EntitySearch";
 import EntityTable from "../components/entities/EntityTable";
+import EntityDetailsModal from "../components/entities/EntityDetailsModal";
 
-import { getTopEntities } from "../services/entityService";
+// import {
+//     getTopEntities,
+//     searchEntities
+// } from "../services/entityService";
+
+import {
+    getTopEntities,
+    searchEntities,
+    getEntityArticles
+} from "../services/entityService";
 
 const EntityExplorer = () => {
 
     const [entities, setEntities] = useState([]);
 
+
     const [loading, setLoading] = useState(true);
+    const [search, setSearch] = useState("");
+    const [selectedEntity, setSelectedEntity] = useState(null);
+    const [articles, setArticles] = useState([]);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
 
-        loadEntities();
+        const timeout = setTimeout(() => {
 
-    }, []);
+            loadEntities();
 
-    const loadEntities = async () => {
+        }, 300);
+
+        return () => clearTimeout(timeout);
+
+         }, [search]);
+
+            const handleView = async (entity) => {
+
+            setSelectedEntity(entity);
+
+            const data = await getEntityArticles(
+                entity.entity_id
+            );
+
+            setArticles(data);
+
+            setShowModal(true);
+
+        };
+
+     const loadEntities = async () => {
+
+        setLoading(true);
 
         try {
 
-            const data = await getTopEntities();
+            let data;
+
+            if (search.trim() === "") {
+
+                data = await getTopEntities();
+
+            } else {
+
+                data = await searchEntities(search);
+
+            }
 
             setEntities(data);
 
-        } catch (err) {
+        } catch (error) {
 
-            console.error(err);
+            console.error(error);
 
         } finally {
 
@@ -38,21 +86,57 @@ const EntityExplorer = () => {
 
     return (
 
-        <div className="container mt-4">
+        <div className="container-fluid">
 
-            <h2>Entity Explorer</h2>
+            <div className="card shadow-sm">
 
-            <EntityTable
+                <div className="card-header d-flex justify-content-between align-items-center">
 
-                entities={entities}
+                    <h4 className="mb-0">
 
-                loading={loading}
+                        Entity Explorer
 
-            />
+                    </h4>
+
+                    <span className="badge bg-primary">
+
+                        {entities.length} Entities
+
+                    </span>
+
+                </div>
+
+                <div className="card-body">
+
+                    <EntitySearch
+
+                        value={search}
+
+                        onChange={setSearch}
+
+                    />
+
+                    <EntityTable
+                        entities={entities}
+                        loading={loading}
+                        onView={handleView}
+                    />
+
+                    <EntityDetailsModal
+                        show={showModal}
+                        entity={selectedEntity}
+                        articles={articles}
+                        onClose={() => setShowModal(false)}
+                    />
+
+                </div>
+
+            </div>
 
         </div>
 
     );
+
 };
 
 export default EntityExplorer;

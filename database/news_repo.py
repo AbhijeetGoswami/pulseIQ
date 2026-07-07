@@ -2,10 +2,26 @@ from database.db import get_connection
 
 
 def save_news(articles):
+    """
+    Save normalized news articles.
+
+    Returns:
+    {
+        "inserted": int,
+        "duplicates": int,
+        "failed": int,
+        "saved_articles": [
+            (article_id, article),
+            ...
+        ]
+    }
+    """
 
     inserted = 0
     duplicates = 0
     failed = 0
+
+    saved_articles = []
 
     for article in articles:
 
@@ -21,9 +37,16 @@ def save_news(articles):
 
                 inserted += 1
 
+                saved_articles.append(
+                    (
+                        article_id,
+                        article
+                    )
+                )
+
         except Exception as e:
 
-            print(e)
+            print(f"Error saving article: {e}")
 
             failed += 1
 
@@ -34,6 +57,9 @@ def save_news(articles):
         "duplicates": duplicates,
 
         "failed": failed,
+
+        "saved_articles": saved_articles,
+
     }
 
 

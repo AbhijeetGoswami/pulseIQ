@@ -1,6 +1,6 @@
 from collections import Counter
 
-from intelligence.entity_matcher import resolve_entities as match_entities
+from intelligence.entity_matcher import match_entities
 from intelligence.entity_resolver import resolve_entities
 
 

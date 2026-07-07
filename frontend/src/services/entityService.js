@@ -18,18 +18,33 @@ export const getArticleEntities = async (articleId) => {
     return response.data;
 };
 
-export const getEntityArticles = async (entityId) => {
-    const response = await axios.get(
-        `${API_BASE}/lookup/${entityId}`
-    );
+// export const getEntityArticles = async (entityId) => {
+//     const response = await axios.get(
+//         `${API_BASE}/lookup/${entityId}`
+//     );
 
-    return response.data;
-};
+//     return response.data;
+// };
 
 export const searchEntities = async (text) => {
+
+    if (!text.trim()) {
+        return getTopEntities();
+    }
+
     const response = await axios.get(
         `${API_BASE}/search/${text}`
     );
 
     return response.data;
+};
+
+export const getEntityArticles = async (entityId) => {
+
+    const response = await axios.get(
+        `${API_BASE}/lookup/${entityId}`
+    );
+
+    return response.data;
+
 };

@@ -11,9 +11,10 @@ class RegistryLoader:
 
     def __init__(self):
 
-        # -----------------------------
+        # -------------------------------------------------
         # Load all registry entities
-        # -----------------------------
+        # -------------------------------------------------
+
         self._entities = []
 
         self._entities.extend(FOOTBALL_COMPETITIONS)
@@ -24,9 +25,10 @@ class RegistryLoader:
 
         self._entities.extend(TENNIS_COMPETITIONS)
 
-        # -----------------------------
+        # -------------------------------------------------
         # Build indexes
-        # -----------------------------
+        # -------------------------------------------------
+
         self._by_id = {}
 
         self._by_type = {}
@@ -37,64 +39,69 @@ class RegistryLoader:
 
         for entity in self._entities:
 
-            # ---------- ID ----------
+            # ---------------- ID ----------------
 
             self._by_id[entity["id"]] = entity
 
-            # ---------- TYPE ----------
+            # ---------------- TYPE ----------------
 
             self._by_type.setdefault(
                 entity["type"],
                 []
             ).append(entity)
 
-            # ---------- SPORT ----------
+            # ---------------- SPORT ----------------
 
             self._by_sport.setdefault(
                 entity["sport"],
                 []
             ).append(entity)
 
-            # ---------- ALIASES ----------
+            # ---------------- ALIASES ----------------
 
             for alias in entity["aliases"]:
 
-                key = alias.lower()
-
                 self._alias_index.setdefault(
-                    key,
+                    alias.lower(),
                     []
                 ).append(entity)
 
-    # ---------------------------------
+    # -------------------------------------------------
 
     def get_all_entities(self):
 
         return self._entities
 
-    # ---------------------------------
+    # -------------------------------------------------
 
-    def get_entity_by_id(self, entity_id):
+    def get_entity_by_id(self, entity_id: str):
 
         return self._by_id.get(entity_id)
 
-    # ---------------------------------
+    # -------------------------------------------------
 
-    def get_entities_by_type(self, entity_type):
+    def get_entities_by_type(self, entity_type: str):
 
         return self._by_type.get(entity_type, [])
 
-    # ---------------------------------
+    # -------------------------------------------------
 
-    def get_entities_by_sport(self, sport):
+    def get_entities_by_sport(self, sport: str):
 
         return self._by_sport.get(sport, [])
 
-    # ---------------------------------
+    # -------------------------------------------------
 
-    def get_entities_by_alias(self, alias):
+    def get_entities_by_alias(self, alias: str):
 
-     return self._alias_index.get(
-        alias.lower(),
-        []
-    )
+        return self._alias_index.get(
+            alias.lower(),
+            []
+        )
+
+
+# =====================================================
+# Singleton Registry
+# =====================================================
+
+registry = RegistryLoader()
