@@ -4,8 +4,13 @@ import {
     Route
 } from "react-router-dom";
 
+import Layout from "./components/layout/Layout";
+
 import Dashboard from "./pages/Dashboard";
 import Articles from "./pages/Articles";
+import EntityExplorer from "./pages/EntityExplorer";
+import Metrics from "./pages/Metrics";
+import NotFound from "./pages/NotFound";
 
 function App() {
 
@@ -15,14 +20,37 @@ function App() {
 
             <Routes>
 
-                <Route
-                    path="/"
-                    element={<Dashboard />}
-                />
+                {/* Shared Application Layout */}
+
+                <Route element={<Layout />}>
+
+                    <Route
+                        path="/"
+                        element={<Dashboard />}
+                    />
+
+                    <Route
+                        path="/articles"
+                        element={<Articles />}
+                    />
+
+                    <Route
+                        path="/entities"
+                        element={<EntityExplorer />}
+                    />
+
+                    <Route
+                        path="/metrics"
+                        element={<Metrics />}
+                    />
+
+                </Route>
+
+                {/* 404 */}
 
                 <Route
-                    path="/articles"
-                    element={<Articles />}
+                    path="*"
+                    element={<NotFound />}
                 />
 
             </Routes>

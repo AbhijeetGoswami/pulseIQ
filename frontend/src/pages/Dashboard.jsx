@@ -5,6 +5,12 @@ import Loader from "../components/Loader/Loader";
 import ErrorCard from "../components/ErrorCard/ErrorCard";
 import SourceChart from "../components/SourceChart/SourceChart";
 import SportChart from "../components/SportChart/SportChart";
+import {
+    FiHome,
+    FiFileText,
+    FiCpu,
+    FiBarChart2
+} from "react-icons/fi";
 
 function Dashboard() {
 
