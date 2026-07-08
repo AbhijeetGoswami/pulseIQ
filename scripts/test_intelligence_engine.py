@@ -3,12 +3,35 @@ from intelligence.entity_resolver import resolve_entities
 from intelligence.classifier import classify_sport
 
 
+
 titles = [
-    "George Russell wins the British Grand Prix",
-    "Mercedes unveils major upgrade package",
-    "Lewis Hamilton joins Ferrari",
-    "Max Verstappen dominates at Monaco GP",
-    "Kimi Antonelli takes pole position",
+
+    # Football
+    "Lionel Messi scores against Brazil",
+
+    # Formula 1
+    "Max Verstappen wins the Monaco Grand Prix",
+
+    # Cricket
+    "Virat Kohli leads India to victory",
+
+    # Tennis
+    "Carlos Alcaraz reaches Wimbledon final",
+
+    # Rugby
+    "Beauden Barrett stars for the All Blacks",
+
+    # Golf
+    "Scottie Scheffler wins The Masters",
+
+    # Basketball
+    "Stephen Curry scores 45 points for the Golden State Warriors",
+
+    # Baseball
+    "Aaron Judge hits another home run for the Yankees",
+
+    # Ice Hockey
+    "Connor McDavid leads the Edmonton Oilers to victory",
 ]
 
 for title in titles:

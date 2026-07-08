@@ -1,15 +1,46 @@
+#Football
 from intelligence.registry.football.competitions import FOOTBALL_COMPETITIONS
-from intelligence.registry.football.teams import FOOTBALL_TEAMS
-from intelligence.registry.football.players import FOOTBALL_PLAYERS
 
+from intelligence.registry.football.players import FOOTBALL_PLAYERS
+from intelligence.registry.football.teams import FOOTBALL_TEAMS
+
+# Formula 1
 from intelligence.registry.formula1.competitions import FORMULA1_COMPETITIONS
 from intelligence.registry.formula1.constructors import FORMULA1_CONSTRUCTORS
 from intelligence.registry.formula1.drivers import FORMULA1_DRIVERS
 
+# Cricket
 from intelligence.registry.cricket.competitions import CRICKET_COMPETITIONS
+from intelligence.registry.cricket.players import CRICKET_PLAYERS
 from intelligence.registry.cricket.teams import CRICKET_TEAMS
 
+# Tennis
 from intelligence.registry.tennis.competitions import TENNIS_COMPETITIONS
+from intelligence.registry.tennis.players import TENNIS_PLAYERS
+
+# Rugby
+from intelligence.registry.rugby.competitions import RUGBY_COMPETITIONS
+from intelligence.registry.rugby.players import RUGBY_PLAYERS
+from intelligence.registry.rugby.teams import RUGBY_TEAMS
+
+# Golf
+from intelligence.registry.golf.competitions import GOLF_COMPETITIONS
+from intelligence.registry.golf.players import GOLF_PLAYERS
+
+# Basketball
+from intelligence.registry.basketball.competitions import BASKETBALL_COMPETITIONS
+from intelligence.registry.basketball.players import BASKETBALL_PLAYERS
+from intelligence.registry.basketball.teams import BASKETBALL_TEAMS
+
+# Baseball
+from intelligence.registry.baseball.competitions import BASEBALL_COMPETITIONS
+from intelligence.registry.baseball.players import BASEBALL_PLAYERS
+from intelligence.registry.baseball.teams import BASEBALL_TEAMS
+
+# Ice Hockey
+from intelligence.registry.icehockey.competitions import ICEHOCKEY_COMPETITIONS
+from intelligence.registry.icehockey.players import ICEHOCKEY_PLAYERS
+from intelligence.registry.icehockey.teams import ICEHOCKEY_TEAMS
 
 
 class RegistryLoader:
@@ -22,23 +53,76 @@ class RegistryLoader:
 
         registries = [
 
-            # Football
-            FOOTBALL_COMPETITIONS,
-            FOOTBALL_TEAMS,
-            FOOTBALL_PLAYERS,
+                    # -------------------------------------------------
+                    # Football
+                    # -------------------------------------------------
 
-            # Formula 1
-            FORMULA1_COMPETITIONS,
-            FORMULA1_CONSTRUCTORS,
-            FORMULA1_DRIVERS,
+                    FOOTBALL_COMPETITIONS,
+                    FOOTBALL_TEAMS,
+                    FOOTBALL_PLAYERS,
 
-            # Cricket
-            CRICKET_COMPETITIONS,
-            CRICKET_TEAMS,
+                    # -------------------------------------------------
+                    # Formula 1
+                    # -------------------------------------------------
 
-            # Tennis
-            TENNIS_COMPETITIONS,
-        ]
+                    FORMULA1_COMPETITIONS,
+                    FORMULA1_CONSTRUCTORS,
+                    FORMULA1_DRIVERS,
+
+                    # -------------------------------------------------
+                    # Cricket
+                    # -------------------------------------------------
+
+                    CRICKET_COMPETITIONS,
+                    CRICKET_TEAMS,
+                    CRICKET_PLAYERS,
+
+                    # -------------------------------------------------
+                    # Tennis
+                    # -------------------------------------------------
+
+                    TENNIS_COMPETITIONS,
+                    TENNIS_PLAYERS,
+
+                    # -------------------------------------------------
+                    # Rugby
+                    # -------------------------------------------------
+
+                    RUGBY_COMPETITIONS,
+                    RUGBY_TEAMS,
+                    RUGBY_PLAYERS,
+
+                    # -------------------------------------------------
+                    # Golf
+                    # -------------------------------------------------
+
+                    GOLF_COMPETITIONS,
+                    GOLF_PLAYERS,
+
+                    # -------------------------------------------------
+                    # Basketball
+                    # -------------------------------------------------
+
+                    BASKETBALL_COMPETITIONS,
+                    BASKETBALL_TEAMS,
+                    BASKETBALL_PLAYERS,
+
+                    # -------------------------------------------------
+                    # Baseball
+                    # -------------------------------------------------
+
+                    BASEBALL_COMPETITIONS,
+                    BASEBALL_TEAMS,
+                    BASEBALL_PLAYERS,
+
+                    # -------------------------------------------------
+                    # Ice Hockey
+                    # -------------------------------------------------
+
+                    ICEHOCKEY_COMPETITIONS,
+                    ICEHOCKEY_TEAMS,
+                    ICEHOCKEY_PLAYERS,
+                ]
 
         self._entities = []
 

@@ -1,4 +1,4 @@
-from intelligence.entity_matcher import resolve_entities
+from intelligence.entity_matcher import match_entities
 
 titles = [
 
@@ -9,6 +9,8 @@ titles = [
     "Manchester United sign goalkeeper",
 
     "Djokovic wins Wimbledon",
+    
+    "After Daniel Alfredsson’s shocking exit for Maple Leafs, Sid Seixeiro floats internal Senators turmoil"
 
 ]
 
@@ -20,7 +22,7 @@ for title in titles:
 
     print()
 
-    matches = resolve_entities(title)
+    matches = match_entities(title)
 
     for match in matches:
 

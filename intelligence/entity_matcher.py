@@ -1,12 +1,11 @@
 from intelligence.registry_loader import RegistryLoader
-
+import re
 
 loader = RegistryLoader()
 
-
 def longest_match(text: str, candidates: list[str]) -> list[str]:
     """
-    Return the longest non-overlapping matches from a list of candidates.
+    Return the longest non-overlapping whole-word/phrase matches.
     """
 
     matches = []
@@ -23,14 +22,20 @@ def longest_match(text: str, candidates: list[str]) -> list[str]:
 
         candidate_lower = candidate.lower()
 
-        if candidate_lower in working_text:
+        pattern = r"\b" + re.escape(candidate_lower) + r"\b"
+
+        match = re.search(pattern, working_text)
+
+        if match:
 
             matches.append(candidate)
 
-            working_text = working_text.replace(
-                candidate_lower,
-                " " * len(candidate_lower),
-                1
+            start, end = match.span()
+
+            working_text = (
+                working_text[:start]
+                + (" " * (end - start))
+                + working_text[end:]
             )
 
     return matches
