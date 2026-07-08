@@ -46,3 +46,18 @@ def analyze_title(title: str) -> dict:
         "sport": sport,
         "entities": entities,
     }
+
+def analyze_titles(titles: list[str]) -> list[dict]:
+    """
+    Analyze multiple news headlines.
+
+    Parameters
+    ----------
+    titles : list[str]
+
+    Returns
+    -------
+    list[dict]
+    """
+
+    return [analyze_title(title) for title in titles]

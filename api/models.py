@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class AnalyzeRequest(BaseModel):
@@ -16,3 +16,13 @@ class AnalyzeResponse(BaseModel):
     title: str
     sport: str
     entities: list[EntityResponse]
+
+class BatchAnalyzeRequest(BaseModel):
+    titles: list[str] = Field(
+        min_length=1,
+        max_length=100,
+    )
+
+
+class BatchAnalyzeResponse(BaseModel):
+    results: list[AnalyzeResponse]
