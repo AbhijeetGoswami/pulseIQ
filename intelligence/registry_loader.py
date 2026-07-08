@@ -2,6 +2,10 @@ from intelligence.registry.football.competitions import FOOTBALL_COMPETITIONS
 from intelligence.registry.football.teams import FOOTBALL_TEAMS
 from intelligence.registry.football.players import FOOTBALL_PLAYERS
 
+from intelligence.registry.formula1.competitions import FORMULA1_COMPETITIONS
+from intelligence.registry.formula1.constructors import FORMULA1_CONSTRUCTORS
+from intelligence.registry.formula1.drivers import FORMULA1_DRIVERS
+
 from intelligence.registry.cricket.competitions import CRICKET_COMPETITIONS
 from intelligence.registry.cricket.teams import CRICKET_TEAMS
 
@@ -22,6 +26,11 @@ class RegistryLoader:
             FOOTBALL_COMPETITIONS,
             FOOTBALL_TEAMS,
             FOOTBALL_PLAYERS,
+
+            # Formula 1
+            FORMULA1_COMPETITIONS,
+            FORMULA1_CONSTRUCTORS,
+            FORMULA1_DRIVERS,
 
             # Cricket
             CRICKET_COMPETITIONS,

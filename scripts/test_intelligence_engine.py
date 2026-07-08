@@ -4,11 +4,11 @@ from intelligence.classifier import classify_sport
 
 
 titles = [
-    "Messi has no equals, and if not for him, Argentina...",
-    "Mo Salah: Never Give Up",
-    "Endrick breaks silence on Brazil crashing out",
-    "Cristiano Ronaldo scores a stunning free kick",
-    "Harry Kane nets another hat-trick",
+    "George Russell wins the British Grand Prix",
+    "Mercedes unveils major upgrade package",
+    "Lewis Hamilton joins Ferrari",
+    "Max Verstappen dominates at Monaco GP",
+    "Kimi Antonelli takes pole position",
 ]
 
 for title in titles:
