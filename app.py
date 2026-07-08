@@ -6,6 +6,7 @@ from database.schema import initialize_database
 from api.routers import dashboard, news, health, metrics, articles
 from route.articles import router as articles_router
 from api.routers import entities
+from api.routers import intelligence
 
 
 
@@ -44,8 +45,9 @@ app.include_router(articles.router, prefix="/api", tags=["Articles"])
 app.include_router(dashboard.router, prefix="/api", tags=["Dashboard"])
 app.include_router(articles_router, prefix="/api", tags=["Articles"])
 app.include_router(entities.router, prefix="/api", tags=["Entities"])
-
+app.include_router(intelligence.router, prefix="/api", tags=["Intelligence"])
 @app.get("/")
+
 async def root():
     return {
         "message": "Welcome to PulseIQ API",
