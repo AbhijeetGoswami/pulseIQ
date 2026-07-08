@@ -1,0 +1,11 @@
+ID	Priority	Problem	Current Impact
+PIQ-INT-001	🔴 Critical	Incorrect Sport Classification	Articles are classified into the wrong sport (e.g., NHL article classified as Football).
+PIQ-INT-002	🔴 Critical	Incomplete Sport Classification Coverage	Many valid sports (F1, WWE, NBA, Baseball, Tennis, MMA, NHL, etc.) become Unknown.
+PIQ-INT-003	🔴 Critical	Sport Determination Relies on Keyword Classification	Sport is inferred directly from text instead of resolved entities, reducing accuracy.
+PIQ-INT-004	🟠 High	Entity Registry Coverage Gaps	Registry lacks players, drivers, managers, venues, etc., limiting entity resolution.
+PIQ-INT-005	🟠 High	Mixed-Content Source Pollution	Sources like Sportskeeda publish Gaming/Anime/etc., but non-sports articles enter the sports pipeline.
+PIQ-INT-006	🟠 High	Category Classification Not Implemented	category remains NULL for all articles, preventing meaningful grouping and filtering.
+PIQ-INT-007	🟡 Medium	No Confidence Scoring	Sport/entity decisions provide no confidence value, making debugging and quality analysis difficult.
+PIQ-INT-008	🟡 Medium	Pipeline Not Fully Entity-Centric	Intelligence pipeline doesn't yet derive all metadata (sport, category) from resolved entities.
+PIQ-INT-009	🟡 Medium	Registry Scalability	Registry organization needs to support additional sports and future verticals without structural changes.
+PIQ-INT-010	🟢 Enhancement	Attention Signals Not Yet Computed	Articles are stored, but attention scores and trend indicators are not yet generated.
