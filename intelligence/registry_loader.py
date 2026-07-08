@@ -1,5 +1,6 @@
 from intelligence.registry.football.competitions import FOOTBALL_COMPETITIONS
 from intelligence.registry.football.teams import FOOTBALL_TEAMS
+from intelligence.registry.football.players import FOOTBALL_PLAYERS
 
 from intelligence.registry.cricket.competitions import CRICKET_COMPETITIONS
 from intelligence.registry.cricket.teams import CRICKET_TEAMS
@@ -15,26 +16,33 @@ class RegistryLoader:
         # Load all registry entities
         # -------------------------------------------------
 
+        registries = [
+
+            # Football
+            FOOTBALL_COMPETITIONS,
+            FOOTBALL_TEAMS,
+            FOOTBALL_PLAYERS,
+
+            # Cricket
+            CRICKET_COMPETITIONS,
+            CRICKET_TEAMS,
+
+            # Tennis
+            TENNIS_COMPETITIONS,
+        ]
+
         self._entities = []
 
-        self._entities.extend(FOOTBALL_COMPETITIONS)
-        self._entities.extend(FOOTBALL_TEAMS)
-
-        self._entities.extend(CRICKET_COMPETITIONS)
-        self._entities.extend(CRICKET_TEAMS)
-
-        self._entities.extend(TENNIS_COMPETITIONS)
+        for registry in registries:
+            self._entities.extend(registry)
 
         # -------------------------------------------------
         # Build indexes
         # -------------------------------------------------
 
         self._by_id = {}
-
         self._by_type = {}
-
         self._by_sport = {}
-
         self._alias_index = {}
 
         for entity in self._entities:
@@ -98,6 +106,12 @@ class RegistryLoader:
             alias.lower(),
             []
         )
+
+    # -------------------------------------------------
+
+    def get_all_aliases(self):
+
+        return list(self._alias_index.keys())
 
 
 # =====================================================
