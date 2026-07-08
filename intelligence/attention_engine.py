@@ -2,15 +2,33 @@ from collections import Counter
 
 
 class AttentionEngine:
+    """
+    Aggregates entity mentions across analyzed articles.
+    """
 
-    def calculate(self, entities: list[dict]) -> dict:
-        """
-        Calculate attention scores from resolved entities.
-        """
+    def calculate(self, analyses: list[dict]) -> dict:
 
-        scores = Counter()
+        entity_counter = Counter()
+        entity_map = {}
 
-        for entity in entities:
-            scores[entity["id"]] += 1
+        for analysis in analyses:
 
-        return dict(scores)
+            for entity in analysis["entities"]:
+
+                entity_counter[entity["id"]] += 1
+
+                entity_map[entity["id"]] = entity
+
+        ranked_entities = []
+
+        for entity_id, mentions in entity_counter.most_common():
+
+            entity = entity_map[entity_id].copy()
+
+            entity["mentions"] = mentions
+
+            ranked_entities.append(entity)
+
+        return {
+            "entities": ranked_entities
+        }
