@@ -12,6 +12,7 @@ from api.routers import (
     entities,
     intelligence,
     attention,
+    trends,
 )
 
 
@@ -53,6 +54,8 @@ app.include_router(dashboard.router, prefix="/api", tags=["Dashboard"])
 app.include_router(entities.router, prefix="/api", tags=["Entities"])
 app.include_router(intelligence.router, prefix="/api", tags=["Intelligence"])
 app.include_router(attention.router,prefix="/api",tags=["Attention"])
+app.include_router(trends.router, prefix="/api", tags=["Trends"])
+
 
 @app.get("/")
 
