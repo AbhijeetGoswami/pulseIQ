@@ -26,3 +26,4 @@ class BatchAnalyzeRequest(BaseModel):
 
 class BatchAnalyzeResponse(BaseModel):
     results: list[AnalyzeResponse]
+

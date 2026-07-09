@@ -23,5 +23,5 @@ class AttentionSnapshot:
         return {
             "generated_at": generated_at.isoformat(),
             "version": self.SNAPSHOT_VERSION,
-            "data": attention_result,
+            "attention": attention_result,
         }
