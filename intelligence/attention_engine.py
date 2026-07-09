@@ -1,5 +1,8 @@
 from collections import Counter
+import datetime
+from time import timezone
 from intelligence.attention_scorer import AttentionScorer
+from intelligence.attention_snapshot import AttentionSnapshot
 
 
 class AttentionEngine:
@@ -142,6 +145,9 @@ class AttentionEngine:
             ranked.append(item)
 
         return ranked
+    
+    def create(self, attention_result, generated_at=None):
+     generated_at = generated_at or datetime.timezone.utc
 
     def calculate(self, analyses):
         """
@@ -202,10 +208,16 @@ class AttentionEngine:
         )
 
         # ----------------------------------------
+        # Apply attention snapshot
+        # ----------------------------------------
+
+        snapshot = AttentionSnapshot()
+
+        # ----------------------------------------
         # Final Result
         # ----------------------------------------
 
-        return {
+        result = {
 
             "summary": summary,
 
@@ -225,6 +237,14 @@ class AttentionEngine:
 
             "entities": ranked_entities,
         }
+
+        # ----------------------------------------
+        # Wrap inside an Attention Snapshot
+        # ----------------------------------------
+
+        snapshot = AttentionSnapshot()
+
+        return snapshot.create(result)
     
     def _group_entities_by_type(self, ranked_entities):
         """
