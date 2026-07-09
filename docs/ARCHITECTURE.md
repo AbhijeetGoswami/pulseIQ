@@ -32,3 +32,36 @@
                  |                 |
                  v                 v
          Dashboard API       History API
+
+
+         ------------------------NEXT EVOLVED TO BELOW -----------------------------------
+
+
+                           PulseIQ
+
+        ┌───────────────────────────┐
+        │      RSS / Sources        │
+        └──────────────┬────────────┘
+                       │
+                       ▼
+             Article Ingestor
+                       │
+                       ▼
+          Intelligence Pipeline
+                       │
+                       ▼
+            Attention Pipeline
+                       │
+                       ▼
+           Attention Snapshot
+                       │
+              ┌────────┴────────┐
+              ▼                 ▼
+      Snapshot Store     Trend Detector
+              │                 │
+              ▼                 ▼
+      Attention History   Trend Snapshot
+              │                 │
+              └────────┬────────┘
+                       ▼
+                    REST APIs
