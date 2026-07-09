@@ -2,50 +2,74 @@ class AttentionScorer:
     """
     PulseIQ Attention Scorer
 
-    Converts entity mention counts into normalized
-    attention scores (0-100).
+    Computes attention scores for ranked entities.
 
-    Future versions will incorporate:
+    Current scoring:
+        - Mention Score (Normalized)
 
-    - Recency
-    - Source Diversity
-    - Trend Velocity
-    - Source Authority
-    - Sentiment
+    Future scoring:
+        - Recency
+        - Source Diversity
+        - Trend Velocity
+        - Source Authority
+        - Sentiment
     """
 
-    def score(self, attention_result: dict) -> dict:
+    def _mention_score(self, mentions, max_mentions):
         """
-        Enrich entities with an attention score.
+        Normalize mentions to a score between 0 and 100.
+        """
+
+        if max_mentions == 0:
+            return 0.0
+
+        return (mentions / max_mentions) * 100
+
+    def _calculate_score(self, entity, max_mentions):
+        """
+        Calculate the final attention score for an entity.
+
+        Future versions will combine multiple scoring signals.
+        """
+
+        return round(
+            self._mention_score(
+                entity["mentions"],
+                max_mentions,
+            ),
+            2,
+        )
+
+    def score_entities(self, entities):
+        """
+        Enrich ranked entities with attention scores.
 
         Parameters
         ----------
-        attention_result : dict
+        entities : list[dict]
 
         Returns
         -------
-        dict
+        list[dict]
         """
 
-        entities = attention_result.get("entities", [])
+
 
         if not entities:
-            return attention_result
+            return entities
 
         max_mentions = max(
             entity["mentions"]
             for entity in entities
         )
 
-        if max_mentions == 0:
-            max_mentions = 1
+
 
         for entity in entities:
 
-            score = (
-                entity["mentions"] / max_mentions
-            ) * 100
+            entity["attention_score"] = self._calculate_score(
+                entity,
+                max_mentions,
+            )
 
-            entity["attention_score"] = round(score, 2)
-
-        return attention_result
+        return entities

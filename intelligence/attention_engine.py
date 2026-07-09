@@ -1,4 +1,5 @@
 from collections import Counter
+from intelligence.attention_scorer import AttentionScorer
 
 
 class AttentionEngine:
@@ -185,12 +186,24 @@ class AttentionEngine:
         }
 
         # ----------------------------------------
-        # Final Result
+        # Rank entities
         # ----------------------------------------
 
         ranked_entities = self._rank_entities()
 
-        ranked_entities = self._rank_entities()
+        # ----------------------------------------
+        # Apply attention scoring
+        # ----------------------------------------
+
+        scorer = AttentionScorer()
+
+        ranked_entities = scorer.score_entities(
+            ranked_entities
+        )
+
+        # ----------------------------------------
+        # Final Result
+        # ----------------------------------------
 
         return {
 
@@ -206,7 +219,6 @@ class AttentionEngine:
                 self.category_map,
             ),
 
-            
             "entity_types": self._group_entities_by_type(
                 ranked_entities
             ),
