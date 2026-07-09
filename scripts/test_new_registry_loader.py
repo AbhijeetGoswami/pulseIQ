@@ -107,3 +107,4 @@ print("=" * 80)
 
 print(f"Total entities : {len(loader.get_all_entities())}")
 print(f"Total aliases  : {len(loader.get_all_aliases())}")
+print(f"Uruguay entities : {len(loader.get_entities_by_alias('uruguay'))}")
