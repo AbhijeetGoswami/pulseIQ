@@ -4,56 +4,101 @@ class AttentionScorer:
 
     Computes attention scores for ranked entities.
 
-    Current scoring:
-        - Mention Score (Normalized)
+    Current signals:
+        - Mention Score
 
-    Future scoring:
-        - Recency
+    Planned signals:
+        - Recency Score
         - Source Diversity
         - Trend Velocity
         - Source Authority
         - Sentiment
     """
 
+    # -------------------------------------------------------
+    # Individual Score Components
+    # -------------------------------------------------------
+
     def _mention_score(self, mentions, max_mentions):
         """
-        Normalize mentions to a score between 0 and 100.
+        Normalize mention count to 0-100.
         """
 
         if max_mentions == 0:
             return 0.0
 
-        return (mentions / max_mentions) * 100
+        return round((mentions / max_mentions) * 100, 2)
 
-    def _calculate_score(self, entity, max_mentions):
+    # -------------------------------------------------------
+    # Score Builder
+    # -------------------------------------------------------
+
+    def _build_scores(self, entity, max_mentions):
         """
-        Calculate the final attention score for an entity.
+        Build all individual scoring components.
 
-        Future versions will combine multiple scoring signals.
+        Future versions will add:
+            - recency
+            - diversity
+            - velocity
+            - authority
+            - sentiment
         """
 
-        return round(
-            self._mention_score(
+        return {
+            "mention": self._mention_score(
                 entity["mentions"],
                 max_mentions,
-            ),
-            2,
+            )
+        }
+
+    # -------------------------------------------------------
+    # Final Score
+    # -------------------------------------------------------
+
+    def _calculate_attention_score(self, scores):
+        """
+        Calculate the overall attention score.
+
+        V1:
+            Attention Score = Mention Score
+
+        Future:
+            Weighted combination of multiple signals.
+        """
+
+        return scores["mention"]
+
+    # -------------------------------------------------------
+    # Entity Scoring
+    # -------------------------------------------------------
+
+    def _score_entity(self, entity, max_mentions):
+        """
+        Score a single entity.
+        """
+
+        scores = self._build_scores(
+            entity,
+            max_mentions,
         )
+
+        entity["scores"] = scores
+
+        entity["attention_score"] = self._calculate_attention_score(
+            scores
+        )
+
+        return entity
+
+    # -------------------------------------------------------
+    # Public API
+    # -------------------------------------------------------
 
     def score_entities(self, entities):
         """
         Enrich ranked entities with attention scores.
-
-        Parameters
-        ----------
-        entities : list[dict]
-
-        Returns
-        -------
-        list[dict]
         """
-
-
 
         if not entities:
             return entities
@@ -63,11 +108,9 @@ class AttentionScorer:
             for entity in entities
         )
 
-
-
         for entity in entities:
 
-            entity["attention_score"] = self._calculate_score(
+            self._score_entity(
                 entity,
                 max_mentions,
             )
