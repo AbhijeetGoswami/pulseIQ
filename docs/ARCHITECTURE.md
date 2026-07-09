@@ -65,3 +65,36 @@
               └────────┬────────┘
                        ▼
                     REST APIs
+
+
+
+                    -------------------FRONTE_END_VISION--------------
+
+                    ┌───────────────────────────────────────────────┐
+│               PulseIQ Dashboard               │
+├───────────────────────────────────────────────┤
+│                                               │
+│ Articles Processed            1,254           │
+│                                               │
+│ Active Domains                  4             │
+│                                               │
+│ Top Categories                  Football      │
+│                               Basketball      │
+│                               Tennis          │
+│                                               │
+├───────────────────────────────────────────────┤
+│                Attention Leaders              │
+│                                               │
+│ Messi                     ████████████ 100    │
+│ Brazil                    ████████      67    │
+│ Curry                     █████         42    │
+│                                               │
+├───────────────────────────────────────────────┤
+│                Trending Now                   │
+│                                               │
+│ 🔥 Carlos Alcaraz         NEW                 │
+│ 📈 Argentina              +42                 │
+│ 📉 Brazil                 -25                 │
+│ ❌ The Masters            disappeared         │
+│                                               │
+└───────────────────────────────────────────────┘
