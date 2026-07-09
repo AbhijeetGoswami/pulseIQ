@@ -1,67 +1,70 @@
 from collections import Counter
 
 
-def resolve_entities(matches: list[dict]) -> list[dict]:
+def resolve_entities(matches):
     """
-    Resolve ambiguous entities using sport consensus.
-
-    Input:
-        Candidate entities from entity_matcher.py
-
-    Output:
-        Canonical resolved entities.
+    Resolve matched entities using contextual sport disambiguation.
     """
 
     resolved = []
+    ambiguous = []
 
     sport_counter = Counter()
 
-    # -----------------------------
-    # Count candidate sports
-    # -----------------------------
+    # -------------------------------------------------
+    # Pass 1 : Resolve unambiguous aliases
+    # -------------------------------------------------
 
     for match in matches:
 
         candidates = match["candidates"]
 
+        if not candidates:
+            continue
+
         if len(candidates) == 1:
 
-            sport_counter[
-                candidates[0]["sport"]
-            ] += 1
+            entity = candidates[0]
 
-    # -----------------------------
+            resolved.append(entity)
+
+            sport_counter[entity["sport"]] += 1
+
+        else:
+
+            ambiguous.append(match)
+
+    # -------------------------------------------------
     # Determine dominant sport
-    # -----------------------------
+    # -------------------------------------------------
 
     dominant_sport = None
 
     if sport_counter:
-
+        
         dominant_sport = sport_counter.most_common(1)[0][0]
 
-    # -----------------------------
-    # Resolve every candidate
-    # -----------------------------
+    # -------------------------------------------------
+    # Pass 2 : Resolve ambiguous aliases
+    # -------------------------------------------------
 
-    for match in matches:
+    for match in ambiguous:
 
         candidates = match["candidates"]
 
-        if len(candidates) == 1:
-
-            resolved.append(candidates[0])
-
-            continue
+        chosen = None
 
         if dominant_sport:
 
             for candidate in candidates:
 
                 if candidate["sport"] == dominant_sport:
-
-                    resolved.append(candidate)
-
+                    chosen = candidate
                     break
+
+        if chosen is None:
+            chosen = candidates[0]
+
+        resolved.append(chosen)
 
     return resolved

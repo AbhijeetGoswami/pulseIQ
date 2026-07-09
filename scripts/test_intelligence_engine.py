@@ -6,32 +6,16 @@ from intelligence.classifier import classify_sport
 
 titles = [
 
-    # Football
-    "Lionel Messi scores against Brazil",
+    "Brazil defeats Uruguay",
 
-    # Formula 1
-    "Max Verstappen wins the Monaco Grand Prix",
+    "India defeats Australia",
 
-    # Cricket
-    "Virat Kohli leads India to victory",
+    "England beat South Africa",
 
-    # Tennis
-    "Carlos Alcaraz reaches Wimbledon final",
+    "New Zealand begin World Cup preparations",
 
-    # Rugby
-    "Beauden Barrett stars for the All Blacks",
+    "Argentina beat Brazil",
 
-    # Golf
-    "Scottie Scheffler wins The Masters",
-
-    # Basketball
-    "Stephen Curry scores 45 points for the Golden State Warriors",
-
-    # Baseball
-    "Aaron Judge hits another home run for the Yankees",
-
-    # Ice Hockey
-    "Connor McDavid leads the Edmonton Oilers to victory",
 ]
 
 for title in titles:

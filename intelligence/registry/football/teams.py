@@ -98,6 +98,23 @@ FOOTBALL_TEAMS = [
     },
 
     {
+        "id": "football_team_uruguay",
+        "value": "Uruguay",
+        "type": "team",
+        "sport": "Football",
+        "aliases": [
+            "Uruguay",
+            "Uruguay National Team",
+            "La Celeste"
+        ],
+        "metadata": {
+            "fifa_code": "URU",
+            "confederation": "CONMEBOL",
+            "country": "Uruguay"
+        }
+    },
+
+    {
         "id": "football_team_portugal",
         "type": "team",
         "value": "Portugal",
