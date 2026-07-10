@@ -105,3 +105,25 @@
     border-radius: 10px;
 
 }
+
+.clickable {
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+
+}
+
+.clickable:hover {
+
+    background-color: #f8fafc;
+
+}
+
+.entity-link {
+
+    font-weight: 600;
+
+    color: #2563eb;
+
+}

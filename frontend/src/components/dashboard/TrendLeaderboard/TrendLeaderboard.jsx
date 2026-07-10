@@ -1,5 +1,6 @@
 import "./TrendLeaderboard.css";
 import Panel from "../../common/Panel/Panel";
+import { Link } from "react-router-dom";
 
 const ICONS = {
     new: "🔥",
@@ -41,9 +42,16 @@ export default function TrendLeaderboard({ trends = [] }) {
 
                             </span>
 
-                            <div className="trend-name">
+                            {/* <div className="trend-name">
                                 {trend.value}
-                            </div>
+                            </div> */}
+
+                            <Link
+                                to={`/entities?id=${trend.id}`}
+                                className="entity-link"
+                            >
+                                {trend.value}
+                            </Link>
 
                             <div className="trend-state">
                                 {trend.trend}

@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import EntitySearch from "../components/entities/EntitySearch";
 import EntityTable from "../components/entities/EntityTable";
 import EntityDetailsModal from "../components/entities/EntityDetailsModal";
 
-// import {
-//     getTopEntities,
-//     searchEntities
-// } from "../services/entityService";
+
 
 import {
     getTopEntities,
@@ -19,12 +17,18 @@ const EntityExplorer = () => {
 
     const [entities, setEntities] = useState([]);
 
-
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
+
     const [selectedEntity, setSelectedEntity] = useState(null);
     const [articles, setArticles] = useState([]);
     const [showModal, setShowModal] = useState(false);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const params = new URLSearchParams(location.search);
+    const entityId = params.get("id");
 
     useEffect(() => {
 
@@ -36,23 +40,9 @@ const EntityExplorer = () => {
 
         return () => clearTimeout(timeout);
 
-         }, [search]);
+    }, [search]);
 
-            const handleView = async (entity) => {
-
-            setSelectedEntity(entity);
-
-            const data = await getEntityArticles(
-                entity.entity_id
-            );
-
-            setArticles(data);
-
-            setShowModal(true);
-
-        };
-
-     const loadEntities = async () => {
+    const loadEntities = async () => {
 
         setLoading(true);
 
@@ -70,6 +60,8 @@ const EntityExplorer = () => {
 
             }
 
+            console.log("Loaded Entities:", data);
+
             setEntities(data);
 
         } catch (error) {
@@ -81,6 +73,167 @@ const EntityExplorer = () => {
             setLoading(false);
 
         }
+
+    };
+
+    // const handleView = async (entity) => {
+
+    //     try {
+
+    //         setSelectedEntity(entity);
+
+    //         const entityIdentifier =
+    //             entity.entity_id ??
+    //             entity.id;
+
+    //         const data = await getEntityArticles(
+    //             entityIdentifier
+    //         );
+
+    //         setArticles(data);
+
+    //         setShowModal(true);
+
+    //     } catch (error) {
+
+    //         console.error(error);
+
+    //     }
+
+    // };
+
+        const handleView = async (entity) => {
+
+        try {
+
+            setSelectedEntity(entity);
+
+            const entityIdentifier =
+                entity.id ??
+                entity.entity_id;
+
+            const data =
+                await getEntityArticles(entityIdentifier);
+
+            setArticles(data);
+
+            setShowModal(true);
+
+        } catch (error) {
+
+            console.error(error);
+
+        }
+
+    };
+
+    /*
+     * Dashboard Deep Link Support
+     *
+     * Example:
+     * /entities?id=football_player_lionel_messi
+     *
+     */
+
+    // useEffect(() => {
+
+    //     if (!entityId)
+    //         return;
+
+    //     if (entities.length === 0)
+    //         return;
+
+    //     const entity = entities.find(item => {
+
+    //         return (
+
+    //             item.entity_id === entityId ||
+
+    //             item.id === entityId
+
+    //         );
+
+    //     });
+
+    //     if (entity) {
+
+    //         handleView(entity);
+
+    //     }
+
+    // }, [entities, entityId]);
+
+        const initialEntity = location.state?.entity;
+
+        useEffect(() => {
+
+            if (!entityId)
+                return;
+
+            if (!initialEntity)
+                return;
+
+            const openEntity = async () => {
+
+                try {
+
+                    setSelectedEntity(initialEntity);
+
+                    const entityIdentifier =
+                        initialEntity.id ??
+                        initialEntity.entity_id;
+
+                    const data =
+                        await getEntityArticles(entityIdentifier);
+
+                    setArticles(data);
+
+                    setShowModal(true);
+
+                } catch (error) {
+
+                    console.error(error);
+
+                }
+
+            };
+
+            openEntity();
+
+        }, [entityId, initialEntity]);
+
+    // const handleCloseModal = () => {
+
+    //     setShowModal(false);
+
+    //     setSelectedEntity(null);
+
+    //     setArticles([]);
+
+    //     navigate(
+    //         "/entities",
+    //         {
+    //             replace: true
+    //         }
+    //     );
+
+    // };
+
+        const handleCloseModal = () => {
+
+        setShowModal(false);
+
+        setSelectedEntity(null);
+
+        setArticles([]);
+
+        navigate(
+            "/entities",
+            {
+                replace: true,
+                state: null
+            }
+        );
 
     };
 
@@ -126,7 +279,7 @@ const EntityExplorer = () => {
                         show={showModal}
                         entity={selectedEntity}
                         articles={articles}
-                        onClose={() => setShowModal(false)}
+                        onClose={handleCloseModal}
                     />
 
                 </div>

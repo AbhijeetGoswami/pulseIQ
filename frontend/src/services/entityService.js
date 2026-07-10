@@ -37,7 +37,22 @@ export const searchEntities = async (text) => {
         `${API_BASE}/search/${text}`
     );
 
-    return response.data;
+    // return response.data;
+    return response.data.map(entity => ({
+
+            id: entity.entity_id,
+
+            value: entity.display_name,
+
+            type: entity.entity_type,
+
+            sport: entity.sport,
+
+            mentions: entity.mentions,
+
+            ...entity
+
+        }));
 };
 
 export const getEntityArticles = async (entityId) => {
@@ -46,6 +61,21 @@ export const getEntityArticles = async (entityId) => {
         `${API_BASE}/lookup/${entityId}`
     );
 
-    return response.data;
+    // return response.data;
+    return response.data.map(entity => ({
+
+            id: entity.entity_id,
+
+            value: entity.display_name,
+
+            type: entity.entity_type,
+
+            sport: entity.sport,
+
+            mentions: entity.mentions,
+
+            ...entity
+
+        }));
 
 };
