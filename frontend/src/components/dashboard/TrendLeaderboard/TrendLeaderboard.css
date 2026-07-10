@@ -1,0 +1,133 @@
+.attention-leaderboard {
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+}
+
+.leaderboard-header {
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+
+}
+
+.leaderboard-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #ececec;
+
+}
+
+.leaderboard-row:last-child {
+
+    border-bottom: none;
+
+}
+
+.leaderboard-rank {
+
+    width: 35px;
+
+    font-weight: bold;
+
+    color: #2563eb;
+
+}
+
+.leaderboard-name {
+
+    flex: 1;
+
+}
+
+.entity-name {
+
+    font-weight: 600;
+
+}
+
+.entity-meta {
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 2px;
+
+}
+
+.leaderboard-score {
+
+    font-weight: bold;
+
+    font-size: 18px;
+
+}
+
+.trend-badge{
+
+    padding:4px 10px;
+
+    border-radius:16px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.trend-badge.new{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+.trend-badge.rising{
+
+    background:#DBEAFE;
+
+    color:#1D4ED8;
+
+}
+
+.trend-badge.falling{
+
+    background:#FEE2E2;
+
+    color:#B91C1C;
+
+}
+
+.trend-badge.disappeared{
+
+    background:#E5E7EB;
+
+    color:#374151;
+
+}
+
+.trend-badge.stable{
+
+    background:#F3F4F6;
+
+    color:#4B5563;
+
+}

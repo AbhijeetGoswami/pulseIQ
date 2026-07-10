@@ -7,9 +7,9 @@ import {
 import Layout from "./components/layout/Layout";
 
 import Dashboard from "./pages/Dashboard";
-import Articles from "./pages/Articles";
+// import Articles from "./pages/Articles";
 import EntityExplorer from "./pages/EntityExplorer";
-import Metrics from "./pages/Metrics";
+// import Metrics from "./pages/Metrics";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -29,20 +29,20 @@ function App() {
                         element={<Dashboard />}
                     />
 
-                    <Route
+                    {/* <Route
                         path="/articles"
                         element={<Articles />}
-                    />
+                    /> */}
 
                     <Route
                         path="/entities"
                         element={<EntityExplorer />}
                     />
 
-                    <Route
+                    {/* <Route
                         path="/metrics"
                         element={<Metrics />}
-                    />
+                    /> */}
 
                 </Route>
 

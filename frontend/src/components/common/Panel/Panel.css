@@ -1,0 +1,41 @@
+.panel {
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+    height: 100%;
+
+}
+
+.panel-header {
+
+    border-bottom: 1px solid #ececec;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 10px;
+
+}
+
+.panel-header h2 {
+
+    margin: 0;
+
+    font-size: 20px;
+
+}
+
+.panel-body {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}

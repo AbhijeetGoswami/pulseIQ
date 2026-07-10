@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_BASE_URL } from "./constants.js";
 
-const API_BASE = "http://127.0.0.1:8000/api/entities";
+const API_BASE = `${API_BASE_URL}/entities`;
 
 export const getTopEntities = async (limit = 10) => {
     const response = await axios.get(`${API_BASE}/top`, {

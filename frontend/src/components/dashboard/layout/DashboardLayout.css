@@ -1,0 +1,29 @@
+.dashboard {
+
+    padding: 30px;
+
+}
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 24px;
+
+    margin-top: 24px;
+
+}
+
+.dashboard-grid-bottom {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 24px;
+
+    margin-top: 24px;
+
+}

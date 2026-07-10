@@ -20,13 +20,13 @@ const Sidebar = () => {
 
         <aside className="sidebar">
 
-            <div className="sidebar-header">
+            {/* <div className="sidebar-header">
 
                 <h2>PulseIQ</h2>
 
                 <p>Attention Intelligence</p>
 
-            </div>
+            </div> */}
 
             <nav className="sidebar-nav">
 
@@ -44,7 +44,7 @@ const Sidebar = () => {
 
                 </NavLink>
 
-                <NavLink
+                {/* <NavLink
                     to="/articles"
                     className={({ isActive }) =>
                         isActive
@@ -56,7 +56,7 @@ const Sidebar = () => {
 
                     Articles
 
-                </NavLink>
+                </NavLink> */}
 
                 <NavLink
                     to="/entities"
@@ -72,7 +72,7 @@ const Sidebar = () => {
 
                 </NavLink>
 
-                <NavLink
+                {/* <NavLink
                     to="/metrics"
                     className={({ isActive }) =>
                         isActive
@@ -84,7 +84,7 @@ const Sidebar = () => {
 
                     Metrics
 
-                </NavLink>
+                </NavLink> */}
 
             </nav>
 
