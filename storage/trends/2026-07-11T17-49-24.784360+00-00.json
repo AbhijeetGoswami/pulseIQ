@@ -1,0 +1,2310 @@
+{
+    "generated_at": "2026-07-11T17:49:24.784332+00:00",
+    "version": 1,
+    "trends": [
+        {
+            "id": "football_team_england",
+            "value": "England",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 68.97,
+            "current_score": 80.65,
+            "score_change": 11.68,
+            "percent_change": 16.93,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 68.97,
+                    "current": 80.65,
+                    "change": 11.68
+                }
+            }
+        },
+        {
+            "id": "cricket_team_england",
+            "value": "England",
+            "type": "team",
+            "sport": "Cricket",
+            "previous_score": 20.69,
+            "current_score": 32.26,
+            "score_change": 11.57,
+            "percent_change": 55.92,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 20.69,
+                    "current": 32.26,
+                    "change": 11.57
+                }
+            }
+        },
+        {
+            "id": "cricket_team_india",
+            "value": "India",
+            "type": "team",
+            "sport": "Cricket",
+            "previous_score": 34.48,
+            "current_score": 41.94,
+            "score_change": 7.46,
+            "percent_change": 21.64,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 34.48,
+                    "current": 41.94,
+                    "change": 7.46
+                }
+            }
+        },
+        {
+            "id": "football_team_bayern_munich",
+            "value": "Bayern Munich",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 3.45,
+            "current_score": 9.68,
+            "score_change": 6.23,
+            "percent_change": 180.58,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 9.68,
+                    "change": 6.23
+                }
+            }
+        },
+        {
+            "id": "baseball_team_chicago_white_sox",
+            "value": "Chicago White Sox",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 6.9,
+            "current_score": 12.9,
+            "score_change": 6.0,
+            "percent_change": 86.96,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 12.9,
+                    "change": 6.0
+                }
+            }
+        },
+        {
+            "id": "football_team_barcelona",
+            "value": "Barcelona",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 17.24,
+            "current_score": 22.58,
+            "score_change": 5.34,
+            "percent_change": 30.97,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 17.24,
+                    "current": 22.58,
+                    "change": 5.34
+                }
+            }
+        },
+        {
+            "id": "basketball_team_los_angeles_lakers",
+            "value": "Los Angeles Lakers",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 27.59,
+            "current_score": 32.26,
+            "score_change": 4.67,
+            "percent_change": 16.93,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 27.59,
+                    "current": 32.26,
+                    "change": 4.67
+                }
+            }
+        },
+        {
+            "id": "basketball_competition_nba_all_star_game",
+            "value": "NBA All-Star Game",
+            "type": "competition",
+            "sport": "Basketball",
+            "previous_score": 0.0,
+            "current_score": 3.23,
+            "score_change": 3.23,
+            "percent_change": 100.0,
+            "trend": "new",
+            "score_changes": {
+                "mention": {
+                    "previous": 0.0,
+                    "current": 3.23,
+                    "change": 3.23
+                }
+            }
+        },
+        {
+            "id": "basketball_team_sacramento_kings",
+            "value": "Sacramento Kings",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 0.0,
+            "current_score": 3.23,
+            "score_change": 3.23,
+            "percent_change": 100.0,
+            "trend": "new",
+            "score_changes": {
+                "mention": {
+                    "previous": 0.0,
+                    "current": 3.23,
+                    "change": 3.23
+                }
+            }
+        },
+        {
+            "id": "rugby_team_british_irish_lions",
+            "value": "British & Irish Lions",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 0.0,
+            "current_score": 3.23,
+            "score_change": 3.23,
+            "percent_change": 100.0,
+            "trend": "new",
+            "score_changes": {
+                "mention": {
+                    "previous": 0.0,
+                    "current": 3.23,
+                    "change": 3.23
+                }
+            }
+        },
+        {
+            "id": "rugby_team_chiefs",
+            "value": "Chiefs",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 0.0,
+            "current_score": 3.23,
+            "score_change": 3.23,
+            "percent_change": 100.0,
+            "trend": "new",
+            "score_changes": {
+                "mention": {
+                    "previous": 0.0,
+                    "current": 3.23,
+                    "change": 3.23
+                }
+            }
+        },
+        {
+            "id": "icehockey_team_toronto_maple_leafs",
+            "value": "Toronto Maple Leafs",
+            "type": "team",
+            "sport": "Ice Hockey",
+            "previous_score": 0.0,
+            "current_score": 3.23,
+            "score_change": 3.23,
+            "percent_change": 100.0,
+            "trend": "new",
+            "score_changes": {
+                "mention": {
+                    "previous": 0.0,
+                    "current": 3.23,
+                    "change": 3.23
+                }
+            }
+        },
+        {
+            "id": "football_player_bukayo_saka",
+            "value": "Bukayo Saka",
+            "type": "player",
+            "sport": "Football",
+            "previous_score": 0.0,
+            "current_score": 3.23,
+            "score_change": 3.23,
+            "percent_change": 100.0,
+            "trend": "new",
+            "score_changes": {
+                "mention": {
+                    "previous": 0.0,
+                    "current": 3.23,
+                    "change": 3.23
+                }
+            }
+        },
+        {
+            "id": "football_team_ac_milan",
+            "value": "AC Milan",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 0.0,
+            "current_score": 3.23,
+            "score_change": 3.23,
+            "percent_change": 100.0,
+            "trend": "new",
+            "score_changes": {
+                "mention": {
+                    "previous": 0.0,
+                    "current": 3.23,
+                    "change": 3.23
+                }
+            }
+        },
+        {
+            "id": "basketball_team_denver_nuggets",
+            "value": "Denver Nuggets",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 3.45,
+            "current_score": 6.45,
+            "score_change": 3.0,
+            "percent_change": 86.96,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 6.45,
+                    "change": 3.0
+                }
+            }
+        },
+        {
+            "id": "basketball_team_boston_celtics",
+            "value": "Boston Celtics",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 3.45,
+            "current_score": 6.45,
+            "score_change": 3.0,
+            "percent_change": 86.96,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 6.45,
+                    "change": 3.0
+                }
+            }
+        },
+        {
+            "id": "basketball_player_luka_doncic",
+            "value": "Luka Dončić",
+            "type": "player",
+            "sport": "Basketball",
+            "previous_score": 3.45,
+            "current_score": 6.45,
+            "score_change": 3.0,
+            "percent_change": 86.96,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 6.45,
+                    "change": 3.0
+                }
+            }
+        },
+        {
+            "id": "baseball_team_philadelphia_phillies",
+            "value": "Philadelphia Phillies",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 6.9,
+            "current_score": 9.68,
+            "score_change": 2.78,
+            "percent_change": 40.29,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 9.68,
+                    "change": 2.78
+                }
+            }
+        },
+        {
+            "id": "cricket_player_travis_head",
+            "value": "Travis Head",
+            "type": "player",
+            "sport": "Cricket",
+            "previous_score": 10.34,
+            "current_score": 12.9,
+            "score_change": 2.56,
+            "percent_change": 24.76,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 12.9,
+                    "change": 2.56
+                }
+            }
+        },
+        {
+            "id": "football_player_erling_haaland",
+            "value": "Erling Haaland",
+            "type": "player",
+            "sport": "Football",
+            "previous_score": 37.93,
+            "current_score": 35.48,
+            "score_change": -2.45,
+            "percent_change": -6.46,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 37.93,
+                    "current": 35.48,
+                    "change": -2.45
+                }
+            }
+        },
+        {
+            "id": "football_team_liverpool",
+            "value": "Liverpool",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 13.79,
+            "current_score": 16.13,
+            "score_change": 2.34,
+            "percent_change": 16.97,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 13.79,
+                    "current": 16.13,
+                    "change": 2.34
+                }
+            }
+        },
+        {
+            "id": "baseball_competition_mlb",
+            "value": "Major League Baseball",
+            "type": "competition",
+            "sport": "Baseball",
+            "previous_score": 65.52,
+            "current_score": 67.74,
+            "score_change": 2.22,
+            "percent_change": 3.39,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 65.52,
+                    "current": 67.74,
+                    "change": 2.22
+                }
+            }
+        },
+        {
+            "id": "basketball_competition_nba",
+            "value": "National Basketball Association",
+            "type": "competition",
+            "sport": "Basketball",
+            "previous_score": 20.69,
+            "current_score": 22.58,
+            "score_change": 1.89,
+            "percent_change": 9.13,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 20.69,
+                    "current": 22.58,
+                    "change": 1.89
+                }
+            }
+        },
+        {
+            "id": "football_team_spain",
+            "value": "Spain",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 24.14,
+            "current_score": 25.81,
+            "score_change": 1.67,
+            "percent_change": 6.92,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 24.14,
+                    "current": 25.81,
+                    "change": 1.67
+                }
+            }
+        },
+        {
+            "id": "football_team_arsenal",
+            "value": "Arsenal",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 24.14,
+            "current_score": 22.58,
+            "score_change": -1.56,
+            "percent_change": -6.46,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 24.14,
+                    "current": 22.58,
+                    "change": -1.56
+                }
+            }
+        },
+        {
+            "id": "basketball_player_lebron_james",
+            "value": "LeBron James",
+            "type": "player",
+            "sport": "Basketball",
+            "previous_score": 24.14,
+            "current_score": 22.58,
+            "score_change": -1.56,
+            "percent_change": -6.46,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 24.14,
+                    "current": 22.58,
+                    "change": -1.56
+                }
+            }
+        },
+        {
+            "id": "cricket_team_south_africa",
+            "value": "South Africa",
+            "type": "team",
+            "sport": "Cricket",
+            "previous_score": 24.14,
+            "current_score": 22.58,
+            "score_change": -1.56,
+            "percent_change": -6.46,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 24.14,
+                    "current": 22.58,
+                    "change": -1.56
+                }
+            }
+        },
+        {
+            "id": "football_team_chelsea",
+            "value": "Chelsea",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 24.14,
+            "current_score": 22.58,
+            "score_change": -1.56,
+            "percent_change": -6.46,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 24.14,
+                    "current": 22.58,
+                    "change": -1.56
+                }
+            }
+        },
+        {
+            "id": "football_team_manchester_city",
+            "value": "Manchester City",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 20.69,
+            "current_score": 19.35,
+            "score_change": -1.34,
+            "percent_change": -6.48,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 20.69,
+                    "current": 19.35,
+                    "change": -1.34
+                }
+            }
+        },
+        {
+            "id": "football_player_lionel_messi",
+            "value": "Lionel Messi",
+            "type": "player",
+            "sport": "Football",
+            "previous_score": 20.69,
+            "current_score": 19.35,
+            "score_change": -1.34,
+            "percent_change": -6.48,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 20.69,
+                    "current": 19.35,
+                    "change": -1.34
+                }
+            }
+        },
+        {
+            "id": "football_competition_fifa_world_cup",
+            "value": "FIFA World Cup",
+            "type": "competition",
+            "sport": "Football",
+            "previous_score": 31.03,
+            "current_score": 32.26,
+            "score_change": 1.23,
+            "percent_change": 3.96,
+            "trend": "rising",
+            "score_changes": {
+                "mention": {
+                    "previous": 31.03,
+                    "current": 32.26,
+                    "change": 1.23
+                }
+            }
+        },
+        {
+            "id": "tennis_competition_wimbledon",
+            "value": "Wimbledon Championships",
+            "type": "competition",
+            "sport": "Tennis",
+            "previous_score": 65.52,
+            "current_score": 64.52,
+            "score_change": -1.0,
+            "percent_change": -1.53,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 65.52,
+                    "current": 64.52,
+                    "change": -1.0
+                }
+            }
+        },
+        {
+            "id": "football_team_france",
+            "value": "France",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 13.79,
+            "current_score": 12.9,
+            "score_change": -0.89,
+            "percent_change": -6.45,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 13.79,
+                    "current": 12.9,
+                    "change": -0.89
+                }
+            }
+        },
+        {
+            "id": "football_team_argentina",
+            "value": "Argentina",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 13.79,
+            "current_score": 12.9,
+            "score_change": -0.89,
+            "percent_change": -6.45,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 13.79,
+                    "current": 12.9,
+                    "change": -0.89
+                }
+            }
+        },
+        {
+            "id": "football_player_cristiano_ronaldo",
+            "value": "Cristiano Ronaldo",
+            "type": "player",
+            "sport": "Football",
+            "previous_score": 13.79,
+            "current_score": 12.9,
+            "score_change": -0.89,
+            "percent_change": -6.45,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 13.79,
+                    "current": 12.9,
+                    "change": -0.89
+                }
+            }
+        },
+        {
+            "id": "basketball_team_san_antonio_spurs",
+            "value": "San Antonio Spurs",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 13.79,
+            "current_score": 12.9,
+            "score_change": -0.89,
+            "percent_change": -6.45,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 13.79,
+                    "current": 12.9,
+                    "change": -0.89
+                }
+            }
+        },
+        {
+            "id": "rugby_team_england",
+            "value": "England",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 13.79,
+            "current_score": 12.9,
+            "score_change": -0.89,
+            "percent_change": -6.45,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 13.79,
+                    "current": 12.9,
+                    "change": -0.89
+                }
+            }
+        },
+        {
+            "id": "rugby_team_fiji",
+            "value": "Fiji",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 13.79,
+            "current_score": 12.9,
+            "score_change": -0.89,
+            "percent_change": -6.45,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 13.79,
+                    "current": 12.9,
+                    "change": -0.89
+                }
+            }
+        },
+        {
+            "id": "golf_competition_amundi_evian_championship",
+            "value": "Amundi Evian Championship",
+            "type": "competition",
+            "sport": "Golf",
+            "previous_score": 13.79,
+            "current_score": 12.9,
+            "score_change": -0.89,
+            "percent_change": -6.45,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 13.79,
+                    "current": 12.9,
+                    "change": -0.89
+                }
+            }
+        },
+        {
+            "id": "rugby_team_georgia",
+            "value": "Georgia",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 13.79,
+            "current_score": 12.9,
+            "score_change": -0.89,
+            "percent_change": -6.45,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 13.79,
+                    "current": 12.9,
+                    "change": -0.89
+                }
+            }
+        },
+        {
+            "id": "basketball_team_miami_heat",
+            "value": "Miami Heat",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 10.34,
+            "current_score": 9.68,
+            "score_change": -0.66,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 9.68,
+                    "change": -0.66
+                }
+            }
+        },
+        {
+            "id": "rugby_team_ireland",
+            "value": "Ireland",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 10.34,
+            "current_score": 9.68,
+            "score_change": -0.66,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 9.68,
+                    "change": -0.66
+                }
+            }
+        },
+        {
+            "id": "tennis_player_novak_djokovic",
+            "value": "Novak Djokovic",
+            "type": "player",
+            "sport": "Tennis",
+            "previous_score": 10.34,
+            "current_score": 9.68,
+            "score_change": -0.66,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 9.68,
+                    "change": -0.66
+                }
+            }
+        },
+        {
+            "id": "football_player_harry_kane",
+            "value": "Harry Kane",
+            "type": "player",
+            "sport": "Football",
+            "previous_score": 10.34,
+            "current_score": 9.68,
+            "score_change": -0.66,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 9.68,
+                    "change": -0.66
+                }
+            }
+        },
+        {
+            "id": "icehockey_competition_nhl",
+            "value": "National Hockey League",
+            "type": "competition",
+            "sport": "Ice Hockey",
+            "previous_score": 10.34,
+            "current_score": 9.68,
+            "score_change": -0.66,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 9.68,
+                    "change": -0.66
+                }
+            }
+        },
+        {
+            "id": "football_team_manchester_united",
+            "value": "Manchester United",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 10.34,
+            "current_score": 9.68,
+            "score_change": -0.66,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 9.68,
+                    "change": -0.66
+                }
+            }
+        },
+        {
+            "id": "baseball_team_detroit_tigers",
+            "value": "Detroit Tigers",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 10.34,
+            "current_score": 9.68,
+            "score_change": -0.66,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 9.68,
+                    "change": -0.66
+                }
+            }
+        },
+        {
+            "id": "football_player_mohamed_salah",
+            "value": "Mohamed Salah",
+            "type": "player",
+            "sport": "Football",
+            "previous_score": 10.34,
+            "current_score": 9.68,
+            "score_change": -0.66,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 9.68,
+                    "change": -0.66
+                }
+            }
+        },
+        {
+            "id": "rugby_team_japan",
+            "value": "Japan",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 10.34,
+            "current_score": 9.68,
+            "score_change": -0.66,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 9.68,
+                    "change": -0.66
+                }
+            }
+        },
+        {
+            "id": "tennis_player_alexander_zverev",
+            "value": "Alexander Zverev",
+            "type": "player",
+            "sport": "Tennis",
+            "previous_score": 10.34,
+            "current_score": 9.68,
+            "score_change": -0.66,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 9.68,
+                    "change": -0.66
+                }
+            }
+        },
+        {
+            "id": "rugby_competition_nations_championship",
+            "value": "Nations Championship",
+            "type": "competition",
+            "sport": "Rugby",
+            "previous_score": 10.34,
+            "current_score": 9.68,
+            "score_change": -0.66,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 10.34,
+                    "current": 9.68,
+                    "change": -0.66
+                }
+            }
+        },
+        {
+            "id": "baseball_team_chicago_cubs",
+            "value": "Chicago Cubs",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "basketball_team_dallas_mavericks",
+            "value": "Dallas Mavericks",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "baseball_team_pittsburgh_pirates",
+            "value": "Pittsburgh Pirates",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "rugby_team_new_zealand",
+            "value": "New Zealand",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "basketball_team_milwaukee_bucks",
+            "value": "Milwaukee Bucks",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "football_team_tottenham_hotspur",
+            "value": "Tottenham Hotspur",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "cricket_player_virat_kohli",
+            "value": "Virat Kohli",
+            "type": "player",
+            "sport": "Cricket",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "football_team_belgium",
+            "value": "Belgium",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "basketball_player_giannis_antetokounmpo",
+            "value": "Giannis Antetokounmpo",
+            "type": "player",
+            "sport": "Basketball",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "basketball_player_victor_wembanyama",
+            "value": "Victor Wembanyama",
+            "type": "player",
+            "sport": "Basketball",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "football_team_germany",
+            "value": "Germany",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "tennis_player_jannik_sinner",
+            "value": "Jannik Sinner",
+            "type": "player",
+            "sport": "Tennis",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "football_player_jude_bellingham",
+            "value": "Jude Bellingham",
+            "type": "player",
+            "sport": "Football",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "basketball_player_jamal_murray",
+            "value": "Jamal Murray",
+            "type": "player",
+            "sport": "Basketball",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "rugby_team_wales",
+            "value": "Wales",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "baseball_team_st_louis_cardinals",
+            "value": "St. Louis Cardinals",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "rugby_team_scotland",
+            "value": "Scotland",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "formula1_constructor_williams",
+            "value": "Williams",
+            "type": "constructor",
+            "sport": "Formula 1",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "cricket_player_sanju_samson",
+            "value": "Sanju Samson",
+            "type": "player",
+            "sport": "Cricket",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "football_player_lamine_yamal",
+            "value": "Lamine Yamal",
+            "type": "player",
+            "sport": "Football",
+            "previous_score": 6.9,
+            "current_score": 6.45,
+            "score_change": -0.45,
+            "percent_change": -6.52,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 6.9,
+                    "current": 6.45,
+                    "change": -0.45
+                }
+            }
+        },
+        {
+            "id": "icehockey_team_florida_panthers",
+            "value": "Florida Panthers",
+            "type": "team",
+            "sport": "Ice Hockey",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_team_kansas_city_royals",
+            "value": "Kansas City Royals",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "formula1_driver_max_verstappen",
+            "value": "Max Verstappen",
+            "type": "driver",
+            "sport": "Formula 1",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "football_competition_premier_league",
+            "value": "Premier League",
+            "type": "competition",
+            "sport": "Football",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "cricket_team_ireland",
+            "value": "Ireland",
+            "type": "team",
+            "sport": "Cricket",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "icehockey_team_winnipeg_jets",
+            "value": "Winnipeg Jets",
+            "type": "team",
+            "sport": "Ice Hockey",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "football_team_italy",
+            "value": "Italy",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "formula1_constructor_racing_bulls",
+            "value": "Racing Bulls",
+            "type": "constructor",
+            "sport": "Formula 1",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_team_new_york_mets",
+            "value": "New York Mets",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "football_player_kylian_mbappe",
+            "value": "Kylian Mbappé",
+            "type": "player",
+            "sport": "Football",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "football_team_paris_saint_germain",
+            "value": "Paris Saint-Germain",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "golf_competition_the_players_championship",
+            "value": "The Players Championship",
+            "type": "competition",
+            "sport": "Golf",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_team_san_francisco_giants",
+            "value": "San Francisco Giants",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "basketball_team_oklahoma_city_thunder",
+            "value": "Oklahoma City Thunder",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_team_washington_nationals",
+            "value": "Washington Nationals",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "golf_player_viktor_hovland",
+            "value": "Viktor Hovland",
+            "type": "player",
+            "sport": "Golf",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "football_team_portugal",
+            "value": "Portugal",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "icehockey_player_matthew_tkachuk",
+            "value": "Matthew Tkachuk",
+            "type": "player",
+            "sport": "Ice Hockey",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "formula1_driver_fernando_alonso",
+            "value": "Fernando Alonso",
+            "type": "driver",
+            "sport": "Formula 1",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "rugby_competition_premiership_rugby",
+            "value": "Premiership Rugby",
+            "type": "competition",
+            "sport": "Rugby",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "icehockey_player_connor_mcdavid",
+            "value": "Connor McDavid",
+            "type": "player",
+            "sport": "Ice Hockey",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "golf_competition_lpga_tour",
+            "value": "LPGA Tour",
+            "type": "competition",
+            "sport": "Golf",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "football_team_juventus",
+            "value": "Juventus",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "football_team_real_madrid",
+            "value": "Real Madrid",
+            "type": "team",
+            "sport": "Football",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "basketball_team_golden_state_warriors",
+            "value": "Golden State Warriors",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "basketball_player_anthony_davis",
+            "value": "Anthony Davis",
+            "type": "player",
+            "sport": "Basketball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "icehockey_player_sidney_crosby",
+            "value": "Sidney Crosby",
+            "type": "player",
+            "sport": "Ice Hockey",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_competition_home_run_derby",
+            "value": "Home Run Derby",
+            "type": "competition",
+            "sport": "Baseball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "icehockey_team_dallas_stars",
+            "value": "Dallas Stars",
+            "type": "team",
+            "sport": "Ice Hockey",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "golf_competition_the_open_championship",
+            "value": "The Open Championship",
+            "type": "competition",
+            "sport": "Golf",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "basketball_team_minnesota_timberwolves",
+            "value": "Minnesota Timberwolves",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "rugby_player_owen_farrell",
+            "value": "Owen Farrell",
+            "type": "player",
+            "sport": "Rugby",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "tennis_player_carlos_alcaraz",
+            "value": "Carlos Alcaraz",
+            "type": "player",
+            "sport": "Tennis",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "basketball_team_cleveland_cavaliers",
+            "value": "Cleveland Cavaliers",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "basketball_player_jaylen_brown",
+            "value": "Jaylen Brown",
+            "type": "player",
+            "sport": "Basketball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "rugby_team_italy",
+            "value": "Italy",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "icehockey_team_washington_capitals",
+            "value": "Washington Capitals",
+            "type": "team",
+            "sport": "Ice Hockey",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "rugby_team_argentina",
+            "value": "Argentina",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_player_shohei_ohtani",
+            "value": "Shohei Ohtani",
+            "type": "player",
+            "sport": "Baseball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "rugby_team_france",
+            "value": "France",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_team_new_york_yankees",
+            "value": "New York Yankees",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "icehockey_player_sergei_bobrovsky",
+            "value": "Sergei Bobrovsky",
+            "type": "player",
+            "sport": "Ice Hockey",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "cricket_player_jofra_archer",
+            "value": "Jofra Archer",
+            "type": "player",
+            "sport": "Cricket",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "icehockey_team_pittsburgh_penguins",
+            "value": "Pittsburgh Penguins",
+            "type": "team",
+            "sport": "Ice Hockey",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_team_los_angeles_dodgers",
+            "value": "Los Angeles Dodgers",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_team_texas_rangers",
+            "value": "Texas Rangers",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "cricket_player_jos_buttler",
+            "value": "Jos Buttler",
+            "type": "player",
+            "sport": "Cricket",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "cricket_player_rohit_sharma",
+            "value": "Rohit Sharma",
+            "type": "player",
+            "sport": "Cricket",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_team_boston_red_sox",
+            "value": "Boston Red Sox",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "rugby_team_australia",
+            "value": "Australia",
+            "type": "team",
+            "sport": "Rugby",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "tennis_player_coco_gauff",
+            "value": "Coco Gauff",
+            "type": "player",
+            "sport": "Tennis",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "cricket_player_shubman_gill",
+            "value": "Shubman Gill",
+            "type": "player",
+            "sport": "Cricket",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "golf_player_min_woo_lee",
+            "value": "Min Woo Lee",
+            "type": "player",
+            "sport": "Golf",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "formula1_competition_formula_one",
+            "value": "Formula 1",
+            "type": "competition",
+            "sport": "Formula 1",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "basketball_team_chicago_bulls",
+            "value": "Chicago Bulls",
+            "type": "team",
+            "sport": "Basketball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_player_bryce_harper",
+            "value": "Bryce Harper",
+            "type": "player",
+            "sport": "Baseball",
+            "previous_score": 3.45,
+            "current_score": 3.23,
+            "score_change": -0.22,
+            "percent_change": -6.38,
+            "trend": "falling",
+            "score_changes": {
+                "mention": {
+                    "previous": 3.45,
+                    "current": 3.23,
+                    "change": -0.22
+                }
+            }
+        },
+        {
+            "id": "baseball_team_athletics",
+            "value": "Athletics",
+            "type": "team",
+            "sport": "Baseball",
+            "previous_score": 100.0,
+            "current_score": 100.0,
+            "score_change": 0.0,
+            "percent_change": 0.0,
+            "trend": "stable",
+            "score_changes": {
+                "mention": {
+                    "previous": 100.0,
+                    "current": 100.0,
+                    "change": 0.0
+                }
+            }
+        }
+    ]
+}

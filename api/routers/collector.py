@@ -12,6 +12,7 @@ from intelligence.attention_engine import AttentionEngine
 from time import perf_counter
 from intelligence.pipeline import process_article
 from intelligence.attention_refresh import AttentionRefresh
+from intelligence.trend_refresh import TrendRefresh
 
 router = APIRouter()
 
@@ -97,17 +98,30 @@ async def collect_news(request: NewsCollectRequest = NewsCollectRequest()):
                 article
             )
 
-        # ------------------------------------
-        # Refresh Attention Snapshot
-        # ------------------------------------
+        if result["inserted"] > 0:
+            # ------------------------------------
+            # Refresh Attention Snapshot
+            # ------------------------------------
 
-        print("=" * 70)
-        print("Refreshing Attention Snapshot...")
-        print("=" * 70)
+            print("=" * 70)
+            print("Refreshing Attention Snapshot...")
+            print("=" * 70)
 
-        AttentionRefresh().run()
+            AttentionRefresh().run()
 
-        print("Attention Snapshot Refreshed")    
+            print("Attention Snapshot Refreshed") 
+
+            #------------------------------------
+            # Refresh Trend Snapshot
+            #------------------------------------
+
+            print("=" * 70)
+            print("Refreshing Trend Snapshot...")
+            print("=" * 70)
+
+            TrendRefresh().run()
+        else:
+         print("No new articles. Skipping snapshot refresh.")       
 
         # ------------------------------------
         # Stop timers

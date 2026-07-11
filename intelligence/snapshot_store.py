@@ -11,11 +11,10 @@ class SnapshotStore:
 
     storage/
         attention/
-            2026-07-11T10-00-00.json
-            ...
+            *.json
+
         trends/
-            2026-07-11T10-00-00.json
-            ...
+            *.json
     """
 
     def __init__(self, storage_dir: str = "storage"):
@@ -46,29 +45,37 @@ class SnapshotStore:
         filepath = directory / self._filename()
 
         with open(filepath, "w", encoding="utf-8") as fp:
-
             json.dump(
                 snapshot,
                 fp,
                 indent=4,
-                ensure_ascii=False,
+                ensure_ascii=False
             )
 
         return filepath
 
-    def _latest(self, directory: Path):
+    def _read_json(self, filepath: Path):
+
+        with open(filepath, "r", encoding="utf-8") as fp:
+            return json.load(fp)
+
+    def _latest_files(self, directory: Path, count: int = 1):
 
         files = sorted(
             directory.glob("*.json"),
             reverse=True
         )
 
+        return files[:count]
+
+    def _latest(self, directory: Path):
+
+        files = self._latest_files(directory)
+
         if not files:
             return None
 
-        with open(files[0], "r", encoding="utf-8") as fp:
-
-            return json.load(fp)
+        return self._read_json(files[0])
 
     # ==========================================================
     # Attention
@@ -87,6 +94,33 @@ class SnapshotStore:
             self.attention_dir
         )
 
+    def get_latest_two_attention_snapshots(self):
+        """
+        Returns:
+
+            (previous_snapshot, current_snapshot)
+
+        Returns (None, None) when fewer than
+        two snapshots exist.
+        """
+
+        files = self._latest_files(
+            self.attention_dir,
+            count=2
+        )
+
+        if len(files) < 2:
+            return None, None
+
+        current = self._read_json(files[0])
+        previous = self._read_json(files[1])
+
+        return previous, current
+
+    # Backward compatibility
+    def latest_two_attention(self):
+        return self.get_latest_two_attention_snapshots()
+
     # ==========================================================
     # Trends
     # ==========================================================
@@ -103,30 +137,3 @@ class SnapshotStore:
         return self._latest(
             self.trends_dir
         )
-
-    # ==========================================================
-    # Utility
-    # ==========================================================
-
-    def latest_two_attention(self):
-        """
-        Returns:
-            previous_snapshot,
-            current_snapshot
-        """
-
-        files = sorted(
-            self.attention_dir.glob("*.json"),
-            reverse=True
-        )
-
-        if len(files) < 2:
-            return None, None
-
-        with open(files[1], "r", encoding="utf-8") as fp:
-            previous = json.load(fp)
-
-        with open(files[0], "r", encoding="utf-8") as fp:
-            current = json.load(fp)
-
-        return previous, current
