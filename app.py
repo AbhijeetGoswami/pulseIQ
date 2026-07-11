@@ -4,8 +4,9 @@ from contextlib import asynccontextmanager
 
 from database.schema import initialize_database
 from api.routers import (
+    collector,
     dashboard,
-    news,
+    
     health,
     metrics,
     articles,
@@ -46,7 +47,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(health.router, prefix="/api", tags=["Health"])
-app.include_router(news.router, prefix="/api", tags=["News"])
+app.include_router(collector.router, prefix="/api", tags=["News"])
 app.include_router(metrics.router, prefix="/api", tags=["Metrics"])
 app.include_router(articles.router, prefix="/api", tags=["Articles"])
 app.include_router(dashboard.router, prefix="/api", tags=["Dashboard"])

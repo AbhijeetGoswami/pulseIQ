@@ -98,3 +98,20 @@
 │ ❌ The Masters            disappeared         │
 │                                               │
 └───────────────────────────────────────────────┘
+
+-----------------FOR LIVE DATA INTEGRATION=---------------------
+
+pipeline/
+
+    pipeline_runner.py
+    scheduler.py
+
+services/
+
+    pipeline_service.py
+
+api/
+
+    routers/
+
+        pipeline.py

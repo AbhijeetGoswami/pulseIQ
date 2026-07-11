@@ -6,6 +6,11 @@ from datetime import datetime, timezone
 
 from database.db import get_connection
 
+from collections import defaultdict
+from datetime import datetime, timedelta, timezone
+
+from intelligence.registry_loader import registry
+
 
 def save_article_entities(article_id: int, entities: list[dict]):
     """
@@ -233,3 +238,78 @@ def get_articles_for_entity(entity_id: str):
     conn.close()
 
     return rows
+
+def get_recent_article_analyses(hours: int = 24):
+    """
+    Reconstruct analyses from persisted article_entities.
+
+    Returns the same structure consumed by:
+
+        AttentionEngine.calculate()
+
+    [
+        {
+            "entities": [
+                {...resolved entity...},
+                {...resolved entity...}
+            ]
+        }
+    ]
+    """
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cutoff = (
+        datetime.now(timezone.utc) -
+        timedelta(hours=hours)
+    ).isoformat()
+
+    cursor.execute(
+        """
+        SELECT
+            ae.article_id,
+            ae.entity_id
+        FROM article_entities ae
+        JOIN news n
+            ON ae.article_id = n.id
+        WHERE n.published_at >= ?
+        ORDER BY
+            ae.article_id,
+            ae.id
+        """,
+        (cutoff,)
+    )
+
+    rows = cursor.fetchall()
+
+    conn.close()
+
+    # ---------------------------------------------
+    # Reconstruct analyses expected by
+    # AttentionEngine.calculate()
+    # ---------------------------------------------
+
+    grouped = defaultdict(list)
+
+    for article_id, entity_id in rows:
+
+        entity = registry.get_entity_by_id(entity_id)
+
+        if entity is None:
+            continue
+
+        grouped[article_id].append(entity)
+
+    analyses = []
+
+    for article_id, entities in grouped.items():
+
+        analyses.append(
+            {
+                "article_id": article_id,
+                "entities": entities
+            }
+        )
+
+    return analyses
