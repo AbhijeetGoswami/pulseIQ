@@ -71,7 +71,7 @@ async def collect_news(request: NewsCollectRequest = NewsCollectRequest()):
         print("=" * 70)
 
         # ------------------------------------
-        # Save Articles
+        # Save News/Articles
         # ------------------------------------
 
         result = save_news(articles)
@@ -160,6 +160,10 @@ async def collect_news(request: NewsCollectRequest = NewsCollectRequest()):
                 run_id,
                 metrics
             )
+
+        # ------------------------------------
+        # Return CollectionResponse
+        # ------------------------------------    
 
         return CollectionResponse(
 

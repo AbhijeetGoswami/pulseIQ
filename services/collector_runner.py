@@ -62,12 +62,10 @@ def run_collection(
         print("=" * 70)
 
         # ------------------------------------
-        # Save Articles
+        # Save News/Articles
         # ------------------------------------
 
-        result = save_news(
-            articles
-        )
+        result = save_news(articles)
 
         print("=" * 70)
         print(f"Inserted        : {result['inserted']}")
@@ -75,23 +73,111 @@ def run_collection(
         print(f"Saved Articles  : {len(result['saved_articles'])}")
         print("=" * 70)
 
-        #
-        # Next section
-        #
-        # process_article(...)
-        #
-        # will be moved here next.
-        #
+        # ------------------------------------
+        # Intelligence Pipeline
+        # ------------------------------------
+
+        
+
+        for article_id, article in result["saved_articles"]:
+
+            print(f"\nProcessing Article ID : {article_id}")
+            print(f"Title : {article.title}")
+
+            process_article(
+                article_id,
+                article
+            )
+
+        if result["inserted"] > 0:
+            # ------------------------------------
+            # Refresh Attention Snapshot
+            # ------------------------------------
+
+            print("=" * 70)
+            print("Refreshing Attention Snapshot...")
+            print("=" * 70)
+
+            AttentionRefresh().run()
+
+            print("Attention Snapshot Refreshed") 
+
+            #------------------------------------
+            # Refresh Trend Snapshot
+            #------------------------------------
+
+            print("=" * 70)
+            print("Refreshing Trend Snapshot...")
+            print("=" * 70)
+
+            TrendRefresh().run()
+        else:
+         print("No new articles. Skipping snapshot refresh.")       
+
+        # ------------------------------------
+        # Stop timers
+        # ------------------------------------
+
+        perf_end = perf_counter()
+        run_end_time = datetime.utcnow()
+
+        duration_ms = round(
+            (perf_end - perf_start) * 1000
+        )
+
+        # ------------------------------------
+        # Save Collector Run
+        # ------------------------------------
+
+        run_id = save_collector_run(
+            {
+                "run_started": run_start_time.isoformat(),
+                "run_finished": run_end_time.isoformat(),
+                "total_articles": len(articles),
+                "inserted": result["inserted"],
+                "duplicates": result["duplicates"],
+                "failed": result["failed"],
+                "duration_ms": duration_ms,
+            }
+        )
+
+        # ------------------------------------
+        # Save Source Metrics
+        # ------------------------------------
+
+        if include_metrics and run_id:
+
+            save_source_metrics(
+                run_id,
+                metrics
+            )
+
+        # ------------------------------------
+        # Return CollectionResponse
+        # ------------------------------------    
 
         return {
-            "articles": articles,
-            "metrics": metrics,
-            "result": result,
-            "run_start_time": run_start_time,
-            "perf_start": perf_start,
-            "include_metrics": include_metrics,
-        }
 
+            "status": "success",
+
+            "run_id": run_id,
+
+            "total_articles": len(articles),
+
+            "inserted": result["inserted"],
+
+            "duplicates": result["duplicates"],
+
+            "failed": result["failed"],
+
+            "duration_ms": duration_ms,
+
+            "run_started": run_start_time.isoformat(),
+
+            "run_finished": run_end_time.isoformat(),
+
+        }
+    
     except Exception:
 
         traceback.print_exc()

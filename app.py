@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
+from operations.scheduler import start_scheduler,stop_scheduler
+from contextlib import asynccontextmanager
 
 from database.schema import initialize_database
 from api.routers import (
@@ -24,10 +26,14 @@ def init_db():
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup
+
     init_db()
+
+    start_scheduler()
+
     yield
-    # Shutdown (if needed)
+
+    stop_scheduler()
 
 app = FastAPI(
     title="PulseIQ API",
