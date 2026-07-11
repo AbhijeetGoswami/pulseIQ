@@ -25,6 +25,9 @@ feeds are the first ingestion source for the MVP, but the architecture
 supports additional sources such as X (Twitter), Google News, Reddit,
 YouTube, blogs, and other public information streams.
 
+Updated**
+PulseIQ is a Continuous Intelligence Platform that continuously collects information from external sources, resolves entities using domain-specific intelligence, computes explainable attention and trend scores, persists intelligence snapshots, and serves live dashboards through snapshot APIs.
+
 ------------------------------------------------------------------------
 
 ## Vision
