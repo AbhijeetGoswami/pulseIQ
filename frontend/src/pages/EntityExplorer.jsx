@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import EntitySearch from "../components/entities/EntitySearch";
 import EntityTable from "../components/entities/EntityTable";
 import EntityDetailsModal from "../components/entities/EntityDetailsModal";
+import { normalizeEntity } from "../utils/entityNormalizer";
 
 
 
@@ -29,6 +30,7 @@ const EntityExplorer = () => {
 
     const params = new URLSearchParams(location.search);
     const entityId = params.get("id");
+    console.log("entityId =", entityId);
 
     useEffect(() => {
 
@@ -102,30 +104,55 @@ const EntityExplorer = () => {
 
     // };
 
-        const handleView = async (entity) => {
+    //     const handleView = async (entity) => {
 
-        try {
+    //     try {
 
-            setSelectedEntity(entity);
+    //         setSelectedEntity(entity);
 
-            const entityIdentifier =
-                entity.id ??
-                entity.entity_id;
+    //         const entityIdentifier =
+    //             entity.id ??
+    //             entity.entity_id;
 
-            const data =
-                await getEntityArticles(entityIdentifier);
+    //         const data =
+    //             await getEntityArticles(entityIdentifier);
 
-            setArticles(data);
+    //         setArticles(data);
 
-            setShowModal(true);
+    //         setShowModal(true);
 
-        } catch (error) {
+    //     } catch (error) {
 
-            console.error(error);
+    //         console.error(error);
 
-        }
+    //     }
 
-    };
+    // };
+
+            const handleView = async (entity) => {
+                console.log("handleView called", entity);
+
+            try {
+
+                const normalized = normalizeEntity(entity);
+
+                setSelectedEntity(normalized);
+
+                const data = await getEntityArticles(
+                    normalized.entity_id
+                );
+
+                setArticles(data);
+
+                setShowModal(true);
+
+            } catch (error) {
+
+                console.error(error);
+
+            }
+
+        };
 
     /*
      * Dashboard Deep Link Support
@@ -163,44 +190,32 @@ const EntityExplorer = () => {
 
     // }, [entities, entityId]);
 
-        const initialEntity = location.state?.entity;
+                // const initialEntity = normalizeEntity(location.state?.entity);
 
         useEffect(() => {
 
             if (!entityId)
                 return;
 
-            if (!initialEntity)
-                return;
-
             const openEntity = async () => {
 
-                try {
+                const articles = await getEntityArticles(entityId);
 
-                    setSelectedEntity(initialEntity);
+                setSelectedEntity(
+                    location.state?.entity ?? {
+                        entity_id: entityId
+                    }
+                );
 
-                    const entityIdentifier =
-                        initialEntity.id ??
-                        initialEntity.entity_id;
+                setArticles(articles);
 
-                    const data =
-                        await getEntityArticles(entityIdentifier);
-
-                    setArticles(data);
-
-                    setShowModal(true);
-
-                } catch (error) {
-
-                    console.error(error);
-
-                }
+                setShowModal(true);
 
             };
 
             openEntity();
 
-        }, [entityId, initialEntity]);
+        }, [entityId]);
 
     // const handleCloseModal = () => {
 
@@ -236,6 +251,18 @@ const EntityExplorer = () => {
         );
 
     };
+
+    console.log("Deep link effect");
+    console.log("entityId =", entityId);
+    console.log("entities =", entities.length);
+    console.table(
+    entities.map(e => ({
+        entity_id: e.entity_id,
+        id: e.id,
+        display_name: e.display_name,
+        value: e.value
+            }))
+    );
 
     return (
 

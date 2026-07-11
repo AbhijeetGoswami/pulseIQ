@@ -1,6 +1,7 @@
 import "./AttentionLeaderboard.css";
 import Panel from "../../common/Panel/Panel";
 import { useNavigate } from "react-router-dom";
+import { normalizeEntity } from "../../../utils/entityNormalizer";
 
 export default function AttentionLeaderboard({ entities = [] }) {
 
@@ -12,11 +13,13 @@ export default function AttentionLeaderboard({ entities = [] }) {
 
     const handleEntityClick = (entity) => {
 
+        const normalized = normalizeEntity(entity);
+
         navigate(
-            `/entities?id=${entity.id}`,
+            `/entities?id=${normalized.entity_id}`,
             {
                 state: {
-                    entity
+                    entity: normalized
                 }
             }
         );

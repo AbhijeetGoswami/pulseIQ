@@ -1,104 +1,110 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
-
-import {
-
-    FiHome,
-
-    FiFileText,
-
-    FiCpu,
-
-    FiBarChart2
-
-} from "react-icons/fi";
-
-import "./Sidebar.css";
 
 const Sidebar = () => {
 
+    const menu = [
+        {
+            title: "Dashboard",
+            icon: "🏠",
+            path: "/"
+        },
+        {
+            title: "Attention",
+            icon: "📊",
+            path: "/attention"
+        },
+        {
+            title: "Trends",
+            icon: "📈",
+            path: "/trends"
+        },
+        {
+            title: "Explorer",
+            icon: "🔎",
+            path: "/entities"
+        },
+        {
+            title: "Pipeline",
+            icon: "⚙️",
+            path: "/pipeline"
+        },
+        {
+            title: "Settings",
+            icon: "🔧",
+            path: "/settings"
+        }
+    ];
+
     return (
 
-        <aside className="sidebar">
+        <div
+            className="d-flex flex-column bg-dark text-light"
+            style={{
+                width: 240,
+                minHeight: "100vh"
+            }}
+        >
 
-            {/* <div className="sidebar-header">
+            <div
+                className="px-3 py-4 border-bottom border-secondary"
+            >
 
-                <h2>PulseIQ</h2>
+                <h4 className="mb-1">
+                    PulseIQ
+                </h4>
 
-                <p>Attention Intelligence</p>
-
-            </div> */}
-
-            <nav className="sidebar-nav">
-
-                <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                        isActive
-                            ? "sidebar-link active"
-                            : "sidebar-link"
-                    }
-                >
-                    <FiHome />
-
-                    Dashboard
-
-                </NavLink>
-
-                {/* <NavLink
-                    to="/articles"
-                    className={({ isActive }) =>
-                        isActive
-                            ? "sidebar-link active"
-                            : "sidebar-link"
-                    }
-                >
-                    <FiFileText />
-
-                    Articles
-
-                </NavLink> */}
-
-                <NavLink
-                    to="/entities"
-                    className={({ isActive }) =>
-                        isActive
-                            ? "sidebar-link active"
-                            : "sidebar-link"
-                    }
-                >
-                    <FiCpu />
-
-                    Entities
-
-                </NavLink>
-
-                {/* <NavLink
-                    to="/metrics"
-                    className={({ isActive }) =>
-                        isActive
-                            ? "sidebar-link active"
-                            : "sidebar-link"
-                    }
-                >
-                    <FiBarChart2 />
-
-                    Metrics
-
-                </NavLink> */}
-
-            </nav>
-
-            <div className="sidebar-footer">
-
-                PulseIQ
-
-                <br />
-
-                Version 0.2.0
+                <small className="text-secondary">
+                    Attention Intelligence Platform
+                </small>
 
             </div>
 
-        </aside>
+            <nav className="nav flex-column mt-3">
+
+                {menu.map(item => (
+
+                    <NavLink
+                        key={item.path}
+                        to={item.path}
+                        className={({ isActive }) =>
+                            `nav-link px-4 py-3 ${
+                                isActive
+                                    ? "bg-primary text-white"
+                                    : "text-light"
+                            }`
+                        }
+                    >
+
+                        <span style={{ width: 30, display: "inline-block" }}>
+                            {item.icon}
+                        </span>
+
+                        {item.title}
+
+                    </NavLink>
+
+                ))}
+
+            </nav>
+
+            <div
+                className="mt-auto p-3 border-top border-secondary"
+            >
+
+                <small className="text-secondary">
+                    PulseIQ
+                </small>
+
+                <br/>
+
+                <small className="text-secondary">
+                    Version 0.3.0
+                </small>
+
+            </div>
+
+        </div>
 
     );
 

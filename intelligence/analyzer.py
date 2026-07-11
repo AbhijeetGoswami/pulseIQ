@@ -38,6 +38,8 @@ def analyze_title(title: str) -> dict:
                 "type": entity["type"],
                 "value": entity["value"],
                 "sport": entity["sport"],
+                "matched_alias": entity.get("matched_alias"),
+                "confidence": entity.get("confidence", 1.0),
             }
         )
 

@@ -1,4 +1,4 @@
-from intelligence.entity_matcher import resolve_entities
+# from intelligence.entity_matcher import resolve_entities
 from intelligence.entity_resolver import resolve_entities as resolver
 
 titles = [
@@ -21,10 +21,10 @@ for title in titles:
 
     print()
 
-    candidates = resolve_entities(title)
+    # candidates = resolve_entities(title)
 
-    entities = resolver(candidates)
+    # entities = resolver(candidates)
 
-    for entity in entities:
+    # for entity in entities:
 
-        print(entity)
+    #     print(entity)

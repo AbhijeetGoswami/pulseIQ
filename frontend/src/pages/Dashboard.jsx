@@ -1,5 +1,3 @@
-
-
 import Loader from "../components/Loader/Loader";
 import ErrorCard from "../components/ErrorCard/ErrorCard";
 import Panel from "../components/common/Panel/Panel";
@@ -37,139 +35,141 @@ export default function Dashboard() {
 
     const attention = data.attention;
 
-    // return (
-
-    //     <div>
-
-    //         <div className="dashboard">
-
-    //         <h1>PulseIQ Dashboard</h1>
-
-    //         <SummaryCards
-    //             summary={attention.summary}
-    //             domains={attention.domains}
-    //             categories={attention.categories}
-    //         />
-
-    //         <div className="dashboard-grid">
-
-    //             <AttentionLeaderboard
-    //                 entities={attention.entities}
-    //             />
-
-    //             <TrendLeaderboard
-    //                 trends={trendData?.trends || []}
-    //             />
-
-    //         </div>
-
-    //         <div className="dashboard-grid-bottom">
-
-    //             <Panel title="Domains">
-
-    //                 Coming next...
-
-    //             </Panel>
-
-    //             <Panel title="Categories">
-
-    //                 Coming next...
-
-    //             </Panel>
-
-    //         </div>
-
-    //     </div>
-
-    //     </div>
-
-    // );
-
-
-        return (
+    return (
 
         <div className="dashboard">
 
-            {/* <div className="dashboard-title">
+            <div className="dashboard-content">
 
-                <h1>PulseIQ Intelligence</h1>
+                <header className="dashboard-header">
 
-                <p>
-                    Live attention and trend intelligence across your monitored articles.
-                </p>
+                    <div>
 
-            </div> */}
+                        <h1>PulseIQ Dashboard</h1>
 
-            <SummaryCards
-                summary={attention.summary}
-                domains={attention.domains}
-                categories={attention.categories}
-            />
+                        <p>
+                            Executive overview of the latest intelligence snapshot
+                        </p>
 
-            <div className="dashboard-main">
+                    </div>
 
-                <AttentionLeaderboard
-                    entities={attention.entities}
+                    <div className="dashboard-status">
+
+                        <span className="status-dot" />
+
+                        LIVE
+
+                    </div>
+
+                </header>
+
+                <SummaryCards
+                    summary={attention.summary}
+                    domains={attention.domains}
+                    categories={attention.categories}
                 />
 
-                <TrendLeaderboard
-                    trends={trendData?.trends || []}
-                />
+                <section className="dashboard-main">
 
-            </div>
+                    <AttentionLeaderboard
+                        entities={attention.entities}
+                    />
 
-            <div className="dashboard-bottom">
+                    <TrendLeaderboard
+                        trends={trendData?.trends || []}
+                    />
 
-                <Panel title="Domains">
+                </section>
 
-                    {
-                        attention.domains.map(domain => (
+                <section className="dashboard-bottom">
 
-                            <div key={domain.id}>
+                    <Panel title="🌍 Domain Distribution">
 
-                                <strong>{domain.name}</strong>
+                        <div className="dashboard-list">
 
-                                <span style={{float:"right"}}>
+                            {
+                                attention.domains.map(domain => (
 
-                                    {domain.mentions} mentions
+                                    <div
+                                        key={domain.id}
+                                        className="dashboard-list-item"
+                                    >
 
-                                </span>
+                                        <div>
 
-                            </div>
+                                            <strong>{domain.name}</strong>
 
-                        ))
-                    }
+                                            <small>
+                                                {domain.mentions} mentions
+                                            </small>
 
-                </Panel>
+                                        </div>
 
-                <Panel title="Categories">
+                                        <div className="mini-bar">
 
-                    {
-                        attention.categories.map(category => (
+                                            <div
+                                                style={{
+                                                    width: `${Math.min(domain.mentions * 8, 100)}%`
+                                                }}
+                                            />
 
-                            <div key={category.id}>
+                                        </div>
 
-                                <strong>{category.name}</strong>
+                                    </div>
 
-                                <span style={{float:"right"}}>
+                                ))
+                            }
 
-                                    {category.mentions}
+                        </div>
 
-                                </span>
+                    </Panel>
 
-                            </div>
+                    <Panel title="🏆 Category Distribution">
 
-                        ))
-                    }
+                        <div className="dashboard-list">
 
-                </Panel>
+                            {
+                                attention.categories.map(category => (
+
+                                    <div
+                                        key={category.id}
+                                        className="dashboard-list-item"
+                                    >
+
+                                        <div>
+
+                                            <strong>{category.name}</strong>
+
+                                            <small>
+                                                {category.mentions} entities
+                                            </small>
+
+                                        </div>
+
+                                        <div className="mini-bar">
+
+                                            <div
+                                                style={{
+                                                    width: `${Math.min(category.mentions * 12, 100)}%`
+                                                }}
+                                            />
+
+                                        </div>
+
+                                    </div>
+
+                                ))
+                            }
+
+                        </div>
+
+                    </Panel>
+
+                </section>
 
             </div>
 
         </div>
 
-        );
-
+    );
 }
-
-
