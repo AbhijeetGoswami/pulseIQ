@@ -7,9 +7,9 @@ def collect_news_job():
     print("Scheduled Collection Started")
     print("=" * 70)
 
-    # result = run_collection()
+    result = run_collection()
 
-    # print(result)
+    print(result)
 
     print("=" * 70)
     print("Scheduled Collection Finished")

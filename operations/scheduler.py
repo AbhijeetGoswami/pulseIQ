@@ -13,7 +13,7 @@ def start_scheduler():
     scheduler.add_job(
         collect_news_job,
         trigger="interval",
-        minutes=2, #-------------For chaning scheduler run time, change value here
+        minutes=10, #-------------For chaning scheduler run time, change value here
         id="news_collector",
         replace_existing=True,
     )

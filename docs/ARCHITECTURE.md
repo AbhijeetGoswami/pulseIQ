@@ -115,3 +115,37 @@ api/
     routers/
 
         pipeline.py
+
+        --------------------------()----------------------
+
+        PulseIQ Main Branch
+Data Collection
+✅ RSS Collector
+✅ Duplicate Detection
+✅ Metrics
+Intelligence
+✅ Entity Extraction
+✅ Registry Loader
+✅ Contextual Disambiguation
+✅ Entity Persistence
+Attention
+✅ Attention Engine
+✅ Snapshot Generation
+✅ Snapshot Persistence
+Trends
+✅ Trend Engine
+✅ Snapshot Generation
+✅ Snapshot Persistence
+APIs
+✅ Intelligence API
+✅ Attention API
+✅ Trend API
+Dashboard
+✅ Live Snapshot Dashboard
+✅ No Dummy Data
+Operations
+✅ APScheduler
+✅ Automatic Collection
+✅ Automatic Snapshot Generation
+
+That's an MVP you can genuinely demonstrate.

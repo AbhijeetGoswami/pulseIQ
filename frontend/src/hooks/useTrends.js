@@ -9,18 +9,26 @@ export default function useTrends() {
 
     const [error, setError] = useState(null);
 
+   
     useEffect(() => {
+
+        let mounted = true;
 
         async function load() {
 
             try {
 
-                const response =
-                    await getLatestTrends();
+                const response = await getLatestTrends();
+
+                if (!mounted) return;
 
                 setData(response);
 
+                setError(null);
+
             } catch (err) {
+
+                if (!mounted) return;
 
                 console.error(err);
 
@@ -28,7 +36,11 @@ export default function useTrends() {
 
             } finally {
 
-                setLoading(false);
+                if (mounted) {
+
+                    setLoading(false);
+
+                }
 
             }
 
@@ -36,8 +48,22 @@ export default function useTrends() {
 
         load();
 
-    }, []);
+        const interval = setInterval(() => {
 
+            load();
+
+        }, 60000);
+
+        return () => {
+
+            mounted = false;
+
+            clearInterval(interval);
+
+        };
+
+    }, []);
+    
     return {
 
         data,

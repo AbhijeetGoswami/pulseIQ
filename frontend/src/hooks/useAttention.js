@@ -11,16 +11,23 @@ export default function useAttention() {
 
     useEffect(() => {
 
+        let mounted = true;
+
         async function load() {
 
             try {
 
-                const response =
-                    await getLatestAttention();
+                const response = await getLatestAttention();
+
+                if (!mounted) return;
 
                 setData(response);
 
+                setError(null);
+
             } catch (err) {
+
+                if (!mounted) return;
 
                 console.error(err);
 
@@ -28,13 +35,31 @@ export default function useAttention() {
 
             } finally {
 
-                setLoading(false);
+                if (mounted) {
+
+                    setLoading(false);
+
+                }
 
             }
 
         }
 
         load();
+
+        const interval = setInterval(() => {
+
+            load();
+
+        }, 60000);
+
+        return () => {
+
+            mounted = false;
+
+            clearInterval(interval);
+
+        };
 
     }, []);
 
