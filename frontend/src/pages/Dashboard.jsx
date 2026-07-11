@@ -9,6 +9,13 @@ import TrendLeaderboard from "../components/dashboard/TrendLeaderboard/TrendLead
 import useAttention from "../hooks/useAttention";
 import useTrends from "../hooks/useTrends";
 
+import {
+    formatDateTime,
+    formatRelativeTime
+} from "../utils/time";
+
+import { useEffect, useState } from "react";
+
 import "./Dashboard.css";
 
 export default function Dashboard() {
@@ -25,6 +32,20 @@ export default function Dashboard() {
         error: trendsError
     } = useTrends();
 
+    const [now, setNow] = useState(Date.now());
+
+    useEffect(() => {
+
+        const timer = setInterval(() => {
+
+            setNow(Date.now());
+
+        }, 1000);
+
+        return () => clearInterval(timer);
+
+    }, []);
+
     if (loading || trendsLoading) {
         return <Loader />;
     }
@@ -34,6 +55,11 @@ export default function Dashboard() {
     }
 
     const attention = data.attention;
+    const generatedAt = data.generated_at;
+
+    
+
+    // const generatedAt = data.generated_at;
 
     return (
 
@@ -55,9 +81,34 @@ export default function Dashboard() {
 
                     <div className="dashboard-status">
 
-                        <span className="status-dot" />
+                        <div className="dashboard-status-top">
 
-                        LIVE
+                            <span className="status-dot" />
+
+                            <span>LIVE</span>
+
+                        </div>
+
+                        <div className="dashboard-status-time">
+
+                            <small>Last Updated</small>
+
+                            <strong>
+
+                                {formatDateTime(generatedAt)}
+
+                            </strong>
+
+                            <span>
+
+                                {formatRelativeTime(
+                                    generatedAt,
+                                    now
+                                )}
+
+                            </span>
+
+                        </div>
 
                     </div>
 
