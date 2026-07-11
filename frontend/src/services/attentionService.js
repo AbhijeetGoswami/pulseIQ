@@ -1,11 +1,9 @@
 import api from "./api";
 
-export async function getAttentionSnapshot(titles) {
-    const response = await api.post(
-        "/attention/analyze/batch",
-        {
-            titles
-        }
+export async function getLatestAttention() {
+
+    const response = await api.get(
+        "/attention/latest"
     );
 
     return response.data;

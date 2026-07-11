@@ -1,7 +1,8 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from intelligence.attention_pipeline import AttentionPipeline
+from intelligence.snapshot_store import SnapshotStore
 
 router = APIRouter(
     prefix="/attention",
@@ -9,6 +10,7 @@ router = APIRouter(
 )
 
 pipeline = AttentionPipeline()
+snapshot_store = SnapshotStore()
 
 
 # --------------------------------------------------
@@ -24,7 +26,7 @@ class BatchAttentionRequest(BaseModel):
 
 
 # --------------------------------------------------
-# Endpoints
+# Analysis Endpoints
 # --------------------------------------------------
 
 @router.post("/analyze")
@@ -41,3 +43,21 @@ def analyze_batch(request: BatchAttentionRequest):
     return pipeline.analyze_batch(
         request.titles
     )
+
+
+# --------------------------------------------------
+# Snapshot Endpoints
+# --------------------------------------------------
+
+@router.get("/latest")
+def latest_attention():
+
+    snapshot = snapshot_store.latest_attention()
+
+    if snapshot is None:
+        raise HTTPException(
+            status_code=404,
+            detail="No attention snapshots available."
+        )
+
+    return snapshot

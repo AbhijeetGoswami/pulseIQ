@@ -1,14 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAttentionSnapshot } from "../services/attentionService";
-
-const SAMPLE_ARTICLES = [
-    "Lionel Messi scores against Brazil",
-    "Lionel Messi wins Ballon d'Or",
-    "Lionel Messi captains Argentina",
-    "Stephen Curry scores for the Golden State Warriors",
-    "Scottie Scheffler wins The Masters",
-    "Carlos Alcaraz reaches Wimbledon final"
-];
+import { getLatestAttention } from "../services/attentionService";
 
 export default function useAttention() {
 
@@ -25,13 +16,13 @@ export default function useAttention() {
             try {
 
                 const response =
-                    await getAttentionSnapshot(
-                        SAMPLE_ARTICLES
-                    );
+                    await getLatestAttention();
 
                 setData(response);
 
             } catch (err) {
+
+                console.error(err);
 
                 setError(err);
 

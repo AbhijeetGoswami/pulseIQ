@@ -1,13 +1,9 @@
 import api from "./api";
 
-export async function getTrendSnapshot(previousTitles, currentTitles) {
+export async function getLatestTrends() {
 
-    const response = await api.post(
-        "/trends/analyze",
-        {
-            previous_titles: previousTitles,
-            current_titles: currentTitles
-        }
+    const response = await api.get(
+        "/trends/latest"
     );
 
     return response.data;

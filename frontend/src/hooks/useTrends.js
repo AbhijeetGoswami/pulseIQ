@@ -1,26 +1,12 @@
 import { useEffect, useState } from "react";
-import { getTrendSnapshot } from "../services/trendService";
-
-const PREVIOUS = [
-    "Lionel Messi scores against Brazil",
-    "Lionel Messi wins Ballon d'Or",
-    "Stephen Curry scores for the Golden State Warriors",
-    "Scottie Scheffler wins The Masters"
-];
-
-const CURRENT = [
-    "Lionel Messi scores against Brazil",
-    "Lionel Messi wins Ballon d'Or",
-    "Lionel Messi captains Argentina",
-    "Lionel Messi leads Argentina to victory",
-    "Stephen Curry scores for the Golden State Warriors",
-    "Carlos Alcaraz reaches Wimbledon final"
-];
+import { getLatestTrends } from "../services/trendService";
 
 export default function useTrends() {
 
     const [data, setData] = useState(null);
+
     const [loading, setLoading] = useState(true);
+
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -30,14 +16,13 @@ export default function useTrends() {
             try {
 
                 const response =
-                    await getTrendSnapshot(
-                        PREVIOUS,
-                        CURRENT
-                    );
+                    await getLatestTrends();
 
                 setData(response);
 
             } catch (err) {
+
+                console.error(err);
 
                 setError(err);
 
@@ -54,9 +39,13 @@ export default function useTrends() {
     }, []);
 
     return {
+
         data,
+
         loading,
+
         error
+
     };
 
 }
