@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { FiCompass, FiSearch } from "react-icons/fi";
 
 import EntitySearch from "../components/entities/EntitySearch";
 import EntityTable from "../components/entities/EntityTable";
@@ -13,6 +14,8 @@ import {
     searchEntities,
     getEntityArticles
 } from "../services/entityService";
+
+import "./EntityExplorer.css";
 
 const EntityExplorer = () => {
 
@@ -266,27 +269,31 @@ const EntityExplorer = () => {
 
     return (
 
-        <div className="container-fluid">
-
-            <div className="card shadow-sm">
-
-                <div className="card-header d-flex justify-content-between align-items-center">
-
-                    <h4 className="mb-0">
-
-                        Entity Explorer
-
-                    </h4>
-
-                    <span className="badge bg-primary">
-
-                        {entities.length} Entities
-
-                    </span>
-
+        <main className="entity-explorer">
+            <header className="entity-explorer-header">
+                <div>
+                    <p className="entity-explorer-eyebrow"><FiCompass aria-hidden="true" /> Intelligence workspace</p>
+                    <h1>Entity Explorer</h1>
+                    <p>Search the people, teams, competitions, and topics shaping the attention landscape.</p>
                 </div>
 
-                <div className="card-body">
+                <div className="entity-explorer-count">
+                    <strong>{entities.length}</strong>
+                    <span>entities found</span>
+                </div>
+            </header>
+
+            <section className="entity-explorer-panel">
+                <div className="entity-explorer-toolbar">
+                    <div>
+                        <h2>Explore entities</h2>
+                        <p>Search by entity name to inspect related coverage.</p>
+                    </div>
+
+                    <span className="entity-explorer-search-icon"><FiSearch aria-hidden="true" /></span>
+                </div>
+
+                <div className="entity-explorer-content">
 
                     <EntitySearch
 
@@ -310,10 +317,8 @@ const EntityExplorer = () => {
                     />
 
                 </div>
-
-            </div>
-
-        </div>
+            </section>
+        </main>
 
     );
 

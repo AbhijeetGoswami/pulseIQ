@@ -1,41 +1,32 @@
 .panel {
-
-    background: white;
-
-    border-radius: 12px;
-
-    padding: 20px;
-
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-
+    display: flex;
+    flex-direction: column;
     height: 100%;
-
+    padding: 20px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e5eaf1;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, .05);
+    transition: border-color .2s ease, box-shadow .2s ease;
 }
+
+.panel:hover { border-color: #d6dfeb; box-shadow: 0 9px 24px rgba(15, 23, 42, .07); }
 
 .panel-header {
-
-    border-bottom: 1px solid #ececec;
-
-    margin-bottom: 20px;
-
-    padding-bottom: 10px;
-
-}
-
-.panel-header h2 {
-
-    margin: 0;
-
-    font-size: 20px;
-
-}
-
-.panel-body {
-
     display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #edf1f5;
 }
+
+.panel-heading { min-width: 0; }
+.panel-header h2 { margin: 0; color: #1e293b; font-size: 17px; font-weight: 750; letter-spacing: -.02em; line-height: 1.25; }
+.panel-header p { margin: 5px 0 0; color: #94a3b8; font-size: 12px; line-height: 1.4; }
+.panel-action { flex-shrink: 0; }
+.panel-body { display: flex; flex: 1; flex-direction: column; gap: 12px; min-width: 0; }
+
+@media (max-width: 620px) { .panel { padding: 16px; border-radius: 13px; } }

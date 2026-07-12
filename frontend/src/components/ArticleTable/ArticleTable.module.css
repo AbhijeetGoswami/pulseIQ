@@ -1,30 +1,16 @@
-.table{
-
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-}
-
-.table th{
-
-    text-align:left;
-    padding:14px;
-    border-bottom:2px solid #ddd;
-}
-
-.table td{
-
-    padding:14px;
-    border-bottom:1px solid #eee;
-}
-
-.table tr:hover{
-
-    background:#f8fafc;
-}
-
-.table a{
-
-    text-decoration:none;
-    color:#2563eb;
-}
+.wrapper { overflow-x: auto; }
+.table { width: 100%; min-width: 720px; border-collapse: collapse; background: #fff; }
+.table th { padding: 13px 22px; border-bottom: 1px solid #e9eef5; background: #f8fafc; color: #64748b; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-align: left; text-transform: uppercase; }
+.table td { padding: 15px 22px; border-bottom: 1px solid #edf1f5; color: #64748b; font-size: 13px; vertical-align: middle; }
+.table tr:last-child td { border-bottom: 0; }
+.table tbody tr { transition: background .18s ease; }
+.table tbody tr:hover { background: #f8fafc; }
+.titleCell { min-width: 330px; }
+.titleCell a { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; color: #1e3a8a; font-size: 14px; font-weight: 700; text-decoration: none; }
+.titleCell a span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.titleCell a svg { flex-shrink: 0; color: #94a3b8; transition: color .18s ease, transform .18s ease; }
+.titleCell a:hover svg { color: #2563eb; transform: translate(1px, -1px); }
+.sport { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; font-size: 11px; font-weight: 700; }
+.empty { display: grid; min-height: 230px; place-content: center; gap: 10px; padding: 24px; color: #94a3b8; text-align: center; }
+.empty svg { justify-self: center; width: 28px; height: 28px; color: #60a5fa; }
+.empty p { margin: 0; font-size: 14px; }

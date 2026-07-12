@@ -32,6 +32,92 @@
 
 }
 
+.dashboard-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-left: -16px;
+
+}
+
+.dashboard-header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.theme-toggle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 13px;
+
+    border: 1px solid #dbe4f0;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #475569;
+
+    cursor: pointer;
+
+    font: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: background .2s ease, border-color .2s ease, color .2s ease;
+
+}
+
+.theme-toggle:hover {
+
+    border-color: #94a3b8;
+
+    color: #1e293b;
+
+}
+
+.theme-toggle:focus-visible {
+
+    outline: 2px solid #2563eb;
+
+    outline-offset: 2px;
+
+}
+
+.theme-toggle svg {
+
+    width: 16px;
+
+    height: 16px;
+
+}
+
+.dashboard-brand-logo {
+
+    width: 142px;
+
+    height: 142px;
+
+    object-fit: contain;
+
+}
+
 .dashboard-header h1 {
 
     margin: 0;
@@ -204,6 +290,20 @@
 
     }
 
+    .dashboard-header-actions {
+
+        width: 100%;
+
+        align-items: stretch;
+
+    }
+
+    .theme-toggle {
+
+        justify-content: center;
+
+    }
+
 }
 
 .dashboard-status {
@@ -345,5 +445,91 @@
     color: #2563eb;
 
     font-weight: 600;
+
+}
+
+/* Dashboard-only Midnight theme */
+.dashboard--midnight {
+
+    background: #0b1120;
+
+    color: #e2e8f0;
+
+}
+
+.dashboard--midnight .dashboard-header h1,
+.dashboard--midnight .summary-section-heading h2,
+.dashboard--midnight .summary-card-content strong,
+.dashboard--midnight .panel-header h2,
+.dashboard--midnight .dashboard-list-item strong,
+.dashboard--midnight .dashboard-status-time strong,
+.dashboard--midnight .attention-entity strong,
+.dashboard--midnight .trend-entity strong {
+
+    color: #f8fafc;
+
+}
+
+.dashboard--midnight .dashboard-header p,
+.dashboard--midnight .summary-card-content p,
+.dashboard--midnight .dashboard-list-item small,
+.dashboard--midnight .dashboard-status-time small,
+.dashboard--midnight .attention-entity small,
+.dashboard--midnight .trend-entity small,
+.dashboard--midnight .trend-movement {
+
+    color: #94a3b8;
+
+}
+
+.dashboard--midnight .panel,
+.dashboard--midnight .summary-card,
+.dashboard--midnight .dashboard-status,
+.dashboard--midnight .theme-toggle {
+
+    background: #111c31;
+
+    border-color: #263650;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+
+}
+
+.dashboard--midnight .panel-header,
+.dashboard--midnight .attention-row,
+.dashboard--midnight .trend-row {
+
+    border-color: #263650;
+
+}
+
+.dashboard--midnight .attention-row:hover,
+.dashboard--midnight .trend-row:hover {
+
+    background: #18263e;
+
+}
+
+.dashboard--midnight .theme-toggle {
+
+    color: #cbd5e1;
+
+}
+
+.dashboard--midnight .theme-toggle:hover {
+
+    border-color: #64748b;
+
+    color: #ffffff;
+
+}
+
+.dashboard--midnight .summary-section-heading > span,
+.dashboard--midnight .mini-bar,
+.dashboard--midnight .attention-meter {
+
+    border-color: #334155;
+
+    background: #1e293b;
 
 }

@@ -1,11 +1,47 @@
-.summary-grid {
+.summary-section { margin-bottom: 30px; }
 
-    display: grid;
+.summary-section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+}
 
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+.summary-section-heading p { margin: 0 0 4px; color: #2563eb; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.summary-section-heading h2 { margin: 0; color: #0f172a; font-size: 19px; letter-spacing: -.02em; }
+.summary-section-heading > span { padding: 5px 9px; border: 1px solid #dbe4f0; border-radius: 999px; color: #64748b; font-size: 12px; font-weight: 600; }
 
-    gap: 20px;
+.summary-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 
-    margin-bottom: 30px;
+.summary-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    min-width: 0;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid #e6eaf0;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, .04);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
 
+.summary-card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15, 23, 42, .09); }
+.summary-card-icon { display: grid; flex: 0 0 40px; width: 40px; height: 40px; place-items: center; border-radius: 11px; }
+.summary-card-icon svg { width: 19px; height: 19px; }
+.summary-card-content { min-width: 0; }
+.summary-card-content p { margin: 1px 0 7px; color: #64748b; font-size: 13px; font-weight: 600; }
+.summary-card-content strong { display: block; color: #0f172a; font-size: 28px; line-height: 1; letter-spacing: -.04em; }
+.summary-card-content small { display: block; overflow: hidden; margin-top: 8px; color: #94a3b8; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+
+.summary-card--blue .summary-card-icon { background: #dbeafe; color: #2563eb; }
+.summary-card--violet .summary-card-icon { background: #ede9fe; color: #7c3aed; }
+.summary-card--teal .summary-card-icon { background: #ccfbf1; color: #0f766e; }
+.summary-card--amber .summary-card-icon { background: #fef3c7; color: #b45309; }
+
+@media (max-width: 1100px) { .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) {
+    .summary-section-heading { align-items: flex-start; flex-direction: column; }
+    .summary-grid { grid-template-columns: 1fr; }
 }

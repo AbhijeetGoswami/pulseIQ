@@ -1,55 +1,39 @@
+import { FiArrowLeft, FiClock, FiCompass } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const NotFound = () => {
+import "./NotFound.css";
 
+export default function NotFound() {
     return (
+        <main className="not-found">
+            <section className="not-found-card" aria-labelledby="not-found-title">
+                <div className="not-found-brand">
+                    <img src="/brand.png" alt="AttenBase" />
+                    <span>AttenBase</span>
+                </div>
 
-        <div
-            className="d-flex flex-column justify-content-center align-items-center"
-            style={{
-                minHeight: "100vh",
-                background: "#f8f9fa",
-                textAlign: "center",
-                padding: "30px"
-            }}
-        >
+                <div className="not-found-illustration">
+                    <img src="/work-in-progress.png" alt="Module under construction" />
+                </div>
 
-            <img
-                src="/work-in-progress.png"
-                alt="Under Construction"
-                style={{
-                    maxWidth: "250px",
-                    width: "50%",
-                    height: "auto"
-                }}
-            />
+                <span className="not-found-eyebrow"><FiClock aria-hidden="true" /> Coming soon</span>
+                <h1 id="not-found-title">This module is still taking shape.</h1>
+                <p>
+                    We’re building the next layer of attention intelligence here.
+                    The dashboard remains available while this workspace is prepared.
+                </p>
 
-            <h2 className="mt-4 fw-bold">
-                Module Under Construction
-            </h2>
+                <div className="not-found-actions">
+                    <Link to="/" className="not-found-primary">
+                        <FiArrowLeft aria-hidden="true" /> Back to dashboard
+                    </Link>
+                    <Link to="/entities" className="not-found-secondary">
+                        <FiCompass aria-hidden="true" /> Explore entities
+                    </Link>
+                </div>
 
-            <p
-                className="text-muted"
-                style={{
-                    maxWidth: "600px",
-                    fontSize: "18px"
-                }}
-            >
-                This PulseIQ module is currently under active development.
-                New intelligence capabilities will be available soon.
-            </p>
-
-            <Link
-                to="/"
-                className="btn btn-primary mt-3"
-            >
-                ← Back to Dashboard
-            </Link>
-
-        </div>
-
+                <span className="not-found-note">PulseIQ intelligence platform</span>
+            </section>
+        </main>
     );
-
-};
-
-export default NotFound;
+}

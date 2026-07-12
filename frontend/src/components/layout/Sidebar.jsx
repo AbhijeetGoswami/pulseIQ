@@ -1,113 +1,47 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
+import { FiActivity, FiBarChart2, FiCompass, FiHome, FiSettings, FiTrendingUp } from "react-icons/fi";
 
-const Sidebar = () => {
+import "./Sidebar.css";
 
-    const menu = [
-        {
-            title: "Dashboard",
-            icon: "🏠",
-            path: "/"
-        },
-        {
-            title: "Attention",
-            icon: "📊",
-            path: "/attention"
-        },
-        {
-            title: "Trends",
-            icon: "📈",
-            path: "/trends"
-        },
-        {
-            title: "Explorer",
-            icon: "🔎",
-            path: "/entities"
-        },
-        {
-            title: "Pipeline",
-            icon: "⚙️",
-            path: "/pipeline"
-        },
-        {
-            title: "Settings",
-            icon: "🔧",
-            path: "/settings"
-        }
-    ];
+const menu = [
+    { title: "Dashboard", icon: FiHome, path: "/" },
+    { title: "Attention", icon: FiActivity, path: "/attention" },
+    { title: "Trends", icon: FiTrendingUp, path: "/trends" },
+    { title: "Explorer", icon: FiCompass, path: "/entities" },
+    { title: "Pipeline", icon: FiBarChart2, path: "/pipeline" },
+    { title: "Settings", icon: FiSettings, path: "/settings" },
+];
 
+export default function Sidebar() {
     return (
-
-        <div
-            className="d-flex flex-column bg-dark text-light"
-            style={{
-                width: 240,
-                minHeight: "100vh"
-            }}
-        >
-
-            <div
-                className="px-3 py-4 border-bottom border-secondary"
-            >
-
-                <h4 className="mb-1">
-                    PulseIQ
-                </h4>
-
-                <small className="text-secondary">
-                    Attention Intelligence Platform
-                </small>
-
+        <aside className="sidebar" aria-label="Primary navigation">
+            <div className="sidebar-header">
+                <img className="sidebar-logo" src="/brand.png" alt="PulseIQ" />
+                <div>
+                    <h2>AttenBase</h2>
+                    <p>Attention intelligence</p>
+                </div>
             </div>
 
-            <nav className="nav flex-column mt-3">
-
-                {menu.map(item => (
-
+            <nav className="sidebar-nav">
+                <p className="sidebar-nav-label">Workspace</p>
+                {menu.map(({ title, icon: Icon, path }) => (
                     <NavLink
-                        key={item.path}
-                        to={item.path}
-                        className={({ isActive }) =>
-                            `nav-link px-4 py-3 ${
-                                isActive
-                                    ? "bg-primary text-white"
-                                    : "text-light"
-                            }`
-                        }
+                        key={path}
+                        to={path}
+                        end={path === "/"}
+                        className={({ isActive }) => `sidebar-link${isActive ? " active" : ""}`}
                     >
-
-                        <span style={{ width: 30, display: "inline-block" }}>
-                            {item.icon}
-                        </span>
-
-                        {item.title}
-
+                        <Icon aria-hidden="true" />
+                        <span>{title}</span>
                     </NavLink>
-
                 ))}
-
             </nav>
 
-            <div
-                className="mt-auto p-3 border-top border-secondary"
-            >
-
-                <small className="text-secondary">
-                    PulseIQ
-                </small>
-
-                <br/>
-
-                <small className="text-secondary">
-                    Version 0.3.0
-                </small>
-
-            </div>
-
-        </div>
-
+            <footer className="sidebar-footer">
+                <span className="sidebar-footer-status"><i /> System operational</span>
+                <span>PulseIQ · v0.3.0</span>
+            </footer>
+        </aside>
     );
-
-};
-
-export default Sidebar;
+}
