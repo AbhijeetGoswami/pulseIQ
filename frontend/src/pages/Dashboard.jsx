@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FiMoon, FiSun } from "react-icons/fi";
+import { FiClock, FiGlobe, FiMoon, FiSun, FiTag } from "react-icons/fi";
 
 import Loader from "../components/Loader/Loader";
 import ErrorCard from "../components/ErrorCard/ErrorCard";
@@ -13,23 +13,31 @@ import { formatDateTime, formatRelativeTime } from "../utils/time";
 
 import "./Dashboard.css";
 
-function DistributionList({ items, label }) {
-    const peakMentions = Math.max(...items.map(({ mentions }) => mentions), 1);
+function DistributionList({ items, label, tone }) {
+    const totalMentions = items.reduce((total, item) => total + Number(item.mentions || 0), 0);
 
     return (
-        <div className="dashboard-list">
-            {items.map((item) => (
-                <div key={item.id} className="dashboard-list-item">
-                    <div>
-                        <strong>{item.name}</strong>
-                        <small>{item.mentions} {label}</small>
-                    </div>
+        <div className={`dashboard-distribution dashboard-distribution--${tone}`}>
+            {items.length ? items.map((item, index) => {
+                const mentions = Number(item.mentions || 0);
+                const percentage = totalMentions ? Math.round((mentions / totalMentions) * 100) : 0;
 
-                    <div className="mini-bar" aria-label={`${item.name}: ${item.mentions} ${label}`}>
-                        <div style={{ width: `${(item.mentions / peakMentions) * 100}%` }} />
+                return (
+                    <div key={item.id ?? item.name} className="dashboard-distribution-row">
+                        <span className="dashboard-distribution-rank">{String(index + 1).padStart(2, "0")}</span>
+                        <div className="dashboard-distribution-copy">
+                            <div>
+                                <strong>{item.name}</strong>
+                                <small>{mentions.toLocaleString()} {label}</small>
+                            </div>
+                            <span className="dashboard-distribution-percent">{percentage}%</span>
+                        </div>
+                        <div className="dashboard-distribution-bar" aria-label={`${item.name}: ${mentions} ${label}, ${percentage}%`}>
+                            <span style={{ width: `${percentage}%` }} />
+                        </div>
                     </div>
-                </div>
-            ))}
+                );
+            }) : <p className="dashboard-distribution-empty">No distribution data available.</p>}
         </div>
     );
 }
@@ -55,6 +63,19 @@ export default function Dashboard() {
     return (
         <div className={`dashboard dashboard--${theme}`}>
             <div className="dashboard-content">
+                <div className="dashboard-top-controls">
+                    <button
+                        type="button"
+                        className="theme-toggle"
+                        onClick={() => setTheme((activeTheme) => activeTheme === "current" ? "midnight" : "current")}
+                        aria-pressed={theme === "midnight"}
+                        aria-label={`Switch to ${theme === "current" ? "Midnight" : "Current"} theme`}
+                    >
+                        {theme === "midnight" ? <FiMoon aria-hidden="true" /> : <FiSun aria-hidden="true" />}
+                        <span>{theme === "midnight" ? "Midnight" : "Current"}</span>
+                    </button>
+                </div>
+
                 <header className="dashboard-header">
                     <div className="dashboard-brand">
                         <img
@@ -70,27 +91,19 @@ export default function Dashboard() {
                     </div>
 
                     <div className="dashboard-header-actions">
-                        <button
-                            type="button"
-                            className="theme-toggle"
-                            onClick={() => setTheme((activeTheme) => activeTheme === "current" ? "midnight" : "current")}
-                            aria-pressed={theme === "midnight"}
-                            aria-label={`Switch to ${theme === "current" ? "Midnight" : "Current"} theme`}
-                        >
-                            {theme === "midnight" ? <FiMoon aria-hidden="true" /> : <FiSun aria-hidden="true" />}
-                            <span>{theme === "midnight" ? "Midnight" : "Current"}</span>
-                        </button>
-
                         <div className="dashboard-status">
                             <div className="dashboard-status-top">
-                                <span className="status-dot" />
-                                <span>LIVE</span>
+                                <span className="status-dot" aria-hidden="true" />
+                                <span>Live intelligence</span>
                             </div>
 
                             <div className="dashboard-status-time">
-                                <small>Last updated</small>
-                                <strong>{formatDateTime(data.generated_at)}</strong>
-                                <span>{formatRelativeTime(data.generated_at, now)}</span>
+                                <FiClock aria-hidden="true" />
+                                <div>
+                                    <small>Last updated</small>
+                                    <strong>{formatDateTime(data.generated_at)}</strong>
+                                    <span>{formatRelativeTime(data.generated_at, now)}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -108,12 +121,18 @@ export default function Dashboard() {
                 </section>
 
                 <section className="dashboard-bottom" aria-label="Distribution summaries">
-                    <Panel title="Domain distribution">
-                        <DistributionList items={domains} label="mentions" />
+                    <Panel
+                        title={<span className="dashboard-distribution-title"><FiGlobe aria-hidden="true" /> Domain distribution</span>}
+                        description="Coverage across contributing sources"
+                    >
+                        <DistributionList items={domains} label="mentions" tone="domain" />
                     </Panel>
 
-                    <Panel title="Category distribution">
-                        <DistributionList items={categories} label="mentions" />
+                    <Panel
+                        title={<span className="dashboard-distribution-title"><FiTag aria-hidden="true" /> Category distribution</span>}
+                        description="Topics represented in this snapshot"
+                    >
+                        <DistributionList items={categories} label="mentions" tone="category" />
                     </Panel>
                 </section>
             </div>

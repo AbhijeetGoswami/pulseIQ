@@ -4,7 +4,9 @@
 
     min-height: 100vh;
 
-    padding: 32px;
+    margin: calc(-1 * var(--content-padding-top)) calc(-1 * var(--content-padding-right)) calc(-1 * var(--content-padding-bottom)) calc(-1 * var(--content-padding-left));
+
+    padding: var(--content-padding-top) var(--content-padding-right) var(--content-padding-bottom) var(--content-padding-left);
 
     box-sizing: border-box;
 
@@ -14,9 +16,23 @@
 
     width: 100%;
 
-    max-width: 1500px;
+    max-width: none;
 
-    margin: 0 auto;
+    margin: 0;
+
+    position: relative;
+
+    padding-top: 48px;
+
+}
+
+.dashboard-top-controls {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
 
 }
 
@@ -273,6 +289,24 @@
 }
 
 @media (max-width: 768px) {
+
+    .dashboard-content {
+
+        padding-top: 0;
+
+    }
+
+    .dashboard-top-controls {
+
+        position: static;
+
+        display: flex;
+
+        justify-content: flex-end;
+
+        margin-bottom: 14px;
+
+    }
 
     .dashboard {
 
@@ -531,5 +565,285 @@
     border-color: #334155;
 
     background: #1e293b;
+
+}
+
+/* Live status card */
+.dashboard-status {
+
+    min-width: 270px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #dfe8f3;
+
+    border-radius: 13px;
+
+    box-shadow: 0 6px 18px rgba(15, 23, 42, .06);
+
+}
+
+.dashboard-status-top {
+
+    padding-bottom: 9px;
+
+    border-bottom: 1px solid #edf1f5;
+
+    color: #15803d;
+
+    font-size: 12px;
+
+    letter-spacing: .03em;
+
+    text-transform: uppercase;
+
+}
+
+.status-dot {
+
+    position: relative;
+
+    width: 8px;
+
+    height: 8px;
+
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, .14);
+
+}
+
+.dashboard-status-time {
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding-top: 9px;
+
+}
+
+.dashboard-status-time > svg {
+
+    width: 17px;
+
+    height: 17px;
+
+    color: #64748b;
+
+}
+
+.dashboard-status-time > div {
+
+    display: grid;
+
+    gap: 1px;
+
+}
+
+.dashboard-status-time strong {
+
+    color: #1e293b;
+
+    font-size: 13px;
+
+}
+
+.dashboard-status-time span {
+
+    color: #2563eb;
+
+}
+
+.dashboard--midnight .dashboard-status-top {
+
+    border-color: #263650;
+
+}
+
+.dashboard--midnight .dashboard-status-time > svg {
+
+    color: #94a3b8;
+
+}
+
+/* Distribution panels */
+.dashboard-distribution-title {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+.dashboard-distribution-title svg {
+
+    color: #2563eb;
+
+}
+
+.dashboard-distribution {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+}
+
+.dashboard-distribution-row {
+
+    display: grid;
+
+    grid-template-columns: 26px minmax(0, 1fr);
+
+    column-gap: 10px;
+
+    padding: 10px;
+
+    border: 1px solid #edf1f5;
+
+    border-radius: 10px;
+
+    background: #fafcff;
+
+}
+
+.dashboard-distribution-rank {
+
+    grid-row: span 2;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    line-height: 1.8;
+
+}
+
+.dashboard-distribution-copy {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    min-width: 0;
+
+}
+
+.dashboard-distribution-copy strong {
+
+    display: block;
+
+    overflow: hidden;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+.dashboard-distribution-copy small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+}
+
+.dashboard-distribution-percent {
+
+    color: #2563eb;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+.dashboard-distribution-bar {
+
+    height: 5px;
+
+    overflow: hidden;
+
+    margin-top: 8px;
+
+    border-radius: 999px;
+
+    background: #e7eef9;
+
+}
+
+.dashboard-distribution-bar span {
+
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    transition: width .35s ease;
+
+}
+
+.dashboard-distribution--domain .dashboard-distribution-bar span {
+
+    background: linear-gradient(90deg, #60a5fa, #2563eb);
+
+}
+
+.dashboard-distribution--category .dashboard-distribution-bar span {
+
+    background: linear-gradient(90deg, #a78bfa, #7c3aed);
+
+}
+
+.dashboard-distribution-empty {
+
+    margin: 14px 0;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    text-align: center;
+
+}
+
+.dashboard--midnight .dashboard-distribution-row {
+
+    border-color: #263650;
+
+    background: #142138;
+
+}
+
+.dashboard--midnight .dashboard-distribution-copy strong {
+
+    color: #e2e8f0;
+
+}
+
+.dashboard--midnight .dashboard-distribution-bar {
+
+    background: #263650;
 
 }
