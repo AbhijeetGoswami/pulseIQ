@@ -164,4 +164,5 @@ are complete.
 The platform now performs automatic collection, intelligence processing,
 attention/trend snapshot generation, and dashboard auto-refresh.
 
-The next focus is **Observability**.
+1) The next focus is **Observability**.
+2) To add a login Page with 2FA (OTP & Google Sign-In)
