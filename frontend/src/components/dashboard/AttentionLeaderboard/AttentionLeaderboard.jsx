@@ -9,7 +9,7 @@ export default function AttentionLeaderboard({ entities = [] }) {
     const navigate = useNavigate();
     const leaderboard = [...entities]
         .sort((a, b) => Number(b.attention_score || 0) - Number(a.attention_score || 0))
-        .slice(0, 10);
+        .slice(0, 5);
 
     const handleEntityClick = (entity) => {
         const normalized = normalizeEntity(entity);

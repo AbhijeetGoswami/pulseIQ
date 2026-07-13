@@ -16,12 +16,12 @@ export default function TrendLeaderboard({ trends = [] }) {
     return (
         <Panel title={<span className="trend-title"><FiTrendingUp aria-hidden="true" /> Trending now</span>}>
             <div className="trend-intro">
-                <span>Topics whose attention signal has changed</span>
+                <span>Topics currently trending</span>
                 <span>Movement</span>
             </div>
 
             <div className="trend-list">
-                {trends.length ? trends.slice(0, 10).map((trend, index) => {
+                {trends.length ? trends.slice(0, 5).map((trend, index) => {
                     const state = trend.trend?.toLowerCase() || "stable";
                     const label = trendLabels[state] || state;
 
@@ -35,9 +35,9 @@ export default function TrendLeaderboard({ trends = [] }) {
                             <span className={`trend-badge trend-badge--${state}`}>{label}</span>
                             <span className="trend-entity">
                                 <strong>{trend.value}</strong>
-                                <small>Attention signal</small>
+                                {/* <small>Attention signal</small> */}
                             </span>
-                            <span className="trend-movement">{label}</span>
+                            {/* <span className="trend-movement">{label}</span> */}
                             <FiArrowUpRight className="trend-arrow" aria-hidden="true" />
                         </Link>
                     );
