@@ -1,0 +1,279 @@
+/* =========================================================
+   PulseIQ / AttenBase Authentication
+========================================================= */
+
+.login-page {
+
+    min-height: 100vh;
+
+    background: #f5f7fb;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+
+}
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 460px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 42px;
+
+    box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+
+    border: 1px solid #e5e7eb;
+
+}
+
+.login-logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+}
+
+.login-logo img {
+
+    width: 110px;
+
+    height: 110px;
+
+    object-fit: contain;
+
+}
+
+.login-title {
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+}
+
+.login-subtitle {
+
+    margin-top: 8px;
+
+    margin-bottom: 34px;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 15px;
+
+}
+
+.login-form label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+
+    color: #374151;
+
+}
+
+.login-form .form-control {
+
+    height: 48px;
+
+    border-radius: 10px;
+
+    border: 1px solid #d1d5db;
+
+    transition: all .2s ease;
+
+}
+
+.login-form .form-control:focus {
+
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 .15rem rgba(37,99,235,.15);
+
+}
+
+.login-btn {
+
+    height: 48px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    font-size: 15px;
+
+    margin-top: 12px;
+
+}
+
+.login-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    margin: 28px 0;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+}
+
+.login-divider::before,
+
+.login-divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e5e7eb;
+
+}
+
+.login-divider span {
+
+    padding: 0 14px;
+
+}
+
+.google-btn {
+
+    height: 48px;
+
+    border-radius: 10px;
+
+    border: 1px solid #dbe4f0;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-weight: 600;
+
+    cursor: not-allowed;
+
+    transition: .2s;
+
+}
+
+.google-btn:hover {
+
+    border-color: #94a3b8;
+
+}
+
+.login-footer {
+
+    margin-top: 30px;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+}
+
+/* OTP */
+
+.otp-input {
+
+    text-align: center;
+
+    font-size: 26px;
+
+    letter-spacing: 12px;
+
+    font-weight: 700;
+
+    height: 58px;
+
+}
+
+.otp-info {
+
+    text-align: center;
+
+    color: #64748b;
+
+    margin-bottom: 24px;
+
+}
+
+.otp-email {
+
+    color: #2563eb;
+
+    font-weight: 700;
+
+}
+
+.resend-link {
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+@media (max-width: 768px) {
+
+    .login-page {
+
+        padding: 20px;
+
+    }
+
+    .login-card {
+
+        padding: 28px;
+
+    }
+
+    .login-title {
+
+        font-size: 28px;
+
+    }
+
+}

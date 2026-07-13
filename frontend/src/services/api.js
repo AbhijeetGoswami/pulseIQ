@@ -1,83 +1,71 @@
 import axios from "axios";
-import { API_BASE_URL } from "./constants.js";
+import { API_BASE_URL } from "./constants";
 
 const api = axios.create({
+
     baseURL: API_BASE_URL,
+
+    headers: {
+
+        "Content-Type": "application/json"
+
+    }
+
 });
 
 
-// ======================================================
-// Intelligence APIs
-// ======================================================
+/*
+|--------------------------------------------------------------------------
+| Request Interceptor
+|--------------------------------------------------------------------------
+*/
 
-export const analyzeArticle = async (title) => {
-    const response = await api.post("/intelligence/analyze", {
-        title,
-    });
+api.interceptors.request.use(
 
-    return response.data;
-};
+    (config) => {
 
+        const token = localStorage.getItem("access_token");
 
-// ======================================================
-// Attention APIs
-// ======================================================
+        if (token) {
 
-export const analyzeAttention = async (title) => {
-    const response = await api.post("/attention/analyze", {
-        title,
-    });
+            config.headers.Authorization =
+                `Bearer ${token}`;
 
-    return response.data;
-};
+        }
 
-export const analyzeAttentionBatch = async (titles) => {
-    const response = await api.post("/attention/analyze/batch", {
-        titles,
-    });
+        return config;
 
-    return response.data;
-};
+    },
 
-export const getLatestAttention = async () => {
-    const response = await api.get("/attention/latest");
+    (error) => Promise.reject(error)
 
-    return response.data;
-};
+);
 
 
-// ======================================================
-// Trend APIs
-// ======================================================
+/*
+|--------------------------------------------------------------------------
+| Response Interceptor
+|--------------------------------------------------------------------------
+*/
 
-export const analyzeTrends = async (
-    previous_titles,
-    current_titles
-) => {
-    const response = await api.post("/trends/analyze", {
-        previous_titles,
-        current_titles,
-    });
+api.interceptors.response.use(
 
-    return response.data;
-};
+    (response) => response,
 
-export const getLatestTrends = async () => {
-    const response = await api.get("/trends/latest");
+    (error) => {
 
-    return response.data;
-};
+        if (error.response?.status === 401) {
 
+            localStorage.removeItem("access_token");
 
-// ======================================================
-// Collector APIs
-// ======================================================
+            window.location.href = "/login";
 
-export const collectNews = async () => {
-    const response = await api.post("/collect");
+        }
 
-    return response.data;
-};
+        return Promise.reject(error);
 
+    }
+
+);
 
 export default api;

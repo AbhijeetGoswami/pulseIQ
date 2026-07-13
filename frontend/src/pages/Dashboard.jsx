@@ -13,6 +13,8 @@ import { formatDateTime, formatRelativeTime } from "../utils/time";
 
 import "./Dashboard.css";
 
+import { useTheme } from "../context/ThemeContext";
+
 function DistributionList({ items, label, tone }) {
     const totalMentions = items.reduce((total, item) => total + Number(item.mentions || 0), 0);
 
@@ -46,7 +48,18 @@ export default function Dashboard() {
     const { data, loading, error } = useAttention();
     const { data: trendData, loading: trendsLoading, error: trendsError } = useTrends();
     const [now, setNow] = useState(() => Date.now());
-    const [theme, setTheme] = useState("current");
+
+    const {
+
+        theme,
+
+        toggleTheme,
+
+        isLight,
+
+        isMidnight
+
+    } = useTheme();
 
     useEffect(() => {
         const timer = setInterval(() => setNow(Date.now()), 1000);
@@ -67,7 +80,8 @@ export default function Dashboard() {
                     <button
                         type="button"
                         className="theme-toggle"
-                        onClick={() => setTheme((activeTheme) => activeTheme === "current" ? "midnight" : "current")}
+                        // onClick={() => setTheme((activeTheme) => activeTheme === "current" ? "midnight" : "current")}
+                        onClick={toggleTheme}
                         aria-pressed={theme === "midnight"}
                         aria-label={`Switch to ${theme === "current" ? "Midnight" : "Current"} theme`}
                     >
