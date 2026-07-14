@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FiClock, FiGlobe, FiMoon, FiSun, FiTag } from "react-icons/fi";
+import { FiClock, FiGlobe, FiSun, FiTag } from "react-icons/fi";
 
 import Loader from "../components/Loader/Loader";
 import ErrorCard from "../components/ErrorCard/ErrorCard";
@@ -53,11 +53,7 @@ export default function Dashboard() {
 
         theme,
 
-        toggleTheme,
-
-        isLight,
-
-        isMidnight
+        toggleTheme
 
     } = useTheme();
 
@@ -80,13 +76,12 @@ export default function Dashboard() {
                     <button
                         type="button"
                         className="theme-toggle"
-                        // onClick={() => setTheme((activeTheme) => activeTheme === "current" ? "midnight" : "current")}
                         onClick={toggleTheme}
                         aria-pressed={theme === "midnight"}
-                        aria-label={`Switch to ${theme === "current" ? "Midnight" : "Current"} theme`}
+                        aria-label={`Switch to ${theme === "midnight" ? "white" : "soft white"} theme`}
                     >
-                        {theme === "midnight" ? <FiMoon aria-hidden="true" /> : <FiSun aria-hidden="true" />}
-                        <span>{theme === "midnight" ? "Midnight" : "Current"}</span>
+                        <FiSun aria-hidden="true" />
+                        <span>{theme === "midnight" ? "Soft white" : "White"}</span>
                     </button>
                 </div>
 

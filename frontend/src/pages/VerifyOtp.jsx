@@ -1,189 +1,71 @@
 import { useState } from "react";
-
-import {
-    useLocation,
-    useNavigate,
-    Navigate
-} from "react-router-dom";
-
-import { verifyOtp } from "../services/authApi";
+import { FiArrowLeft } from "react-icons/fi";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../context/AuthContext";
-
+import { verifyOtp } from "../services/authApi";
 import "./Login.css";
 
 export default function VerifyOtp() {
-
     const navigate = useNavigate();
-
     const location = useLocation();
-
     const { login } = useAuth();
-
     const email = location.state?.email;
-
     const [otp, setOtp] = useState("");
-
     const [loading, setLoading] = useState(false);
-
     const [error, setError] = useState("");
 
-    // Prevent direct navigation
-    if (!email) {
-        return <Navigate to="/login" replace />;
-    }
+    if (!email) return <Navigate to="/login" replace />;
 
-    async function handleSubmit(e) {
-
-        e.preventDefault();
-
+    async function handleSubmit(event) {
+        event.preventDefault();
         setLoading(true);
-
         setError("");
-
         try {
-
-            const response = await verifyOtp(
-                email,
-                otp
-            );
-
-            login(
-                response.access_token,
-                response.user
-            );
-
+            const response = await verifyOtp(email, otp);
+            login(response.access_token, response.user);
             navigate("/");
-
         } catch (err) {
-
-            setError(
-                err.response?.data?.detail ||
-                "Invalid verification code."
-            );
-
+            setError(err.response?.data?.detail || "Invalid verification code.");
         } finally {
-
             setLoading(false);
-
         }
-
     }
 
     return (
-
-        <div className="login-page">
-
-            <div className="login-card">
-
-                <div className="login-logo">
-
-                    <img
-                        src="/logo.png"
-                        alt="AttenBase Logo"
-                    />
-
-                </div>
-
-                <h2 className="login-title">
-
-                    Verify OTP
-
-                </h2>
-
-                <p className="otp-info">
-
-                    Enter the verification code sent to
-
-                    <br />
-
-                    <span className="otp-email">
-                        {email}
-                    </span>
-
-                </p>
-
-                <form
-                    className="login-form"
-                    onSubmit={handleSubmit}
-                >
-
-                    <div className="mb-3">
-
-                        <input
-
-                            type="text"
-
-                            className="form-control otp-input"
-
-                            placeholder="------"
-
-                            value={otp}
-
-                            maxLength={6}
-
-                            onChange={(e) => setOtp(e.target.value)}
-
-                            required
-
-                        />
-
+        <main className="login-page">
+            <section className="login-card" aria-label="Verify your sign in">
+                <aside className="login-brand">
+                    <div className="login-brand-mark"><span className="login-mark-icon"><img src="/logo.png" alt="" /></span><span>AttenBase</span></div>
+                    <div className="login-brand-copy">
+                        <span className="eyebrow">Secure verification</span>
+                        <h2>Your workspace is almost ready.</h2>
+                        <p>One quick confirmation helps keep your organization’s intelligence secure.</p>
                     </div>
+                    <span className="login-brand-footer">Protected with two-step verification</span>
+                </aside>
 
-                    {
-                        error && (
+                <div className="login-content">
+                    <div className="login-logo"><span className="login-mark-icon"><img src="/logo.png" alt="AttenBase" /></span></div>
+                    <h1 className="login-title">Check your email</h1>
+                    <p className="otp-info">We sent a 6-digit verification code to<br /><span className="otp-email">{email}</span></p>
 
-                            <div className="alert alert-danger">
+                    <form className="login-form" onSubmit={handleSubmit}>
+                        <div className="mb-3">
+                            <label htmlFor="otp">Verification code</label>
+                            <input id="otp" type="text" inputMode="numeric" autoComplete="one-time-code" className="form-control otp-input" placeholder="000000" value={otp} maxLength={6} onChange={(event) => setOtp(event.target.value.replace(/\D/g, ""))} required />
+                        </div>
 
-                                {error}
+                        {error && <div className="alert login-alert" role="alert">{error}</div>}
 
-                            </div>
+                        <button type="submit" className="btn w-100 login-btn" disabled={loading}>{loading ? "Verifying…" : "Verify and continue"}</button>
+                    </form>
 
-                        )
-                    }
-
-                    <button
-
-                        type="submit"
-
-                        className="btn btn-success w-100 login-btn"
-
-                        disabled={loading}
-
-                    >
-
-                        {
-
-                            loading
-
-                                ? "Verifying..."
-
-                                : "Verify OTP"
-
-                        }
-
-                    </button>
-
-                </form>
-
-                <a
-                    href="#"
-                    className="resend-link"
-                    onClick={(e) => e.preventDefault()}
-                >
-                    Resend OTP
-                </a>
-
-                <div className="login-footer">
-
-                    © {new Date().getFullYear()} AttenBase
-
+                    <div className="resend-row"><a href="#resend" className="resend-link" onClick={(event) => event.preventDefault()}>Didn’t receive a code? Resend OTP</a></div>
+                    <Link to="/login" className="back-link"><FiArrowLeft /> Back to sign in</Link>
+                    <div className="login-footer">© {new Date().getFullYear()} AttenBase</div>
                 </div>
-
-            </div>
-
-        </div>
-
+            </section>
+        </main>
     );
-
 }

@@ -18,27 +18,49 @@ body.light-theme {
 
     --border-color: #e5e7eb;
 
+    --surface: #ffffff;
+    --surface-muted: #f8fafc;
+    --surface-hover: #f8fafc;
+    --surface-input: #fbfdff;
+    --border-soft: #e9eef5;
+    --text-heading: #0f172a;
+    --text-body: #475569;
+    --text-muted: #64748b;
+    --text-subtle: #94a3b8;
+    --shadow-color: rgba(15, 23, 42, .06);
+
 }
 
 /*
 |--------------------------------------------------------------------------
-| Midnight Theme
+| Soft White Theme
 |--------------------------------------------------------------------------
 */
 
 body.midnight-theme {
 
-    --bg-primary: #020617;
+    --bg-primary: #f1f4f7;
 
-    --bg-card: #0f172a;
+    --bg-card: #ffffff;
 
-    --bg-sidebar: #07101d;
+    --bg-sidebar: #ffffff;
 
-    --text-primary: #f8fafc;
+    --text-primary: #1e293b;
 
-    --text-secondary: #94a3b8;
+    --text-secondary: #64748b;
 
-    --border-color: #1e293b;
+    --border-color: #d8e0e8;
+
+    --surface: #ffffff;
+    --surface-muted: #f7f9fb;
+    --surface-hover: #eef3f7;
+    --surface-input: #ffffff;
+    --border-soft: #dce5ed;
+    --text-heading: #1e293b;
+    --text-body: #475569;
+    --text-muted: #64748b;
+    --text-subtle: #7c8b9d;
+    --shadow-color: rgba(30, 41, 59, .08);
 
 }
 
@@ -61,3 +83,31 @@ body {
         color .25s ease;
 
 }
+
+/* Shared Bootstrap components used by the authenticated workspace. */
+body.midnight-theme .modal-content,
+body.midnight-theme .modal-header,
+body.midnight-theme .modal-footer {
+    background: var(--surface);
+    border-color: var(--border-soft);
+    color: var(--text-body);
+}
+
+body.midnight-theme .modal-header h1,
+body.midnight-theme .modal-header h2,
+body.midnight-theme .modal-header h3,
+body.midnight-theme .modal-header h4,
+body.midnight-theme .modal-header h5,
+body.midnight-theme .modal-body h1,
+body.midnight-theme .modal-body h2,
+body.midnight-theme .modal-body h3,
+body.midnight-theme .modal-body h4,
+body.midnight-theme .modal-body h5 {
+    color: var(--text-heading);
+}
+
+body.midnight-theme .btn-close { filter: none; }
+body.midnight-theme .alert-light { background: var(--surface-muted); border-color: var(--border-soft); color: var(--text-body); }
+body.midnight-theme .pagination .page-link { background: var(--surface); border-color: var(--border-soft); color: #2563eb; }
+body.midnight-theme .pagination .page-item.active .page-link { background: #2563eb; border-color: #2563eb; color: #fff; }
+body.midnight-theme .pagination .page-item.disabled .page-link { background: var(--surface-muted); color: var(--text-subtle); }

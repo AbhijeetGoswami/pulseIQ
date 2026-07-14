@@ -482,12 +482,12 @@
 
 }
 
-/* Dashboard-only Midnight theme */
+/* Dashboard-only soft white theme */
 .dashboard--midnight {
 
-    background: #0b1120;
+    background: #f1f4f7;
 
-    color: #e2e8f0;
+    color: #475569;
 
 }
 
@@ -500,7 +500,7 @@
 .dashboard--midnight .attention-entity strong,
 .dashboard--midnight .trend-entity strong {
 
-    color: #f8fafc;
+    color: #1e293b;
 
 }
 
@@ -512,7 +512,7 @@
 .dashboard--midnight .trend-entity small,
 .dashboard--midnight .trend-movement {
 
-    color: #94a3b8;
+    color: #64748b;
 
 }
 
@@ -521,11 +521,11 @@
 .dashboard--midnight .dashboard-status,
 .dashboard--midnight .theme-toggle {
 
-    background: #111c31;
+    background: #ffffff;
 
-    border-color: #263650;
+    border-color: #dce5ed;
 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+    box-shadow: 0 6px 18px rgba(30, 41, 59, .08);
 
 }
 
@@ -533,28 +533,28 @@
 .dashboard--midnight .attention-row,
 .dashboard--midnight .trend-row {
 
-    border-color: #263650;
+    border-color: #dce5ed;
 
 }
 
 .dashboard--midnight .attention-row:hover,
 .dashboard--midnight .trend-row:hover {
 
-    background: #18263e;
+    background: #eef3f7;
 
 }
 
 .dashboard--midnight .theme-toggle {
 
-    color: #cbd5e1;
+    color: #475569;
 
 }
 
 .dashboard--midnight .theme-toggle:hover {
 
-    border-color: #64748b;
+    border-color: #94a3b8;
 
-    color: #ffffff;
+    color: #1e293b;
 
 }
 
@@ -562,9 +562,9 @@
 .dashboard--midnight .mini-bar,
 .dashboard--midnight .attention-meter {
 
-    border-color: #334155;
+    border-color: #dce5ed;
 
-    background: #1e293b;
+    background: #e7edf3;
 
 }
 
@@ -659,13 +659,13 @@
 
 .dashboard--midnight .dashboard-status-top {
 
-    border-color: #263650;
+    border-color: #dce5ed;
 
 }
 
 .dashboard--midnight .dashboard-status-time > svg {
 
-    color: #94a3b8;
+    color: #64748b;
 
 }
 
@@ -830,20 +830,20 @@
 
 .dashboard--midnight .dashboard-distribution-row {
 
-    border-color: #263650;
+    border-color: #dce5ed;
 
-    background: #142138;
+    background: #f7f9fb;
 
 }
 
 .dashboard--midnight .dashboard-distribution-copy strong {
 
-    color: #e2e8f0;
+    color: #1e293b;
 
 }
 
 .dashboard--midnight .dashboard-distribution-bar {
 
-    background: #263650;
+    background: #e7edf3;
 
 }

@@ -4,7 +4,8 @@
     grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
     min-height: 100vh;
     min-height: 100dvh;
-    background: #f5f7fb;
+    background: var(--bg-primary);
+    transition: background .25s ease;
 }
 
 .main-content {
@@ -18,7 +19,8 @@
     padding: var(--content-padding-top) var(--content-padding-right) var(--content-padding-bottom) var(--content-padding-left);
     background:
         radial-gradient(circle at 96% 2%, rgba(37, 99, 235, .06), transparent 26rem),
-        linear-gradient(180deg, #f8fafc 0%, #f5f7fb 38%, #f5f7fb 100%);
+        linear-gradient(180deg, var(--surface-muted) 0%, var(--bg-primary) 38%, var(--bg-primary) 100%);
+    transition: background .25s ease;
 }
 
 .main-content-inner {

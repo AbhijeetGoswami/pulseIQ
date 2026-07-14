@@ -131,7 +131,7 @@ export default function Sidebar() {
 
                     <img
                         src="/logo.png"
-                        alt="AttenBase"
+                        alt=""
                         className="sidebar-logo"
                     />
 
