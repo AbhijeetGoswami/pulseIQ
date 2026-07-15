@@ -1,0 +1,309 @@
+/* ==========================================================
+   EntityCard.css
+   ========================================================== */
+
+.entity-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 12px;
+    margin: 6px 0;
+
+    border: 1px solid #edf0f5;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.entity-card:hover {
+    background: #f8fbff;
+    border-color: #cfe0fb;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+/* ==========================================================
+   Header
+   ========================================================== */
+
+.entity-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.entity-card-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.entity-card-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    min-width: 92px;
+}
+
+/* ==========================================================
+   Metadata
+   ========================================================== */
+
+.entity-card .attention-entity {
+    min-width: 0;
+}
+
+.entity-card .attention-entity strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: #1e293b;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.entity-card .attention-entity small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+.entity-card .attention-supporting-metric {
+    margin-top: 5px;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+/* ==========================================================
+   Rank
+   ========================================================== */
+
+.entity-card .attention-rank {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 8px;
+
+    border: 1px solid #dce6f3;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    flex-shrink: 0;
+}
+
+.entity-card .attention-rank--1 {
+    background: #fffbeb;
+    border-color: #fde68a;
+    color: #b45309;
+}
+
+.entity-card .attention-rank--2 {
+    background: #f8fafc;
+    border-color: #dbe4ee;
+    color: #475569;
+}
+
+.entity-card .attention-rank--3 {
+    background: #fff7ed;
+    border-color: #fed7aa;
+    color: #c2410c;
+}
+
+/* ==========================================================
+   Score
+   ========================================================== */
+
+.entity-card .attention-score-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 4px;
+}
+
+.entity-card .attention-score-label {
+    color: #94a3b8;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .05em;
+}
+
+.entity-card .attention-score-value {
+    color: #1e3a8a;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+.entity-card .attention-score-value small {
+    margin-left: 2px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+.entity-card .attention-meter {
+    width: 84px;
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #e8eef8;
+}
+
+.entity-card .attention-meter span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        #60a5fa,
+        #2563eb
+    );
+}
+
+/* ==========================================================
+   Trend
+   ========================================================== */
+
+.entity-card .attention-trend {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 4px 8px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.entity-card .attention-trend svg {
+    width: 12px;
+    height: 12px;
+}
+
+.entity-card .attention-trend--rising {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.entity-card .attention-trend--stable {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.entity-card .attention-trend--falling {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* ==========================================================
+   Expandable Section
+   ========================================================== */
+
+.entity-card .expandable-section {
+    margin-top: 4px;
+
+    border-top: 1px dashed #e2e8f0;
+
+    padding-top: 10px;
+}
+
+/* ==========================================================
+   Details
+   ========================================================== */
+
+.entity-card .attention-reason {
+    margin-bottom: 14px;
+}
+
+.entity-card .attention-stats {
+    margin-bottom: 14px;
+}
+
+.entity-card .attention-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .entity-card-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .entity-card-side {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .entity-card .attention-score-card {
+        align-items: flex-start;
+    }
+
+    .entity-card .attention-meter {
+        width: 100%;
+    }
+
+}

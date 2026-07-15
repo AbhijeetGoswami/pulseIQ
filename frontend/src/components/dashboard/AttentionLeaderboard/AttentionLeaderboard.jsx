@@ -17,7 +17,7 @@ export default function AttentionLeaderboard({ entities = [] }) {
     };
 
     return (
-        <Panel title={<span className="attention-title"><FiZap aria-hidden="true" /> Top attention</span>}>
+        <Panel title={<span className="attention-title"><FiZap aria-hidden="true" /> Top attentions</span>}>
             <div className="attention-intro">
                 <span>Entities drawing the most attention right now</span>
                 <span>Score</span>

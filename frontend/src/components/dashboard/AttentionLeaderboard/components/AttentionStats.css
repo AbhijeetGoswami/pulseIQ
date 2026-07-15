@@ -1,0 +1,23 @@
+.attention-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.stats-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stats-item strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.stats-muted {
+    color: var(--text-tertiary);
+}

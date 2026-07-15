@@ -1,0 +1,71 @@
+.expandable-section {
+    margin-top: 12px;
+}
+
+.expandable-header {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 0;
+
+    color: var(--text-primary);
+
+    font-weight: 600;
+
+    font-size: 13px;
+}
+
+.expandable-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.expandable-icon {
+
+    transition: transform 0.25s ease;
+
+    color: var(--text-secondary);
+}
+
+.expandable-icon.expanded {
+    transform: rotate(180deg);
+}
+
+.expandable-content {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition:
+
+        max-height 0.3s ease,
+
+        opacity 0.25s ease;
+
+    opacity: 0;
+
+    margin-top: 0;
+}
+
+.expandable-content.expanded {
+
+    max-height: 500px;
+
+    opacity: 1;
+
+    margin-top: 12px;
+}

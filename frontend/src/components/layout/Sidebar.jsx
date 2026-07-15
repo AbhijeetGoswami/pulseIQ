@@ -20,9 +20,9 @@ import "./Sidebar.css";
 
 const menu = [
     { title: "Dashboard", icon: FiHome, path: "/" },
-    { title: "Attention", icon: FiActivity, path: "/attention" },
+    { title: "Attentions", icon: FiActivity, path: "/attention" },
     { title: "Trends", icon: FiTrendingUp, path: "/trends" },
-    { title: "Explorer", icon: FiCompass, path: "/entities" },
+    { title: "Entity Explorer", icon: FiCompass, path: "/entities" },
     { title: "Pipeline", icon: FiBarChart2, path: "/pipeline" },
     { title: "Settings", icon: FiSettings, path: "/settings" }
 ];
