@@ -1,12 +1,12 @@
 .wrapper { overflow-x: auto; }
 .table { width: 100%; min-width: 720px; border-collapse: collapse; background: var(--surface); }
-.table th { padding: 13px 22px; border-bottom: 1px solid var(--border-soft); background: var(--surface-muted); color: var(--text-muted); font-size: 11px; font-weight: 800; letter-spacing: .05em; text-align: left; text-transform: uppercase; }
-.table td { padding: 15px 22px; border-bottom: 1px solid var(--border-soft); color: var(--text-muted); font-size: 13px; vertical-align: middle; }
+.table th { padding: 10px 16px; border-bottom: 1px solid var(--border-soft); background: var(--surface-muted); color: var(--text-muted); font-size: 10px; font-weight: 800; letter-spacing: .05em; text-align: left; text-transform: uppercase; }
+.table td { padding: 11px 16px; border-bottom: 1px solid var(--border-soft); color: var(--text-muted); font-size: 12px; vertical-align: middle; }
 .table tr:last-child td { border-bottom: 0; }
 .table tbody tr { transition: background .18s ease; }
 .table tbody tr:hover { background: var(--surface-hover); }
 .titleCell { min-width: 330px; }
-.titleCell a { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; color: #60a5fa; font-size: 14px; font-weight: 700; text-decoration: none; }
+.titleCell a { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; color: #60a5fa; font-size: 13px; font-weight: 700; text-decoration: none; }
 .titleCell a span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .titleCell a svg { flex-shrink: 0; color: #94a3b8; transition: color .18s ease, transform .18s ease; }
 .titleCell a:hover svg { color: #2563eb; transform: translate(1px, -1px); }

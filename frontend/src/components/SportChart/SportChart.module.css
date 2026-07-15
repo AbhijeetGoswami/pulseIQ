@@ -1,10 +1,10 @@
 .card {
     background: var(--surface);
-    padding: 20px;
+    padding: 14px;
     border-radius: 12px;
     box-shadow: 0 2px 10px var(--shadow-color);
 }
 
 .title {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }

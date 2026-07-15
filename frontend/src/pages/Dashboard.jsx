@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { FiClock, FiGlobe, FiSun, FiTag } from "react-icons/fi";
+import { FiGlobe, FiTag } from "react-icons/fi";
 
 import Loader from "../components/Loader/Loader";
 import ErrorCard from "../components/ErrorCard/ErrorCard";
@@ -9,11 +8,7 @@ import AttentionLeaderboard from "../components/dashboard/AttentionLeaderboard/A
 import TrendLeaderboard from "../components/dashboard/TrendLeaderboard/TrendLeaderboard";
 import useAttention from "../hooks/useAttention";
 import useTrends from "../hooks/useTrends";
-import { formatDateTime, formatRelativeTime } from "../utils/time";
-
 import "./Dashboard.css";
-
-import { useTheme } from "../context/ThemeContext";
 
 function DistributionList({ items, label, tone }) {
     const totalMentions = items.reduce((total, item) => total + Number(item.mentions || 0), 0);
@@ -47,77 +42,19 @@ function DistributionList({ items, label, tone }) {
 export default function Dashboard() {
     const { data, loading, error } = useAttention();
     const { data: trendData, loading: trendsLoading, error: trendsError } = useTrends();
-    const [now, setNow] = useState(() => Date.now());
-
-    const {
-
-        theme,
-
-        toggleTheme
-
-    } = useTheme();
-
-    useEffect(() => {
-        const timer = setInterval(() => setNow(Date.now()), 1000);
-        return () => clearInterval(timer);
-    }, []);
-
     if (loading || trendsLoading) return <Loader />;
     if (error || trendsError || !data?.attention) return <ErrorCard />;
 
     const attention = data.attention;
     const domains = attention.domains || [];
     const categories = attention.categories || [];
+    const topCategories = [...categories]
+        .sort((a, b) => Number(b.mentions || 0) - Number(a.mentions || 0))
+        .slice(0, 5);
 
     return (
-        <div className={`dashboard dashboard--${theme}`}>
+        <div className="dashboard">
             <div className="dashboard-content">
-                <div className="dashboard-top-controls">
-                    <button
-                        type="button"
-                        className="theme-toggle"
-                        onClick={toggleTheme}
-                        aria-pressed={theme === "midnight"}
-                        aria-label={`Switch to ${theme === "midnight" ? "white" : "soft white"} theme`}
-                    >
-                        <FiSun aria-hidden="true" />
-                        <span>{theme === "midnight" ? "Soft white" : "White"}</span>
-                    </button>
-                </div>
-
-                <header className="dashboard-header">
-                    <div className="dashboard-brand">
-                        <img
-                            className="dashboard-brand-logo"
-                            src="/logo.png"
-                            alt="AttenBase_Logo"
-                        />
-
-                        <div>
-                            <h1>AttenBase Dashboard</h1>
-                            <p>Your window to attention intelligence snapshots in realtime</p>
-                        </div>
-                    </div>
-
-                    <div className="dashboard-header-actions">
-                        <div className="dashboard-status">
-                            <div className="dashboard-status-top">
-                                <span className="status-dot" aria-hidden="true" />
-                                <span>Live intelligence</span>
-                            </div>
-
-                            <div className="dashboard-status-time">
-                                <FiClock aria-hidden="true" />
-                                <div>
-                                    <small>Last updated</small>
-                                    <strong>{formatDateTime(data.generated_at)}</strong>
-                                    <span>{formatRelativeTime(data.generated_at, now)}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-
                 <SummaryCards
                     summary={attention.summary}
                     domains={domains}
@@ -141,7 +78,7 @@ export default function Dashboard() {
                         title={<span className="dashboard-distribution-title"><FiTag aria-hidden="true" /> Category distribution</span>}
                         description="Topics represented in this snapshot"
                     >
-                        <DistributionList items={categories} label="mentions" tone="category" />
+                        <DistributionList items={topCategories} label="mentions" tone="category" />
                     </Panel>
                 </section>
             </div>

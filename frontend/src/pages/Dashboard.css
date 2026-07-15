@@ -6,7 +6,7 @@
 
     margin: calc(-1 * var(--content-padding-top)) calc(-1 * var(--content-padding-right)) calc(-1 * var(--content-padding-bottom)) calc(-1 * var(--content-padding-left));
 
-    padding: var(--content-padding-top) var(--content-padding-right) var(--content-padding-bottom) var(--content-padding-left);
+    padding: clamp(16px, 1.5vw, 24px) var(--content-padding-right) var(--content-padding-bottom) var(--content-padding-left);
 
     box-sizing: border-box;
 
@@ -22,7 +22,7 @@
 
     position: relative;
 
-    padding-top: 48px;
+    padding-top: 0;
 
 }
 
@@ -44,7 +44,7 @@
 
     align-items: center;
 
-    margin-bottom: 28px;
+    margin-bottom: 18px;
 
 }
 
@@ -126,9 +126,9 @@
 
 .dashboard-brand-logo {
 
-    width: 142px;
+    width: 112px;
 
-    height: 142px;
+    height: 112px;
 
     object-fit: contain;
 
@@ -138,7 +138,7 @@
 
     margin: 0;
 
-    font-size: 36px;
+    font-size: 30px;
 
     font-weight: 700;
 
@@ -192,11 +192,11 @@
 
     display: grid;
 
-    grid-template-columns: 2.2fr 1fr;
+    grid-template-columns: 1.45fr 1fr;
 
-    gap: 24px;
+    gap: 16px;
 
-    margin-top: 20px;
+    margin-top: 14px;
 
 }
 
@@ -204,11 +204,11 @@
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(280px, .82fr) minmax(0, 1.18fr);
 
-    gap: 24px;
+    gap: 16px;
 
-    margin-top: 24px;
+    margin-top: 16px;
 
 }
 
@@ -692,7 +692,7 @@
 
     flex-direction: column;
 
-    gap: 13px;
+    gap: 9px;
 
 }
 
@@ -704,7 +704,7 @@
 
     column-gap: 10px;
 
-    padding: 10px;
+    padding: 7px 8px;
 
     border: 1px solid #edf1f5;
 
@@ -748,7 +748,7 @@
 
     color: #334155;
 
-    font-size: 13px;
+    font-size: 12px;
 
     text-overflow: ellipsis;
 
@@ -760,7 +760,7 @@
 
     display: block;
 
-    margin-top: 2px;
+    margin-top: 1px;
 
     color: #94a3b8;
 
@@ -784,7 +784,7 @@
 
     overflow: hidden;
 
-    margin-top: 8px;
+    margin-top: 5px;
 
     border-radius: 999px;
 

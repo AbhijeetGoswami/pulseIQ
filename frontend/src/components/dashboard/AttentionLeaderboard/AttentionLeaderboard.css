@@ -2,9 +2,10 @@
 .attention-title svg { color: #f59e0b; }
 
 .attention-intro {
-    display: flex;
-    justify-content: space-between;
-    margin: -3px 0 8px 50px;
+    display: grid;
+    grid-template-columns: 30px minmax(120px, 1fr) minmax(64px, 145px) 50px 16px;
+    gap: 9px;
+    margin: -2px 0 4px;
     color: #94a3b8;
     font-size: 11px;
     font-weight: 700;
@@ -12,15 +13,18 @@
     text-transform: uppercase;
 }
 
+.attention-intro span:first-child { grid-column: 1 / span 2; }
+.attention-intro span:last-child { grid-column: 4; text-align: right; }
+
 .leaderboard-body { display: flex; flex-direction: column; }
 
 .attention-row {
     display: grid;
-    grid-template-columns: 36px minmax(130px, 1fr) minmax(72px, 180px) 54px 18px;
+    grid-template-columns: 30px minmax(120px, 1fr) minmax(64px, 145px) 50px 16px;
     align-items: center;
-    gap: 12px;
+    gap: 9px;
     width: 100%;
-    padding: 13px 8px;
+    padding: 9px 6px;
     border: 0;
     border-bottom: 1px solid #edf0f5;
     background: transparent;
@@ -38,19 +42,21 @@
 .attention-rank { color: #94a3b8; font-size: 12px; font-weight: 800; }
 .attention-rank--top { color: #2563eb; }
 .attention-entity { min-width: 0; }
-.attention-entity strong { display: block; overflow: hidden; color: #1e293b; font-size: 14px; text-overflow: ellipsis; white-space: nowrap; }
-.attention-entity small { display: block; overflow: hidden; margin-top: 3px; color: #94a3b8; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.attention-entity strong { display: block; overflow: hidden; color: #1e293b; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.attention-entity small { display: block; overflow: hidden; margin-top: 1px; color: #94a3b8; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
 
-.attention-meter { display: block; height: 7px; overflow: hidden; border-radius: 999px; background: #e8eef8; }
+.attention-meter { display: block; height: 6px; overflow: hidden; border-radius: 999px; background: #e8eef8; }
 .attention-meter > span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #60a5fa, #2563eb); transition: width .35s ease; }
-.attention-score { color: #1e3a8a; font-size: 15px; font-weight: 800; text-align: right; }
+.attention-score { color: #1e3a8a; font-size: 14px; font-weight: 800; text-align: right; }
 .attention-score small { margin-left: 1px; color: #94a3b8; font-size: 10px; font-weight: 600; }
 .attention-arrow { color: #94a3b8; transition: color .18s ease, transform .18s ease; }
 .attention-row:hover .attention-arrow { color: #2563eb; transform: translate(1px, -1px); }
 .attention-empty { margin: 20px 0; color: #94a3b8; font-size: 14px; text-align: center; }
 
 @media (max-width: 620px) {
-    .attention-intro { margin-left: 0; }
+    .attention-intro { grid-template-columns: 30px minmax(0, 1fr) 48px 16px; gap: 8px; }
+    .attention-intro span:first-child { grid-column: 1 / span 2; }
+    .attention-intro span:last-child { grid-column: 3; }
     .attention-intro span:last-child { display: none; }
     .attention-row { grid-template-columns: 30px minmax(0, 1fr) 48px 16px; gap: 8px; padding-inline: 2px; }
     .attention-meter { display: none; }

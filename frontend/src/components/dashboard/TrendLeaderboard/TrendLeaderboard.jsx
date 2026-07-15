@@ -2,6 +2,7 @@ import { FiArrowUpRight, FiTrendingUp } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 import Panel from "../../common/Panel/Panel";
+import { normalizeEntity } from "../../../utils/entityNormalizer";
 import "./TrendLeaderboard.css";
 
 const trendLabels = {
@@ -21,14 +22,16 @@ export default function TrendLeaderboard({ trends = [] }) {
             </div>
 
             <div className="trend-list">
-                {trends.length ? trends.slice(0, 5).map((trend, index) => {
+                {trends.length ? trends.slice(0, 7).map((trend, index) => {
                     const state = trend.trend?.toLowerCase() || "stable";
                     const label = trendLabels[state] || state;
+                    const entity = normalizeEntity(trend);
 
                     return (
                         <Link
                             key={trend.id ?? `${trend.value}-${index}`}
-                            to={`/entities?id=${trend.id}`}
+                            to={`/entities?id=${entity.entity_id}`}
+                            state={{ entity }}
                             className="trend-row"
                         >
                             <span className="trend-rank">{String(index + 1).padStart(2, "0")}</span>
