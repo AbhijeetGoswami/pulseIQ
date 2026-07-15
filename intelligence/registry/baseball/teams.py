@@ -284,7 +284,7 @@ BASEBALL_TEAMS = [
         "aliases": [
             "Athletics",
             "A's",
-            "As",
+            "Athletics Club",
             "ATH",
         ],
         "sport": "Baseball",

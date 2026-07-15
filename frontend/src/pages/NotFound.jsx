@@ -32,7 +32,7 @@ export default function NotFound() {
                     </Link>
                 </div>
 
-                <span className="not-found-note">PulseIQ intelligence platform</span>
+                <span className="not-found-note">AttenBase intelligence platform</span>
             </section>
         </main>
     );

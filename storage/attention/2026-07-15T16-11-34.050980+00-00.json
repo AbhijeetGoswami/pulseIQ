@@ -1,0 +1,3996 @@
+{
+    "generated_at": "2026-07-15T16:11:34.050957+00:00",
+    "version": 1,
+    "attention": {
+        "summary": {
+            "total_articles": 157,
+            "unique_entities": 94,
+            "total_mentions": 261
+        },
+        "domains": [
+            {
+                "name": "Sports",
+                "mentions": 261,
+                "id": "sports"
+            }
+        ],
+        "categories": [
+            {
+                "name": "Football",
+                "mentions": 142,
+                "id": "football",
+                "domain": "Sports"
+            },
+            {
+                "name": "Baseball",
+                "mentions": 23,
+                "id": "baseball",
+                "domain": "Sports"
+            },
+            {
+                "name": "Ice Hockey",
+                "mentions": 20,
+                "id": "ice_hockey",
+                "domain": "Sports"
+            },
+            {
+                "name": "Golf",
+                "mentions": 18,
+                "id": "golf",
+                "domain": "Sports"
+            },
+            {
+                "name": "Cricket",
+                "mentions": 17,
+                "id": "cricket",
+                "domain": "Sports"
+            },
+            {
+                "name": "Basketball",
+                "mentions": 15,
+                "id": "basketball",
+                "domain": "Sports"
+            },
+            {
+                "name": "Formula 1",
+                "mentions": 13,
+                "id": "formula_1",
+                "domain": "Sports"
+            },
+            {
+                "name": "Tennis",
+                "mentions": 8,
+                "id": "tennis",
+                "domain": "Sports"
+            },
+            {
+                "name": "Rugby",
+                "mentions": 5,
+                "id": "rugby",
+                "domain": "Sports"
+            }
+        ],
+        "entity_types": {
+            "team": [
+                {
+                    "id": "football_team_england",
+                    "type": "team",
+                    "value": "England",
+                    "aliases": [
+                        "England",
+                        "Three Lions"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "National",
+                        "country": "England"
+                    },
+                    "mentions": 39,
+                    "scores": {
+                        "mention": 100.0
+                    },
+                    "attention_score": 100.0
+                },
+                {
+                    "id": "football_team_argentina",
+                    "type": "team",
+                    "value": "Argentina",
+                    "aliases": [
+                        "Argentina",
+                        "La Albiceleste"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "National",
+                        "country": "Argentina"
+                    },
+                    "mentions": 27,
+                    "scores": {
+                        "mention": 69.23
+                    },
+                    "attention_score": 69.23
+                },
+                {
+                    "id": "football_team_spain",
+                    "type": "team",
+                    "value": "Spain",
+                    "aliases": [
+                        "Spain",
+                        "La Roja"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "National",
+                        "country": "Spain"
+                    },
+                    "mentions": 15,
+                    "scores": {
+                        "mention": 38.46
+                    },
+                    "attention_score": 38.46
+                },
+                {
+                    "id": "football_team_france",
+                    "type": "team",
+                    "value": "France",
+                    "aliases": [
+                        "France",
+                        "Les Bleus"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "National",
+                        "country": "France"
+                    },
+                    "mentions": 15,
+                    "scores": {
+                        "mention": 38.46
+                    },
+                    "attention_score": 38.46
+                },
+                {
+                    "id": "cricket_team_england",
+                    "type": "team",
+                    "value": "England",
+                    "aliases": [
+                        "England"
+                    ],
+                    "sport": "Cricket",
+                    "metadata": {
+                        "team_type": "National",
+                        "country": "England"
+                    },
+                    "mentions": 6,
+                    "scores": {
+                        "mention": 15.38
+                    },
+                    "attention_score": 15.38
+                },
+                {
+                    "id": "cricket_team_india",
+                    "type": "team",
+                    "value": "India",
+                    "aliases": [
+                        "India",
+                        "Team India",
+                        "Men in Blue"
+                    ],
+                    "sport": "Cricket",
+                    "metadata": {
+                        "team_type": "National",
+                        "country": "India"
+                    },
+                    "mentions": 4,
+                    "scores": {
+                        "mention": 10.26
+                    },
+                    "attention_score": 10.26
+                },
+                {
+                    "id": "icehockey_team_detroit_red_wings",
+                    "type": "team",
+                    "value": "Detroit Red Wings",
+                    "aliases": [
+                        "Detroit Red Wings",
+                        "Red Wings",
+                        "DET"
+                    ],
+                    "sport": "Ice Hockey",
+                    "metadata": {
+                        "league": "NHL",
+                        "conference": "Eastern",
+                        "division": "Atlantic",
+                        "city": "Detroit",
+                        "country": "USA",
+                        "abbreviation": "DET",
+                        "arena": "Little Caesars Arena"
+                    },
+                    "mentions": 4,
+                    "scores": {
+                        "mention": 10.26
+                    },
+                    "attention_score": 10.26
+                },
+                {
+                    "id": "football_team_liverpool",
+                    "type": "team",
+                    "value": "Liverpool",
+                    "aliases": [
+                        "Liverpool",
+                        "LFC",
+                        "Reds"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "Club",
+                        "country": "England"
+                    },
+                    "mentions": 3,
+                    "scores": {
+                        "mention": 7.69
+                    },
+                    "attention_score": 7.69
+                },
+                {
+                    "id": "icehockey_team_carolina_hurricanes",
+                    "type": "team",
+                    "value": "Carolina Hurricanes",
+                    "aliases": [
+                        "Carolina Hurricanes",
+                        "Hurricanes",
+                        "Canes",
+                        "CAR"
+                    ],
+                    "sport": "Ice Hockey",
+                    "metadata": {
+                        "league": "NHL",
+                        "conference": "Eastern",
+                        "division": "Metropolitan",
+                        "city": "Raleigh",
+                        "country": "USA",
+                        "abbreviation": "CAR",
+                        "arena": "Lenovo Center"
+                    },
+                    "mentions": 3,
+                    "scores": {
+                        "mention": 7.69
+                    },
+                    "attention_score": 7.69
+                },
+                {
+                    "id": "baseball_team_boston_red_sox",
+                    "type": "team",
+                    "value": "Boston Red Sox",
+                    "aliases": [
+                        "Boston Red Sox",
+                        "Red Sox",
+                        "BOS"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "conference": "American League",
+                        "division": "East",
+                        "city": "Boston",
+                        "country": "USA",
+                        "abbreviation": "BOS"
+                    },
+                    "mentions": 3,
+                    "scores": {
+                        "mention": 7.69
+                    },
+                    "attention_score": 7.69
+                },
+                {
+                    "id": "football_team_arsenal",
+                    "type": "team",
+                    "value": "Arsenal",
+                    "aliases": [
+                        "Arsenal",
+                        "Gunners"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "Club",
+                        "country": "England"
+                    },
+                    "mentions": 3,
+                    "scores": {
+                        "mention": 7.69
+                    },
+                    "attention_score": 7.69
+                },
+                {
+                    "id": "football_team_manchester_city",
+                    "type": "team",
+                    "value": "Manchester City",
+                    "aliases": [
+                        "Manchester City",
+                        "Man City",
+                        "City",
+                        "MCFC"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "Club",
+                        "country": "England"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "football_team_chelsea",
+                    "type": "team",
+                    "value": "Chelsea",
+                    "aliases": [
+                        "Chelsea",
+                        "Blues",
+                        "CFC"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "Club",
+                        "country": "England"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "icehockey_team_florida_panthers",
+                    "type": "team",
+                    "value": "Florida Panthers",
+                    "aliases": [
+                        "Florida Panthers",
+                        "Panthers",
+                        "FLA"
+                    ],
+                    "sport": "Ice Hockey",
+                    "metadata": {
+                        "league": "NHL",
+                        "conference": "Eastern",
+                        "division": "Atlantic",
+                        "city": "Sunrise",
+                        "country": "USA",
+                        "abbreviation": "FLA",
+                        "arena": "Amerant Bank Arena"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "basketball_team_boston_celtics",
+                    "type": "team",
+                    "value": "Boston Celtics",
+                    "aliases": [
+                        "Boston Celtics",
+                        "Celtics",
+                        "Boston",
+                        "BOS"
+                    ],
+                    "sport": "Basketball",
+                    "metadata": {
+                        "league": "NBA",
+                        "conference": "Eastern",
+                        "division": "Atlantic",
+                        "city": "Boston",
+                        "country": "USA",
+                        "abbreviation": "BOS",
+                        "arena": "TD Garden"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "icehockey_team_dallas_stars",
+                    "type": "team",
+                    "value": "Dallas Stars",
+                    "aliases": [
+                        "Dallas Stars",
+                        "Stars",
+                        "DAL"
+                    ],
+                    "sport": "Ice Hockey",
+                    "metadata": {
+                        "league": "NHL",
+                        "conference": "Western",
+                        "division": "Central",
+                        "city": "Dallas",
+                        "country": "USA",
+                        "abbreviation": "DAL",
+                        "arena": "American Airlines Center"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "baseball_team_milwaukee_brewers",
+                    "type": "team",
+                    "value": "Milwaukee Brewers",
+                    "aliases": [
+                        "Milwaukee Brewers",
+                        "Brewers",
+                        "MIL"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "conference": "National League",
+                        "division": "Central",
+                        "city": "Milwaukee",
+                        "country": "USA",
+                        "abbreviation": "MIL"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "baseball_team_houston_astros",
+                    "type": "team",
+                    "value": "Houston Astros",
+                    "aliases": [
+                        "Houston Astros",
+                        "Astros",
+                        "HOU"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "conference": "American League",
+                        "division": "West",
+                        "city": "Houston",
+                        "country": "USA",
+                        "abbreviation": "HOU"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "baseball_team_chicago_white_sox",
+                    "type": "team",
+                    "value": "Chicago White Sox",
+                    "aliases": [
+                        "Chicago White Sox",
+                        "White Sox",
+                        "CWS"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "conference": "American League",
+                        "division": "Central",
+                        "city": "Chicago",
+                        "country": "USA",
+                        "abbreviation": "CWS"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "football_team_tottenham_hotspur",
+                    "type": "team",
+                    "value": "Tottenham Hotspur",
+                    "aliases": [
+                        "Tottenham",
+                        "Tottenham Hotspur",
+                        "Spurs"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "Club",
+                        "country": "England"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "baseball_team_los_angeles_dodgers",
+                    "type": "team",
+                    "value": "Los Angeles Dodgers",
+                    "aliases": [
+                        "Los Angeles Dodgers",
+                        "Dodgers",
+                        "LAD"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "conference": "National League",
+                        "division": "West",
+                        "city": "Los Angeles",
+                        "country": "USA",
+                        "abbreviation": "LAD"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "football_team_belgium",
+                    "type": "team",
+                    "value": "Belgium",
+                    "aliases": [
+                        "Belgium",
+                        "Red Devils"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "National",
+                        "country": "Belgium"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "baseball_team_texas_rangers",
+                    "type": "team",
+                    "value": "Texas Rangers",
+                    "aliases": [
+                        "Texas Rangers",
+                        "Rangers",
+                        "TEX"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "conference": "American League",
+                        "division": "West",
+                        "city": "Arlington",
+                        "country": "USA",
+                        "abbreviation": "TEX"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "icehockey_team_new_jersey_devils",
+                    "type": "team",
+                    "value": "New Jersey Devils",
+                    "aliases": [
+                        "New Jersey Devils",
+                        "Devils",
+                        "NJD"
+                    ],
+                    "sport": "Ice Hockey",
+                    "metadata": {
+                        "league": "NHL",
+                        "conference": "Eastern",
+                        "division": "Metropolitan",
+                        "city": "Newark",
+                        "country": "USA",
+                        "abbreviation": "NJD",
+                        "arena": "Prudential Center"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "basketball_team_atlanta_hawks",
+                    "type": "team",
+                    "value": "Atlanta Hawks",
+                    "aliases": [
+                        "Atlanta Hawks",
+                        "Hawks",
+                        "ATL"
+                    ],
+                    "sport": "Basketball",
+                    "metadata": {
+                        "league": "NBA",
+                        "conference": "Eastern",
+                        "division": "Southeast",
+                        "city": "Atlanta",
+                        "country": "USA",
+                        "abbreviation": "ATL",
+                        "arena": "State Farm Arena"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "football_team_barcelona",
+                    "type": "team",
+                    "value": "Barcelona",
+                    "aliases": [
+                        "Barcelona",
+                        "Barca",
+                        "Barça"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "Club",
+                        "country": "Spain"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "cricket_team_united_states",
+                    "type": "team",
+                    "value": "United States",
+                    "aliases": [
+                        "United States",
+                        "USA",
+                        "United States of America"
+                    ],
+                    "sport": "Cricket",
+                    "metadata": {
+                        "team_type": "National",
+                        "country": "United States"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "rugby_team_chiefs",
+                    "type": "team",
+                    "value": "Chiefs",
+                    "aliases": [
+                        "Chiefs"
+                    ],
+                    "sport": "Rugby",
+                    "metadata": {},
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "football_team_manchester_united",
+                    "type": "team",
+                    "value": "Manchester United",
+                    "aliases": [
+                        "Manchester United",
+                        "Man United",
+                        "Man U",
+                        "Manchester Utd",
+                        "MUFC"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "Club",
+                        "country": "England"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "cricket_team_bangladesh",
+                    "type": "team",
+                    "value": "Bangladesh",
+                    "aliases": [
+                        "Bangladesh",
+                        "Tigers"
+                    ],
+                    "sport": "Cricket",
+                    "metadata": {
+                        "team_type": "National",
+                        "country": "Bangladesh"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "baseball_team_athletics",
+                    "type": "team",
+                    "value": "Athletics",
+                    "aliases": [
+                        "Athletics",
+                        "A's",
+                        "Athletics Club",
+                        "ATH"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "conference": "American League",
+                        "division": "West",
+                        "city": "West Sacramento",
+                        "country": "USA",
+                        "abbreviation": "ATH"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "football_team_inter_milan",
+                    "type": "team",
+                    "value": "Inter Milan",
+                    "aliases": [
+                        "Inter Milan",
+                        "Inter"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "Club",
+                        "country": "Italy"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "football_team_real_madrid",
+                    "type": "team",
+                    "value": "Real Madrid",
+                    "aliases": [
+                        "Real Madrid",
+                        "Los Blancos"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "Club",
+                        "country": "Spain"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "icehockey_team_boston_bruins",
+                    "type": "team",
+                    "value": "Boston Bruins",
+                    "aliases": [
+                        "Boston Bruins",
+                        "Bruins",
+                        "BOS"
+                    ],
+                    "sport": "Ice Hockey",
+                    "metadata": {
+                        "league": "NHL",
+                        "conference": "Eastern",
+                        "division": "Atlantic",
+                        "city": "Boston",
+                        "country": "USA",
+                        "abbreviation": "BOS",
+                        "arena": "TD Garden"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "baseball_team_pittsburgh_pirates",
+                    "type": "team",
+                    "value": "Pittsburgh Pirates",
+                    "aliases": [
+                        "Pittsburgh Pirates",
+                        "Pirates",
+                        "PIT"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "conference": "National League",
+                        "division": "Central",
+                        "city": "Pittsburgh",
+                        "country": "USA",
+                        "abbreviation": "PIT"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "rugby_team_georgia",
+                    "type": "team",
+                    "value": "Georgia",
+                    "aliases": [
+                        "Georgia"
+                    ],
+                    "sport": "Rugby",
+                    "metadata": {},
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "baseball_team_kansas_city_royals",
+                    "type": "team",
+                    "value": "Kansas City Royals",
+                    "aliases": [
+                        "Kansas City Royals",
+                        "Royals",
+                        "KC"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "conference": "American League",
+                        "division": "Central",
+                        "city": "Kansas City",
+                        "country": "USA",
+                        "abbreviation": "KC"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "baseball_team_chicago_cubs",
+                    "type": "team",
+                    "value": "Chicago Cubs",
+                    "aliases": [
+                        "Chicago Cubs",
+                        "Cubs",
+                        "CHC"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "conference": "National League",
+                        "division": "Central",
+                        "city": "Chicago",
+                        "country": "USA",
+                        "abbreviation": "CHC"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "baseball_team_philadelphia_phillies",
+                    "type": "team",
+                    "value": "Philadelphia Phillies",
+                    "aliases": [
+                        "Philadelphia Phillies",
+                        "Phillies",
+                        "PHI"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "conference": "National League",
+                        "division": "East",
+                        "city": "Philadelphia",
+                        "country": "USA",
+                        "abbreviation": "PHI"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "basketball_team_minnesota_timberwolves",
+                    "type": "team",
+                    "value": "Minnesota Timberwolves",
+                    "aliases": [
+                        "Minnesota Timberwolves",
+                        "Timberwolves",
+                        "Wolves",
+                        "MIN"
+                    ],
+                    "sport": "Basketball",
+                    "metadata": {
+                        "league": "NBA",
+                        "conference": "Western",
+                        "division": "Northwest",
+                        "city": "Minneapolis",
+                        "country": "USA",
+                        "abbreviation": "MIN",
+                        "arena": "Target Center"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "football_team_juventus",
+                    "type": "team",
+                    "value": "Juventus",
+                    "aliases": [
+                        "Juventus",
+                        "Juve"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "team_type": "Club",
+                        "country": "Italy"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                }
+            ],
+            "player": [
+                {
+                    "id": "football_player_lionel_messi",
+                    "type": "player",
+                    "value": "Lionel Messi",
+                    "aliases": [
+                        "Lionel Messi",
+                        "Messi",
+                        "Leo Messi",
+                        "L. Messi"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "country": "Argentina"
+                    },
+                    "mentions": 9,
+                    "scores": {
+                        "mention": 23.08
+                    },
+                    "attention_score": 23.08
+                },
+                {
+                    "id": "golf_player_rory_mcilroy",
+                    "type": "player",
+                    "value": "Rory McIlroy",
+                    "aliases": [
+                        "Rory McIlroy",
+                        "McIlroy",
+                        "Rory"
+                    ],
+                    "sport": "Golf",
+                    "metadata": {
+                        "tour": "PGA Tour",
+                        "country": "Northern Ireland",
+                        "handedness": "Right",
+                        "turned_pro": "2007"
+                    },
+                    "mentions": 4,
+                    "scores": {
+                        "mention": 10.26
+                    },
+                    "attention_score": 10.26
+                },
+                {
+                    "id": "football_player_harry_kane",
+                    "type": "player",
+                    "value": "Harry Kane",
+                    "aliases": [
+                        "Harry Kane",
+                        "Kane"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "country": "England"
+                    },
+                    "mentions": 3,
+                    "scores": {
+                        "mention": 7.69
+                    },
+                    "attention_score": 7.69
+                },
+                {
+                    "id": "football_player_jude_bellingham",
+                    "type": "player",
+                    "value": "Jude Bellingham",
+                    "aliases": [
+                        "Jude Bellingham",
+                        "Bellingham"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "country": "England"
+                    },
+                    "mentions": 3,
+                    "scores": {
+                        "mention": 7.69
+                    },
+                    "attention_score": 7.69
+                },
+                {
+                    "id": "cricket_player_ben_stokes",
+                    "type": "player",
+                    "value": "Ben Stokes",
+                    "aliases": [
+                        "Ben Stokes",
+                        "Stokes"
+                    ],
+                    "sport": "Cricket",
+                    "metadata": {
+                        "country": "England"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "golf_player_scottie_scheffler",
+                    "type": "player",
+                    "value": "Scottie Scheffler",
+                    "aliases": [
+                        "Scottie Scheffler",
+                        "Scheffler"
+                    ],
+                    "sport": "Golf",
+                    "metadata": {
+                        "tour": "PGA Tour",
+                        "country": "USA",
+                        "handedness": "Right",
+                        "turned_pro": "2018"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "football_player_cristiano_ronaldo",
+                    "type": "player",
+                    "value": "Cristiano Ronaldo",
+                    "aliases": [
+                        "Cristiano Ronaldo",
+                        "Ronaldo",
+                        "CR7"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "country": "Portugal"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "football_player_kylian_mbappe",
+                    "type": "player",
+                    "value": "Kylian Mbappé",
+                    "aliases": [
+                        "Kylian Mbappé",
+                        "Kylian Mbappe",
+                        "Mbappe",
+                        "Mbappé"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "country": "France"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "golf_player_bryson_dechambeau",
+                    "type": "player",
+                    "value": "Bryson DeChambeau",
+                    "aliases": [
+                        "Bryson DeChambeau",
+                        "DeChambeau",
+                        "Bryson"
+                    ],
+                    "sport": "Golf",
+                    "metadata": {
+                        "tour": "LIV Golf",
+                        "country": "USA",
+                        "handedness": "Right",
+                        "turned_pro": "2016"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "golf_player_justin_thomas",
+                    "type": "player",
+                    "value": "Justin Thomas",
+                    "aliases": [
+                        "Justin Thomas",
+                        "JT",
+                        "Thomas"
+                    ],
+                    "sport": "Golf",
+                    "metadata": {
+                        "tour": "PGA Tour",
+                        "country": "USA",
+                        "handedness": "Right",
+                        "turned_pro": "2013"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "rugby_player_jac_morgan",
+                    "type": "player",
+                    "value": "Jac Morgan",
+                    "aliases": [
+                        "Jac Morgan",
+                        "Morgan"
+                    ],
+                    "sport": "Rugby",
+                    "metadata": {
+                        "country": "Wales"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "cricket_player_joe_root",
+                    "type": "player",
+                    "value": "Joe Root",
+                    "aliases": [
+                        "Joe Root",
+                        "Root"
+                    ],
+                    "sport": "Cricket",
+                    "metadata": {
+                        "country": "England"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "cricket_player_shubman_gill",
+                    "type": "player",
+                    "value": "Shubman Gill",
+                    "aliases": [
+                        "Shubman Gill",
+                        "Gill"
+                    ],
+                    "sport": "Cricket",
+                    "metadata": {
+                        "country": "India"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "football_player_mohamed_salah",
+                    "type": "player",
+                    "value": "Mohamed Salah",
+                    "aliases": [
+                        "Mohamed Salah",
+                        "Mo Salah",
+                        "Salah"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "country": "Egypt"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "basketball_player_devin_booker",
+                    "type": "player",
+                    "value": "Devin Booker",
+                    "aliases": [
+                        "Devin Booker",
+                        "Book",
+                        "Booker"
+                    ],
+                    "sport": "Basketball",
+                    "metadata": {
+                        "team": "Phoenix Suns",
+                        "league": "NBA",
+                        "position": "Guard",
+                        "jersey": "1",
+                        "country": "USA",
+                        "height": "6 ft 6 in"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "golf_player_tommy_fleetwood",
+                    "type": "player",
+                    "value": "Tommy Fleetwood",
+                    "aliases": [
+                        "Tommy Fleetwood",
+                        "Fleetwood"
+                    ],
+                    "sport": "Golf",
+                    "metadata": {
+                        "tour": "DP World Tour",
+                        "country": "England",
+                        "handedness": "Right",
+                        "turned_pro": "2010"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "basketball_player_jaylen_brown",
+                    "type": "player",
+                    "value": "Jaylen Brown",
+                    "aliases": [
+                        "Jaylen Brown",
+                        "Brown"
+                    ],
+                    "sport": "Basketball",
+                    "metadata": {
+                        "team": "Boston Celtics",
+                        "league": "NBA",
+                        "position": "Guard",
+                        "jersey": "7",
+                        "country": "USA",
+                        "height": "6 ft 6 in"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "football_player_lamine_yamal",
+                    "type": "player",
+                    "value": "Lamine Yamal",
+                    "aliases": [
+                        "Lamine Yamal",
+                        "Yamal"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "country": "Spain"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "cricket_player_shai_hope",
+                    "type": "player",
+                    "value": "Shai Hope",
+                    "aliases": [
+                        "Shai Hope",
+                        "Hope"
+                    ],
+                    "sport": "Cricket",
+                    "metadata": {
+                        "country": "West Indies"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "basketball_player_donovan_mitchell",
+                    "type": "player",
+                    "value": "Donovan Mitchell",
+                    "aliases": [
+                        "Donovan Mitchell",
+                        "Mitchell",
+                        "Spida"
+                    ],
+                    "sport": "Basketball",
+                    "metadata": {
+                        "team": "Cleveland Cavaliers",
+                        "league": "NBA",
+                        "position": "Guard",
+                        "jersey": "45",
+                        "country": "USA",
+                        "height": "6 ft 3 in"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "tennis_player_frances_tiafoe",
+                    "type": "player",
+                    "value": "Frances Tiafoe",
+                    "aliases": [
+                        "Frances Tiafoe",
+                        "Tiafoe"
+                    ],
+                    "sport": "Tennis",
+                    "metadata": {
+                        "country": "United States"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "tennis_player_taylor_fritz",
+                    "type": "player",
+                    "value": "Taylor Fritz",
+                    "aliases": [
+                        "Taylor Fritz",
+                        "Fritz"
+                    ],
+                    "sport": "Tennis",
+                    "metadata": {
+                        "country": "United States"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "tennis_player_ben_shelton",
+                    "type": "player",
+                    "value": "Ben Shelton",
+                    "aliases": [
+                        "Ben Shelton",
+                        "Shelton"
+                    ],
+                    "sport": "Tennis",
+                    "metadata": {
+                        "country": "United States"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "basketball_player_lebron_james",
+                    "type": "player",
+                    "value": "LeBron James",
+                    "aliases": [
+                        "LeBron James",
+                        "LeBron",
+                        "King James"
+                    ],
+                    "sport": "Basketball",
+                    "metadata": {
+                        "team": "Los Angeles Lakers",
+                        "league": "NBA",
+                        "position": "Forward",
+                        "jersey": "23",
+                        "country": "USA",
+                        "height": "6 ft 9 in"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "golf_player_phil_mickelson",
+                    "type": "player",
+                    "value": "Phil Mickelson",
+                    "aliases": [
+                        "Phil Mickelson",
+                        "Mickelson",
+                        "Lefty"
+                    ],
+                    "sport": "Golf",
+                    "metadata": {
+                        "tour": "LIV Golf",
+                        "country": "USA",
+                        "handedness": "Left",
+                        "turned_pro": "1992"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                }
+            ],
+            "competition": [
+                {
+                    "id": "football_competition_fifa_world_cup",
+                    "type": "competition",
+                    "value": "FIFA World Cup",
+                    "aliases": [
+                        "FIFA World Cup",
+                        "FIFA World Cup 2026",
+                        "FIFA World Cup 2030"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "level": "International",
+                        "governing_body": "FIFA",
+                        "frequency": "4 Years"
+                    },
+                    "mentions": 6,
+                    "scores": {
+                        "mention": 15.38
+                    },
+                    "attention_score": 15.38
+                },
+                {
+                    "id": "tennis_competition_wimbledon",
+                    "type": "competition",
+                    "value": "Wimbledon Championships",
+                    "aliases": [
+                        "Wimbledon",
+                        "The Championships",
+                        "Wimbledon Championships"
+                    ],
+                    "sport": "Tennis",
+                    "metadata": {
+                        "level": "Grand Slam",
+                        "surface": "Grass",
+                        "country": "United Kingdom"
+                    },
+                    "mentions": 5,
+                    "scores": {
+                        "mention": 12.82
+                    },
+                    "attention_score": 12.82
+                },
+                {
+                    "id": "basketball_competition_nba",
+                    "type": "competition",
+                    "value": "National Basketball Association",
+                    "aliases": [
+                        "National Basketball Association",
+                        "NBA"
+                    ],
+                    "sport": "Basketball",
+                    "metadata": {
+                        "league": "NBA",
+                        "country": "USA/Canada",
+                        "level": "Professional",
+                        "organizer": "National Basketball Association"
+                    },
+                    "mentions": 4,
+                    "scores": {
+                        "mention": 10.26
+                    },
+                    "attention_score": 10.26
+                },
+                {
+                    "id": "golf_competition_the_open_championship",
+                    "type": "competition",
+                    "value": "The Open Championship",
+                    "aliases": [
+                        "The Open Championship",
+                        "The Open",
+                        "British Open"
+                    ],
+                    "sport": "Golf",
+                    "metadata": {
+                        "tour": "Major Championship",
+                        "country": "United Kingdom",
+                        "level": "Professional",
+                        "organizer": "The R&A"
+                    },
+                    "mentions": 3,
+                    "scores": {
+                        "mention": 7.69
+                    },
+                    "attention_score": 7.69
+                },
+                {
+                    "id": "icehockey_competition_nhl",
+                    "type": "competition",
+                    "value": "National Hockey League",
+                    "aliases": [
+                        "National Hockey League",
+                        "NHL"
+                    ],
+                    "sport": "Ice Hockey",
+                    "metadata": {
+                        "league": "NHL",
+                        "country": "USA/Canada",
+                        "level": "Professional",
+                        "organizer": "National Hockey League"
+                    },
+                    "mentions": 3,
+                    "scores": {
+                        "mention": 7.69
+                    },
+                    "attention_score": 7.69
+                },
+                {
+                    "id": "baseball_competition_all_star_game",
+                    "type": "competition",
+                    "value": "MLB All-Star Game",
+                    "aliases": [
+                        "MLB All-Star Game",
+                        "All-Star Game",
+                        "MLB All-Star"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "country": "USA/Canada",
+                        "level": "Professional",
+                        "organizer": "Major League Baseball"
+                    },
+                    "mentions": 3,
+                    "scores": {
+                        "mention": 7.69
+                    },
+                    "attention_score": 7.69
+                },
+                {
+                    "id": "formula1_competition_formula_one",
+                    "type": "competition",
+                    "value": "Formula 1",
+                    "aliases": [
+                        "Formula 1",
+                        "Formula One",
+                        "F1",
+                        "FIA Formula One World Championship",
+                        "Formula One World Championship"
+                    ],
+                    "sport": "Formula 1",
+                    "metadata": {},
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "icehockey_competition_national_league",
+                    "type": "competition",
+                    "value": "National League",
+                    "aliases": [
+                        "National League",
+                        "Swiss National League",
+                        "NL"
+                    ],
+                    "sport": "Ice Hockey",
+                    "metadata": {
+                        "league": "National League",
+                        "country": "Switzerland",
+                        "level": "Professional",
+                        "organizer": "Swiss Ice Hockey"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "baseball_competition_mlb",
+                    "type": "competition",
+                    "value": "Major League Baseball",
+                    "aliases": [
+                        "Major League Baseball",
+                        "MLB"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "country": "USA/Canada",
+                        "level": "Professional",
+                        "organizer": "Major League Baseball"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "basketball_competition_wnba",
+                    "type": "competition",
+                    "value": "Women's National Basketball Association",
+                    "aliases": [
+                        "Women's National Basketball Association",
+                        "WNBA"
+                    ],
+                    "sport": "Basketball",
+                    "metadata": {
+                        "league": "WNBA",
+                        "country": "USA",
+                        "level": "Professional",
+                        "organizer": "Women's National Basketball Association"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "golf_competition_liv_golf_league",
+                    "type": "competition",
+                    "value": "LIV Golf League",
+                    "aliases": [
+                        "LIV Golf League",
+                        "LIV Golf",
+                        "LIV"
+                    ],
+                    "sport": "Golf",
+                    "metadata": {
+                        "tour": "LIV Golf",
+                        "country": "International",
+                        "level": "Professional",
+                        "organizer": "LIV Golf"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "rugby_competition_premiership_rugby",
+                    "type": "competition",
+                    "value": "Premiership Rugby",
+                    "aliases": [
+                        "Premiership Rugby",
+                        "Gallagher Premiership",
+                        "Premiership"
+                    ],
+                    "sport": "Rugby",
+                    "metadata": {},
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "icehockey_competition_nhl_all_star_game",
+                    "type": "competition",
+                    "value": "NHL All-Star Game",
+                    "aliases": [
+                        "NHL All-Star Game",
+                        "All-Star Game",
+                        "NHL All-Star"
+                    ],
+                    "sport": "Ice Hockey",
+                    "metadata": {
+                        "league": "NHL",
+                        "country": "USA/Canada",
+                        "level": "Professional",
+                        "organizer": "National Hockey League"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "baseball_competition_world_series",
+                    "type": "competition",
+                    "value": "World Series",
+                    "aliases": [
+                        "World Series",
+                        "MLB World Series"
+                    ],
+                    "sport": "Baseball",
+                    "metadata": {
+                        "league": "MLB",
+                        "country": "USA/Canada",
+                        "level": "Professional",
+                        "organizer": "Major League Baseball"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "golf_competition_solheim_cup",
+                    "type": "competition",
+                    "value": "Solheim Cup",
+                    "aliases": [
+                        "Solheim Cup"
+                    ],
+                    "sport": "Golf",
+                    "metadata": {
+                        "tour": "LPGA / LET",
+                        "country": "International",
+                        "level": "Professional",
+                        "organizer": "LPGA / Ladies European Tour"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "icehockey_competition_stanley_cup_playoffs",
+                    "type": "competition",
+                    "value": "Stanley Cup Playoffs",
+                    "aliases": [
+                        "Stanley Cup Playoffs",
+                        "NHL Playoffs",
+                        "Stanley Cup"
+                    ],
+                    "sport": "Ice Hockey",
+                    "metadata": {
+                        "league": "NHL",
+                        "country": "USA/Canada",
+                        "level": "Professional",
+                        "organizer": "National Hockey League"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "basketball_competition_nba_all_star_game",
+                    "type": "competition",
+                    "value": "NBA All-Star Game",
+                    "aliases": [
+                        "NBA All-Star Game",
+                        "All-Star Game",
+                        "NBA All-Star Weekend"
+                    ],
+                    "sport": "Basketball",
+                    "metadata": {
+                        "league": "NBA",
+                        "country": "USA/Canada",
+                        "level": "Professional",
+                        "organizer": "National Basketball Association"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "football_competition_serie_a",
+                    "type": "competition",
+                    "value": "Serie A",
+                    "aliases": [
+                        "Serie A",
+                        "Italian Serie A"
+                    ],
+                    "sport": "Football",
+                    "metadata": {
+                        "country": "Italy",
+                        "level": "Club"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "formula1_competition_belgian_grand_prix",
+                    "type": "competition",
+                    "value": "Belgian Grand Prix",
+                    "aliases": [
+                        "Belgian Grand Prix",
+                        "Belgian GP"
+                    ],
+                    "sport": "Formula 1",
+                    "metadata": {
+                        "country": "Belgium"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                }
+            ],
+            "constructor": [
+                {
+                    "id": "formula1_constructor_mclaren",
+                    "type": "constructor",
+                    "value": "McLaren",
+                    "aliases": [
+                        "McLaren",
+                        "McLaren Racing"
+                    ],
+                    "sport": "Formula 1",
+                    "metadata": {
+                        "country": "United Kingdom"
+                    },
+                    "mentions": 2,
+                    "scores": {
+                        "mention": 5.13
+                    },
+                    "attention_score": 5.13
+                },
+                {
+                    "id": "formula1_constructor_racing_bulls",
+                    "type": "constructor",
+                    "value": "Racing Bulls",
+                    "aliases": [
+                        "Racing Bulls",
+                        "Visa Cash App RB",
+                        "RB",
+                        "VCARB"
+                    ],
+                    "sport": "Formula 1",
+                    "metadata": {
+                        "country": "Italy"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "formula1_constructor_williams",
+                    "type": "constructor",
+                    "value": "Williams",
+                    "aliases": [
+                        "Williams",
+                        "Williams Racing"
+                    ],
+                    "sport": "Formula 1",
+                    "metadata": {
+                        "country": "United Kingdom"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "formula1_constructor_aston_martin",
+                    "type": "constructor",
+                    "value": "Aston Martin",
+                    "aliases": [
+                        "Aston Martin",
+                        "Aston Martin F1",
+                        "Aston Martin Aramco"
+                    ],
+                    "sport": "Formula 1",
+                    "metadata": {
+                        "country": "United Kingdom"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                }
+            ],
+            "driver": [
+                {
+                    "id": "formula1_driver_max_verstappen",
+                    "type": "driver",
+                    "value": "Max Verstappen",
+                    "aliases": [
+                        "Max Verstappen",
+                        "Verstappen"
+                    ],
+                    "sport": "Formula 1",
+                    "metadata": {
+                        "country": "Netherlands"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "formula1_driver_fernando_alonso",
+                    "type": "driver",
+                    "value": "Fernando Alonso",
+                    "aliases": [
+                        "Fernando Alonso",
+                        "Alonso"
+                    ],
+                    "sport": "Formula 1",
+                    "metadata": {
+                        "country": "Spain"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "formula1_driver_kimi_antonelli",
+                    "type": "driver",
+                    "value": "Kimi Antonelli",
+                    "aliases": [
+                        "Kimi Antonelli",
+                        "Antonelli"
+                    ],
+                    "sport": "Formula 1",
+                    "metadata": {
+                        "country": "Italy"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "formula1_driver_lewis_hamilton",
+                    "type": "driver",
+                    "value": "Lewis Hamilton",
+                    "aliases": [
+                        "Lewis Hamilton",
+                        "Hamilton"
+                    ],
+                    "sport": "Formula 1",
+                    "metadata": {
+                        "country": "United Kingdom"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                },
+                {
+                    "id": "formula1_driver_george_russell",
+                    "type": "driver",
+                    "value": "George Russell",
+                    "aliases": [
+                        "George Russell",
+                        "Russell"
+                    ],
+                    "sport": "Formula 1",
+                    "metadata": {
+                        "country": "United Kingdom"
+                    },
+                    "mentions": 1,
+                    "scores": {
+                        "mention": 2.56
+                    },
+                    "attention_score": 2.56
+                }
+            ]
+        },
+        "entities": [
+            {
+                "id": "football_team_england",
+                "type": "team",
+                "value": "England",
+                "aliases": [
+                    "England",
+                    "Three Lions"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "National",
+                    "country": "England"
+                },
+                "mentions": 39,
+                "scores": {
+                    "mention": 100.0
+                },
+                "attention_score": 100.0
+            },
+            {
+                "id": "football_team_argentina",
+                "type": "team",
+                "value": "Argentina",
+                "aliases": [
+                    "Argentina",
+                    "La Albiceleste"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "National",
+                    "country": "Argentina"
+                },
+                "mentions": 27,
+                "scores": {
+                    "mention": 69.23
+                },
+                "attention_score": 69.23
+            },
+            {
+                "id": "football_team_spain",
+                "type": "team",
+                "value": "Spain",
+                "aliases": [
+                    "Spain",
+                    "La Roja"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "National",
+                    "country": "Spain"
+                },
+                "mentions": 15,
+                "scores": {
+                    "mention": 38.46
+                },
+                "attention_score": 38.46
+            },
+            {
+                "id": "football_team_france",
+                "type": "team",
+                "value": "France",
+                "aliases": [
+                    "France",
+                    "Les Bleus"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "National",
+                    "country": "France"
+                },
+                "mentions": 15,
+                "scores": {
+                    "mention": 38.46
+                },
+                "attention_score": 38.46
+            },
+            {
+                "id": "football_player_lionel_messi",
+                "type": "player",
+                "value": "Lionel Messi",
+                "aliases": [
+                    "Lionel Messi",
+                    "Messi",
+                    "Leo Messi",
+                    "L. Messi"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "country": "Argentina"
+                },
+                "mentions": 9,
+                "scores": {
+                    "mention": 23.08
+                },
+                "attention_score": 23.08
+            },
+            {
+                "id": "cricket_team_england",
+                "type": "team",
+                "value": "England",
+                "aliases": [
+                    "England"
+                ],
+                "sport": "Cricket",
+                "metadata": {
+                    "team_type": "National",
+                    "country": "England"
+                },
+                "mentions": 6,
+                "scores": {
+                    "mention": 15.38
+                },
+                "attention_score": 15.38
+            },
+            {
+                "id": "football_competition_fifa_world_cup",
+                "type": "competition",
+                "value": "FIFA World Cup",
+                "aliases": [
+                    "FIFA World Cup",
+                    "FIFA World Cup 2026",
+                    "FIFA World Cup 2030"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "level": "International",
+                    "governing_body": "FIFA",
+                    "frequency": "4 Years"
+                },
+                "mentions": 6,
+                "scores": {
+                    "mention": 15.38
+                },
+                "attention_score": 15.38
+            },
+            {
+                "id": "tennis_competition_wimbledon",
+                "type": "competition",
+                "value": "Wimbledon Championships",
+                "aliases": [
+                    "Wimbledon",
+                    "The Championships",
+                    "Wimbledon Championships"
+                ],
+                "sport": "Tennis",
+                "metadata": {
+                    "level": "Grand Slam",
+                    "surface": "Grass",
+                    "country": "United Kingdom"
+                },
+                "mentions": 5,
+                "scores": {
+                    "mention": 12.82
+                },
+                "attention_score": 12.82
+            },
+            {
+                "id": "cricket_team_india",
+                "type": "team",
+                "value": "India",
+                "aliases": [
+                    "India",
+                    "Team India",
+                    "Men in Blue"
+                ],
+                "sport": "Cricket",
+                "metadata": {
+                    "team_type": "National",
+                    "country": "India"
+                },
+                "mentions": 4,
+                "scores": {
+                    "mention": 10.26
+                },
+                "attention_score": 10.26
+            },
+            {
+                "id": "golf_player_rory_mcilroy",
+                "type": "player",
+                "value": "Rory McIlroy",
+                "aliases": [
+                    "Rory McIlroy",
+                    "McIlroy",
+                    "Rory"
+                ],
+                "sport": "Golf",
+                "metadata": {
+                    "tour": "PGA Tour",
+                    "country": "Northern Ireland",
+                    "handedness": "Right",
+                    "turned_pro": "2007"
+                },
+                "mentions": 4,
+                "scores": {
+                    "mention": 10.26
+                },
+                "attention_score": 10.26
+            },
+            {
+                "id": "icehockey_team_detroit_red_wings",
+                "type": "team",
+                "value": "Detroit Red Wings",
+                "aliases": [
+                    "Detroit Red Wings",
+                    "Red Wings",
+                    "DET"
+                ],
+                "sport": "Ice Hockey",
+                "metadata": {
+                    "league": "NHL",
+                    "conference": "Eastern",
+                    "division": "Atlantic",
+                    "city": "Detroit",
+                    "country": "USA",
+                    "abbreviation": "DET",
+                    "arena": "Little Caesars Arena"
+                },
+                "mentions": 4,
+                "scores": {
+                    "mention": 10.26
+                },
+                "attention_score": 10.26
+            },
+            {
+                "id": "basketball_competition_nba",
+                "type": "competition",
+                "value": "National Basketball Association",
+                "aliases": [
+                    "National Basketball Association",
+                    "NBA"
+                ],
+                "sport": "Basketball",
+                "metadata": {
+                    "league": "NBA",
+                    "country": "USA/Canada",
+                    "level": "Professional",
+                    "organizer": "National Basketball Association"
+                },
+                "mentions": 4,
+                "scores": {
+                    "mention": 10.26
+                },
+                "attention_score": 10.26
+            },
+            {
+                "id": "football_player_harry_kane",
+                "type": "player",
+                "value": "Harry Kane",
+                "aliases": [
+                    "Harry Kane",
+                    "Kane"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "country": "England"
+                },
+                "mentions": 3,
+                "scores": {
+                    "mention": 7.69
+                },
+                "attention_score": 7.69
+            },
+            {
+                "id": "football_player_jude_bellingham",
+                "type": "player",
+                "value": "Jude Bellingham",
+                "aliases": [
+                    "Jude Bellingham",
+                    "Bellingham"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "country": "England"
+                },
+                "mentions": 3,
+                "scores": {
+                    "mention": 7.69
+                },
+                "attention_score": 7.69
+            },
+            {
+                "id": "golf_competition_the_open_championship",
+                "type": "competition",
+                "value": "The Open Championship",
+                "aliases": [
+                    "The Open Championship",
+                    "The Open",
+                    "British Open"
+                ],
+                "sport": "Golf",
+                "metadata": {
+                    "tour": "Major Championship",
+                    "country": "United Kingdom",
+                    "level": "Professional",
+                    "organizer": "The R&A"
+                },
+                "mentions": 3,
+                "scores": {
+                    "mention": 7.69
+                },
+                "attention_score": 7.69
+            },
+            {
+                "id": "football_team_liverpool",
+                "type": "team",
+                "value": "Liverpool",
+                "aliases": [
+                    "Liverpool",
+                    "LFC",
+                    "Reds"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "Club",
+                    "country": "England"
+                },
+                "mentions": 3,
+                "scores": {
+                    "mention": 7.69
+                },
+                "attention_score": 7.69
+            },
+            {
+                "id": "icehockey_team_carolina_hurricanes",
+                "type": "team",
+                "value": "Carolina Hurricanes",
+                "aliases": [
+                    "Carolina Hurricanes",
+                    "Hurricanes",
+                    "Canes",
+                    "CAR"
+                ],
+                "sport": "Ice Hockey",
+                "metadata": {
+                    "league": "NHL",
+                    "conference": "Eastern",
+                    "division": "Metropolitan",
+                    "city": "Raleigh",
+                    "country": "USA",
+                    "abbreviation": "CAR",
+                    "arena": "Lenovo Center"
+                },
+                "mentions": 3,
+                "scores": {
+                    "mention": 7.69
+                },
+                "attention_score": 7.69
+            },
+            {
+                "id": "icehockey_competition_nhl",
+                "type": "competition",
+                "value": "National Hockey League",
+                "aliases": [
+                    "National Hockey League",
+                    "NHL"
+                ],
+                "sport": "Ice Hockey",
+                "metadata": {
+                    "league": "NHL",
+                    "country": "USA/Canada",
+                    "level": "Professional",
+                    "organizer": "National Hockey League"
+                },
+                "mentions": 3,
+                "scores": {
+                    "mention": 7.69
+                },
+                "attention_score": 7.69
+            },
+            {
+                "id": "baseball_team_boston_red_sox",
+                "type": "team",
+                "value": "Boston Red Sox",
+                "aliases": [
+                    "Boston Red Sox",
+                    "Red Sox",
+                    "BOS"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "conference": "American League",
+                    "division": "East",
+                    "city": "Boston",
+                    "country": "USA",
+                    "abbreviation": "BOS"
+                },
+                "mentions": 3,
+                "scores": {
+                    "mention": 7.69
+                },
+                "attention_score": 7.69
+            },
+            {
+                "id": "football_team_arsenal",
+                "type": "team",
+                "value": "Arsenal",
+                "aliases": [
+                    "Arsenal",
+                    "Gunners"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "Club",
+                    "country": "England"
+                },
+                "mentions": 3,
+                "scores": {
+                    "mention": 7.69
+                },
+                "attention_score": 7.69
+            },
+            {
+                "id": "baseball_competition_all_star_game",
+                "type": "competition",
+                "value": "MLB All-Star Game",
+                "aliases": [
+                    "MLB All-Star Game",
+                    "All-Star Game",
+                    "MLB All-Star"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "country": "USA/Canada",
+                    "level": "Professional",
+                    "organizer": "Major League Baseball"
+                },
+                "mentions": 3,
+                "scores": {
+                    "mention": 7.69
+                },
+                "attention_score": 7.69
+            },
+            {
+                "id": "cricket_player_ben_stokes",
+                "type": "player",
+                "value": "Ben Stokes",
+                "aliases": [
+                    "Ben Stokes",
+                    "Stokes"
+                ],
+                "sport": "Cricket",
+                "metadata": {
+                    "country": "England"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "football_team_manchester_city",
+                "type": "team",
+                "value": "Manchester City",
+                "aliases": [
+                    "Manchester City",
+                    "Man City",
+                    "City",
+                    "MCFC"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "Club",
+                    "country": "England"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "golf_player_scottie_scheffler",
+                "type": "player",
+                "value": "Scottie Scheffler",
+                "aliases": [
+                    "Scottie Scheffler",
+                    "Scheffler"
+                ],
+                "sport": "Golf",
+                "metadata": {
+                    "tour": "PGA Tour",
+                    "country": "USA",
+                    "handedness": "Right",
+                    "turned_pro": "2018"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "football_player_cristiano_ronaldo",
+                "type": "player",
+                "value": "Cristiano Ronaldo",
+                "aliases": [
+                    "Cristiano Ronaldo",
+                    "Ronaldo",
+                    "CR7"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "country": "Portugal"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "formula1_constructor_mclaren",
+                "type": "constructor",
+                "value": "McLaren",
+                "aliases": [
+                    "McLaren",
+                    "McLaren Racing"
+                ],
+                "sport": "Formula 1",
+                "metadata": {
+                    "country": "United Kingdom"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "formula1_competition_formula_one",
+                "type": "competition",
+                "value": "Formula 1",
+                "aliases": [
+                    "Formula 1",
+                    "Formula One",
+                    "F1",
+                    "FIA Formula One World Championship",
+                    "Formula One World Championship"
+                ],
+                "sport": "Formula 1",
+                "metadata": {},
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "football_team_chelsea",
+                "type": "team",
+                "value": "Chelsea",
+                "aliases": [
+                    "Chelsea",
+                    "Blues",
+                    "CFC"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "Club",
+                    "country": "England"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "icehockey_team_florida_panthers",
+                "type": "team",
+                "value": "Florida Panthers",
+                "aliases": [
+                    "Florida Panthers",
+                    "Panthers",
+                    "FLA"
+                ],
+                "sport": "Ice Hockey",
+                "metadata": {
+                    "league": "NHL",
+                    "conference": "Eastern",
+                    "division": "Atlantic",
+                    "city": "Sunrise",
+                    "country": "USA",
+                    "abbreviation": "FLA",
+                    "arena": "Amerant Bank Arena"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "football_player_kylian_mbappe",
+                "type": "player",
+                "value": "Kylian Mbappé",
+                "aliases": [
+                    "Kylian Mbappé",
+                    "Kylian Mbappe",
+                    "Mbappe",
+                    "Mbappé"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "country": "France"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "icehockey_competition_national_league",
+                "type": "competition",
+                "value": "National League",
+                "aliases": [
+                    "National League",
+                    "Swiss National League",
+                    "NL"
+                ],
+                "sport": "Ice Hockey",
+                "metadata": {
+                    "league": "National League",
+                    "country": "Switzerland",
+                    "level": "Professional",
+                    "organizer": "Swiss Ice Hockey"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "baseball_competition_mlb",
+                "type": "competition",
+                "value": "Major League Baseball",
+                "aliases": [
+                    "Major League Baseball",
+                    "MLB"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "country": "USA/Canada",
+                    "level": "Professional",
+                    "organizer": "Major League Baseball"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "basketball_competition_wnba",
+                "type": "competition",
+                "value": "Women's National Basketball Association",
+                "aliases": [
+                    "Women's National Basketball Association",
+                    "WNBA"
+                ],
+                "sport": "Basketball",
+                "metadata": {
+                    "league": "WNBA",
+                    "country": "USA",
+                    "level": "Professional",
+                    "organizer": "Women's National Basketball Association"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "basketball_team_boston_celtics",
+                "type": "team",
+                "value": "Boston Celtics",
+                "aliases": [
+                    "Boston Celtics",
+                    "Celtics",
+                    "Boston",
+                    "BOS"
+                ],
+                "sport": "Basketball",
+                "metadata": {
+                    "league": "NBA",
+                    "conference": "Eastern",
+                    "division": "Atlantic",
+                    "city": "Boston",
+                    "country": "USA",
+                    "abbreviation": "BOS",
+                    "arena": "TD Garden"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "golf_player_bryson_dechambeau",
+                "type": "player",
+                "value": "Bryson DeChambeau",
+                "aliases": [
+                    "Bryson DeChambeau",
+                    "DeChambeau",
+                    "Bryson"
+                ],
+                "sport": "Golf",
+                "metadata": {
+                    "tour": "LIV Golf",
+                    "country": "USA",
+                    "handedness": "Right",
+                    "turned_pro": "2016"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "icehockey_team_dallas_stars",
+                "type": "team",
+                "value": "Dallas Stars",
+                "aliases": [
+                    "Dallas Stars",
+                    "Stars",
+                    "DAL"
+                ],
+                "sport": "Ice Hockey",
+                "metadata": {
+                    "league": "NHL",
+                    "conference": "Western",
+                    "division": "Central",
+                    "city": "Dallas",
+                    "country": "USA",
+                    "abbreviation": "DAL",
+                    "arena": "American Airlines Center"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "baseball_team_milwaukee_brewers",
+                "type": "team",
+                "value": "Milwaukee Brewers",
+                "aliases": [
+                    "Milwaukee Brewers",
+                    "Brewers",
+                    "MIL"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "conference": "National League",
+                    "division": "Central",
+                    "city": "Milwaukee",
+                    "country": "USA",
+                    "abbreviation": "MIL"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "baseball_team_houston_astros",
+                "type": "team",
+                "value": "Houston Astros",
+                "aliases": [
+                    "Houston Astros",
+                    "Astros",
+                    "HOU"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "conference": "American League",
+                    "division": "West",
+                    "city": "Houston",
+                    "country": "USA",
+                    "abbreviation": "HOU"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "baseball_team_chicago_white_sox",
+                "type": "team",
+                "value": "Chicago White Sox",
+                "aliases": [
+                    "Chicago White Sox",
+                    "White Sox",
+                    "CWS"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "conference": "American League",
+                    "division": "Central",
+                    "city": "Chicago",
+                    "country": "USA",
+                    "abbreviation": "CWS"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "golf_player_justin_thomas",
+                "type": "player",
+                "value": "Justin Thomas",
+                "aliases": [
+                    "Justin Thomas",
+                    "JT",
+                    "Thomas"
+                ],
+                "sport": "Golf",
+                "metadata": {
+                    "tour": "PGA Tour",
+                    "country": "USA",
+                    "handedness": "Right",
+                    "turned_pro": "2013"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "football_team_tottenham_hotspur",
+                "type": "team",
+                "value": "Tottenham Hotspur",
+                "aliases": [
+                    "Tottenham",
+                    "Tottenham Hotspur",
+                    "Spurs"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "Club",
+                    "country": "England"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "rugby_player_jac_morgan",
+                "type": "player",
+                "value": "Jac Morgan",
+                "aliases": [
+                    "Jac Morgan",
+                    "Morgan"
+                ],
+                "sport": "Rugby",
+                "metadata": {
+                    "country": "Wales"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "golf_competition_liv_golf_league",
+                "type": "competition",
+                "value": "LIV Golf League",
+                "aliases": [
+                    "LIV Golf League",
+                    "LIV Golf",
+                    "LIV"
+                ],
+                "sport": "Golf",
+                "metadata": {
+                    "tour": "LIV Golf",
+                    "country": "International",
+                    "level": "Professional",
+                    "organizer": "LIV Golf"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "baseball_team_los_angeles_dodgers",
+                "type": "team",
+                "value": "Los Angeles Dodgers",
+                "aliases": [
+                    "Los Angeles Dodgers",
+                    "Dodgers",
+                    "LAD"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "conference": "National League",
+                    "division": "West",
+                    "city": "Los Angeles",
+                    "country": "USA",
+                    "abbreviation": "LAD"
+                },
+                "mentions": 2,
+                "scores": {
+                    "mention": 5.13
+                },
+                "attention_score": 5.13
+            },
+            {
+                "id": "football_team_belgium",
+                "type": "team",
+                "value": "Belgium",
+                "aliases": [
+                    "Belgium",
+                    "Red Devils"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "National",
+                    "country": "Belgium"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "cricket_player_joe_root",
+                "type": "player",
+                "value": "Joe Root",
+                "aliases": [
+                    "Joe Root",
+                    "Root"
+                ],
+                "sport": "Cricket",
+                "metadata": {
+                    "country": "England"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "cricket_player_shubman_gill",
+                "type": "player",
+                "value": "Shubman Gill",
+                "aliases": [
+                    "Shubman Gill",
+                    "Gill"
+                ],
+                "sport": "Cricket",
+                "metadata": {
+                    "country": "India"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "formula1_driver_max_verstappen",
+                "type": "driver",
+                "value": "Max Verstappen",
+                "aliases": [
+                    "Max Verstappen",
+                    "Verstappen"
+                ],
+                "sport": "Formula 1",
+                "metadata": {
+                    "country": "Netherlands"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "formula1_driver_fernando_alonso",
+                "type": "driver",
+                "value": "Fernando Alonso",
+                "aliases": [
+                    "Fernando Alonso",
+                    "Alonso"
+                ],
+                "sport": "Formula 1",
+                "metadata": {
+                    "country": "Spain"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "football_player_mohamed_salah",
+                "type": "player",
+                "value": "Mohamed Salah",
+                "aliases": [
+                    "Mohamed Salah",
+                    "Mo Salah",
+                    "Salah"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "country": "Egypt"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "baseball_team_texas_rangers",
+                "type": "team",
+                "value": "Texas Rangers",
+                "aliases": [
+                    "Texas Rangers",
+                    "Rangers",
+                    "TEX"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "conference": "American League",
+                    "division": "West",
+                    "city": "Arlington",
+                    "country": "USA",
+                    "abbreviation": "TEX"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "rugby_competition_premiership_rugby",
+                "type": "competition",
+                "value": "Premiership Rugby",
+                "aliases": [
+                    "Premiership Rugby",
+                    "Gallagher Premiership",
+                    "Premiership"
+                ],
+                "sport": "Rugby",
+                "metadata": {},
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "icehockey_team_new_jersey_devils",
+                "type": "team",
+                "value": "New Jersey Devils",
+                "aliases": [
+                    "New Jersey Devils",
+                    "Devils",
+                    "NJD"
+                ],
+                "sport": "Ice Hockey",
+                "metadata": {
+                    "league": "NHL",
+                    "conference": "Eastern",
+                    "division": "Metropolitan",
+                    "city": "Newark",
+                    "country": "USA",
+                    "abbreviation": "NJD",
+                    "arena": "Prudential Center"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "icehockey_competition_nhl_all_star_game",
+                "type": "competition",
+                "value": "NHL All-Star Game",
+                "aliases": [
+                    "NHL All-Star Game",
+                    "All-Star Game",
+                    "NHL All-Star"
+                ],
+                "sport": "Ice Hockey",
+                "metadata": {
+                    "league": "NHL",
+                    "country": "USA/Canada",
+                    "level": "Professional",
+                    "organizer": "National Hockey League"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "basketball_team_atlanta_hawks",
+                "type": "team",
+                "value": "Atlanta Hawks",
+                "aliases": [
+                    "Atlanta Hawks",
+                    "Hawks",
+                    "ATL"
+                ],
+                "sport": "Basketball",
+                "metadata": {
+                    "league": "NBA",
+                    "conference": "Eastern",
+                    "division": "Southeast",
+                    "city": "Atlanta",
+                    "country": "USA",
+                    "abbreviation": "ATL",
+                    "arena": "State Farm Arena"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "basketball_player_devin_booker",
+                "type": "player",
+                "value": "Devin Booker",
+                "aliases": [
+                    "Devin Booker",
+                    "Book",
+                    "Booker"
+                ],
+                "sport": "Basketball",
+                "metadata": {
+                    "team": "Phoenix Suns",
+                    "league": "NBA",
+                    "position": "Guard",
+                    "jersey": "1",
+                    "country": "USA",
+                    "height": "6 ft 6 in"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "baseball_competition_world_series",
+                "type": "competition",
+                "value": "World Series",
+                "aliases": [
+                    "World Series",
+                    "MLB World Series"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "country": "USA/Canada",
+                    "level": "Professional",
+                    "organizer": "Major League Baseball"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "golf_player_tommy_fleetwood",
+                "type": "player",
+                "value": "Tommy Fleetwood",
+                "aliases": [
+                    "Tommy Fleetwood",
+                    "Fleetwood"
+                ],
+                "sport": "Golf",
+                "metadata": {
+                    "tour": "DP World Tour",
+                    "country": "England",
+                    "handedness": "Right",
+                    "turned_pro": "2010"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "formula1_driver_kimi_antonelli",
+                "type": "driver",
+                "value": "Kimi Antonelli",
+                "aliases": [
+                    "Kimi Antonelli",
+                    "Antonelli"
+                ],
+                "sport": "Formula 1",
+                "metadata": {
+                    "country": "Italy"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "formula1_driver_lewis_hamilton",
+                "type": "driver",
+                "value": "Lewis Hamilton",
+                "aliases": [
+                    "Lewis Hamilton",
+                    "Hamilton"
+                ],
+                "sport": "Formula 1",
+                "metadata": {
+                    "country": "United Kingdom"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "formula1_driver_george_russell",
+                "type": "driver",
+                "value": "George Russell",
+                "aliases": [
+                    "George Russell",
+                    "Russell"
+                ],
+                "sport": "Formula 1",
+                "metadata": {
+                    "country": "United Kingdom"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "football_team_barcelona",
+                "type": "team",
+                "value": "Barcelona",
+                "aliases": [
+                    "Barcelona",
+                    "Barca",
+                    "Barça"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "Club",
+                    "country": "Spain"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "golf_competition_solheim_cup",
+                "type": "competition",
+                "value": "Solheim Cup",
+                "aliases": [
+                    "Solheim Cup"
+                ],
+                "sport": "Golf",
+                "metadata": {
+                    "tour": "LPGA / LET",
+                    "country": "International",
+                    "level": "Professional",
+                    "organizer": "LPGA / Ladies European Tour"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "cricket_team_united_states",
+                "type": "team",
+                "value": "United States",
+                "aliases": [
+                    "United States",
+                    "USA",
+                    "United States of America"
+                ],
+                "sport": "Cricket",
+                "metadata": {
+                    "team_type": "National",
+                    "country": "United States"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "rugby_team_chiefs",
+                "type": "team",
+                "value": "Chiefs",
+                "aliases": [
+                    "Chiefs"
+                ],
+                "sport": "Rugby",
+                "metadata": {},
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "football_team_manchester_united",
+                "type": "team",
+                "value": "Manchester United",
+                "aliases": [
+                    "Manchester United",
+                    "Man United",
+                    "Man U",
+                    "Manchester Utd",
+                    "MUFC"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "Club",
+                    "country": "England"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "icehockey_competition_stanley_cup_playoffs",
+                "type": "competition",
+                "value": "Stanley Cup Playoffs",
+                "aliases": [
+                    "Stanley Cup Playoffs",
+                    "NHL Playoffs",
+                    "Stanley Cup"
+                ],
+                "sport": "Ice Hockey",
+                "metadata": {
+                    "league": "NHL",
+                    "country": "USA/Canada",
+                    "level": "Professional",
+                    "organizer": "National Hockey League"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "basketball_competition_nba_all_star_game",
+                "type": "competition",
+                "value": "NBA All-Star Game",
+                "aliases": [
+                    "NBA All-Star Game",
+                    "All-Star Game",
+                    "NBA All-Star Weekend"
+                ],
+                "sport": "Basketball",
+                "metadata": {
+                    "league": "NBA",
+                    "country": "USA/Canada",
+                    "level": "Professional",
+                    "organizer": "National Basketball Association"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "cricket_team_bangladesh",
+                "type": "team",
+                "value": "Bangladesh",
+                "aliases": [
+                    "Bangladesh",
+                    "Tigers"
+                ],
+                "sport": "Cricket",
+                "metadata": {
+                    "team_type": "National",
+                    "country": "Bangladesh"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "baseball_team_athletics",
+                "type": "team",
+                "value": "Athletics",
+                "aliases": [
+                    "Athletics",
+                    "A's",
+                    "Athletics Club",
+                    "ATH"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "conference": "American League",
+                    "division": "West",
+                    "city": "West Sacramento",
+                    "country": "USA",
+                    "abbreviation": "ATH"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "football_team_inter_milan",
+                "type": "team",
+                "value": "Inter Milan",
+                "aliases": [
+                    "Inter Milan",
+                    "Inter"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "Club",
+                    "country": "Italy"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "football_team_real_madrid",
+                "type": "team",
+                "value": "Real Madrid",
+                "aliases": [
+                    "Real Madrid",
+                    "Los Blancos"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "Club",
+                    "country": "Spain"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "icehockey_team_boston_bruins",
+                "type": "team",
+                "value": "Boston Bruins",
+                "aliases": [
+                    "Boston Bruins",
+                    "Bruins",
+                    "BOS"
+                ],
+                "sport": "Ice Hockey",
+                "metadata": {
+                    "league": "NHL",
+                    "conference": "Eastern",
+                    "division": "Atlantic",
+                    "city": "Boston",
+                    "country": "USA",
+                    "abbreviation": "BOS",
+                    "arena": "TD Garden"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "baseball_team_pittsburgh_pirates",
+                "type": "team",
+                "value": "Pittsburgh Pirates",
+                "aliases": [
+                    "Pittsburgh Pirates",
+                    "Pirates",
+                    "PIT"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "conference": "National League",
+                    "division": "Central",
+                    "city": "Pittsburgh",
+                    "country": "USA",
+                    "abbreviation": "PIT"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "basketball_player_jaylen_brown",
+                "type": "player",
+                "value": "Jaylen Brown",
+                "aliases": [
+                    "Jaylen Brown",
+                    "Brown"
+                ],
+                "sport": "Basketball",
+                "metadata": {
+                    "team": "Boston Celtics",
+                    "league": "NBA",
+                    "position": "Guard",
+                    "jersey": "7",
+                    "country": "USA",
+                    "height": "6 ft 6 in"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "football_competition_serie_a",
+                "type": "competition",
+                "value": "Serie A",
+                "aliases": [
+                    "Serie A",
+                    "Italian Serie A"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "country": "Italy",
+                    "level": "Club"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "rugby_team_georgia",
+                "type": "team",
+                "value": "Georgia",
+                "aliases": [
+                    "Georgia"
+                ],
+                "sport": "Rugby",
+                "metadata": {},
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "baseball_team_kansas_city_royals",
+                "type": "team",
+                "value": "Kansas City Royals",
+                "aliases": [
+                    "Kansas City Royals",
+                    "Royals",
+                    "KC"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "conference": "American League",
+                    "division": "Central",
+                    "city": "Kansas City",
+                    "country": "USA",
+                    "abbreviation": "KC"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "baseball_team_chicago_cubs",
+                "type": "team",
+                "value": "Chicago Cubs",
+                "aliases": [
+                    "Chicago Cubs",
+                    "Cubs",
+                    "CHC"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "conference": "National League",
+                    "division": "Central",
+                    "city": "Chicago",
+                    "country": "USA",
+                    "abbreviation": "CHC"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "football_player_lamine_yamal",
+                "type": "player",
+                "value": "Lamine Yamal",
+                "aliases": [
+                    "Lamine Yamal",
+                    "Yamal"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "country": "Spain"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "formula1_constructor_racing_bulls",
+                "type": "constructor",
+                "value": "Racing Bulls",
+                "aliases": [
+                    "Racing Bulls",
+                    "Visa Cash App RB",
+                    "RB",
+                    "VCARB"
+                ],
+                "sport": "Formula 1",
+                "metadata": {
+                    "country": "Italy"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "cricket_player_shai_hope",
+                "type": "player",
+                "value": "Shai Hope",
+                "aliases": [
+                    "Shai Hope",
+                    "Hope"
+                ],
+                "sport": "Cricket",
+                "metadata": {
+                    "country": "West Indies"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "basketball_player_donovan_mitchell",
+                "type": "player",
+                "value": "Donovan Mitchell",
+                "aliases": [
+                    "Donovan Mitchell",
+                    "Mitchell",
+                    "Spida"
+                ],
+                "sport": "Basketball",
+                "metadata": {
+                    "team": "Cleveland Cavaliers",
+                    "league": "NBA",
+                    "position": "Guard",
+                    "jersey": "45",
+                    "country": "USA",
+                    "height": "6 ft 3 in"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "tennis_player_frances_tiafoe",
+                "type": "player",
+                "value": "Frances Tiafoe",
+                "aliases": [
+                    "Frances Tiafoe",
+                    "Tiafoe"
+                ],
+                "sport": "Tennis",
+                "metadata": {
+                    "country": "United States"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "tennis_player_taylor_fritz",
+                "type": "player",
+                "value": "Taylor Fritz",
+                "aliases": [
+                    "Taylor Fritz",
+                    "Fritz"
+                ],
+                "sport": "Tennis",
+                "metadata": {
+                    "country": "United States"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "tennis_player_ben_shelton",
+                "type": "player",
+                "value": "Ben Shelton",
+                "aliases": [
+                    "Ben Shelton",
+                    "Shelton"
+                ],
+                "sport": "Tennis",
+                "metadata": {
+                    "country": "United States"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "baseball_team_philadelphia_phillies",
+                "type": "team",
+                "value": "Philadelphia Phillies",
+                "aliases": [
+                    "Philadelphia Phillies",
+                    "Phillies",
+                    "PHI"
+                ],
+                "sport": "Baseball",
+                "metadata": {
+                    "league": "MLB",
+                    "conference": "National League",
+                    "division": "East",
+                    "city": "Philadelphia",
+                    "country": "USA",
+                    "abbreviation": "PHI"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "formula1_constructor_williams",
+                "type": "constructor",
+                "value": "Williams",
+                "aliases": [
+                    "Williams",
+                    "Williams Racing"
+                ],
+                "sport": "Formula 1",
+                "metadata": {
+                    "country": "United Kingdom"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "formula1_constructor_aston_martin",
+                "type": "constructor",
+                "value": "Aston Martin",
+                "aliases": [
+                    "Aston Martin",
+                    "Aston Martin F1",
+                    "Aston Martin Aramco"
+                ],
+                "sport": "Formula 1",
+                "metadata": {
+                    "country": "United Kingdom"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "formula1_competition_belgian_grand_prix",
+                "type": "competition",
+                "value": "Belgian Grand Prix",
+                "aliases": [
+                    "Belgian Grand Prix",
+                    "Belgian GP"
+                ],
+                "sport": "Formula 1",
+                "metadata": {
+                    "country": "Belgium"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "basketball_team_minnesota_timberwolves",
+                "type": "team",
+                "value": "Minnesota Timberwolves",
+                "aliases": [
+                    "Minnesota Timberwolves",
+                    "Timberwolves",
+                    "Wolves",
+                    "MIN"
+                ],
+                "sport": "Basketball",
+                "metadata": {
+                    "league": "NBA",
+                    "conference": "Western",
+                    "division": "Northwest",
+                    "city": "Minneapolis",
+                    "country": "USA",
+                    "abbreviation": "MIN",
+                    "arena": "Target Center"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "basketball_player_lebron_james",
+                "type": "player",
+                "value": "LeBron James",
+                "aliases": [
+                    "LeBron James",
+                    "LeBron",
+                    "King James"
+                ],
+                "sport": "Basketball",
+                "metadata": {
+                    "team": "Los Angeles Lakers",
+                    "league": "NBA",
+                    "position": "Forward",
+                    "jersey": "23",
+                    "country": "USA",
+                    "height": "6 ft 9 in"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "football_team_juventus",
+                "type": "team",
+                "value": "Juventus",
+                "aliases": [
+                    "Juventus",
+                    "Juve"
+                ],
+                "sport": "Football",
+                "metadata": {
+                    "team_type": "Club",
+                    "country": "Italy"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            },
+            {
+                "id": "golf_player_phil_mickelson",
+                "type": "player",
+                "value": "Phil Mickelson",
+                "aliases": [
+                    "Phil Mickelson",
+                    "Mickelson",
+                    "Lefty"
+                ],
+                "sport": "Golf",
+                "metadata": {
+                    "tour": "LIV Golf",
+                    "country": "USA",
+                    "handedness": "Left",
+                    "turned_pro": "1992"
+                },
+                "mentions": 1,
+                "scores": {
+                    "mention": 2.56
+                },
+                "attention_score": 2.56
+            }
+        ]
+    }
+}
