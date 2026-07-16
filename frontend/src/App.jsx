@@ -9,8 +9,10 @@ import {
 import Layout from "./components/layout/Layout";
 
 import Dashboard from "./pages/Dashboard";
+import Attention from "./pages/Attention";
 import Articles from "./pages/Articles";
 import EntityExplorer from "./pages/EntityExplorer";
+import Trends from "./pages/Trends";
 import Login from "./pages/Login";
 import VerifyOtp from "./pages/VerifyOtp";
 import NotFound from "./pages/NotFound";
@@ -80,6 +82,10 @@ function App() {
                             path="/articles"
                             element={<Articles />}
                         />
+
+                        <Route path="/attention" element={<Attention />} />
+
+                        <Route path="/trends" element={<Trends />} />
 
                         <Route
                             path="/entities"

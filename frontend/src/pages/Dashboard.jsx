@@ -1,4 +1,4 @@
-import { FiGlobe, FiTag } from "react-icons/fi";
+import { FiRss, FiTag } from "react-icons/fi";
 
 import Loader from "../components/Loader/Loader";
 import ErrorCard from "../components/ErrorCard/ErrorCard";
@@ -6,30 +6,46 @@ import Panel from "../components/common/Panel/Panel";
 import SummaryCards from "../components/dashboard/SummaryCards/SummaryCards";
 import AttentionLeaderboard from "../components/dashboard/AttentionLeaderboard/AttentionLeaderboard";
 import TrendLeaderboard from "../components/dashboard/TrendLeaderboard/TrendLeaderboard";
+import SnapshotSummary from "../components/dashboard/SnapshotSummary/SnapshotSummary";
+import BiggestMovers from "../components/dashboard/BiggestMovers/BiggestMovers";
 import useAttention from "../hooks/useAttention";
 import useTrends from "../hooks/useTrends";
+import useTopSources from "../hooks/useTopSources";
 import "./Dashboard.css";
 
-function DistributionList({ items, label, tone }) {
-    const totalMentions = items.reduce((total, item) => total + Number(item.mentions || 0), 0);
+const sportIcons = {
+    football: "⚽",
+    baseball: "⚾",
+    basketball: "🏀",
+    golf: "⛳",
+    "ice hockey": "🏒",
+    cricket: "🏏",
+    "formula 1": "🏎️",
+    rugby: "🏉",
+    tennis: "🎾",
+};
+
+function DistributionList({ items, label, tone, nameKey = "name", valueKey = "mentions" }) {
+    const total = items.reduce((totalValue, item) => totalValue + Number(item[valueKey] || 0), 0);
 
     return (
         <div className={`dashboard-distribution dashboard-distribution--${tone}`}>
             {items.length ? items.map((item, index) => {
-                const mentions = Number(item.mentions || 0);
-                const percentage = totalMentions ? Math.round((mentions / totalMentions) * 100) : 0;
+                const value = Number(item[valueKey] || 0);
+                const percentage = total ? Math.round((value / total) * 100) : 0;
+                const name = item[nameKey];
 
                 return (
-                    <div key={item.id ?? item.name} className="dashboard-distribution-row">
+                    <div key={item.id ?? name} className="dashboard-distribution-row">
                         <span className="dashboard-distribution-rank">{String(index + 1).padStart(2, "0")}</span>
                         <div className="dashboard-distribution-copy">
                             <div>
-                                <strong>{item.name}</strong>
-                                <small>{mentions.toLocaleString()} {label}</small>
+                                <strong>{tone === "category" && <span className="dashboard-category-icon" aria-hidden="true">{sportIcons[String(name).toLowerCase()] || "🏅"}</span>}{name}</strong>
+                                <small>{value.toLocaleString()} {label}</small>
                             </div>
                             <span className="dashboard-distribution-percent">{percentage}%</span>
                         </div>
-                        <div className="dashboard-distribution-bar" aria-label={`${item.name}: ${mentions} ${label}, ${percentage}%`}>
+                        <div className="dashboard-distribution-bar" aria-label={`${name}: ${value} ${label}, ${percentage}%`}>
                             <span style={{ width: `${percentage}%` }} />
                         </div>
                     </div>
@@ -42,6 +58,7 @@ function DistributionList({ items, label, tone }) {
 export default function Dashboard() {
     const { data, loading, error } = useAttention();
     const { data: trendData, loading: trendsLoading, error: trendsError } = useTrends();
+    const topSources = useTopSources();
     if (loading || trendsLoading) return <Loader />;
     if (error || trendsError || !data?.attention) return <ErrorCard />;
 
@@ -55,6 +72,8 @@ export default function Dashboard() {
     return (
         <div className="dashboard">
             <div className="dashboard-content">
+                <SnapshotSummary generatedAt={data.generated_at} summary={attention.summary} categories={categories} trends={trendData?.trends || []} />
+
                 <SummaryCards
                     summary={attention.summary}
                     domains={domains}
@@ -62,16 +81,17 @@ export default function Dashboard() {
                 />
 
                 <section className="dashboard-main" aria-label="Attention and trend leaders">
-                    <AttentionLeaderboard entities={attention.entities || []} />
+                    <AttentionLeaderboard entities={attention.entities || []} trends={trendData?.trends || []} />
                     <TrendLeaderboard trends={trendData?.trends || []} />
+                    <BiggestMovers trends={trendData?.trends || []} />
                 </section>
 
                 <section className="dashboard-bottom" aria-label="Distribution summaries">
                     <Panel
-                        title={<span className="dashboard-distribution-title"><FiGlobe aria-hidden="true" /> Domain distribution</span>}
-                        description="Coverage across contributing sources"
+                        title={<span className="dashboard-distribution-title"><FiRss aria-hidden="true" /> Top sources</span>}
+                        description="Publishers contributing the most articles"
                     >
-                        <DistributionList items={domains} label="mentions" tone="domain" />
+                        <DistributionList items={topSources} label="articles" tone="source" nameKey="source" valueKey="article_count" />
                     </Panel>
 
                     <Panel

@@ -192,7 +192,7 @@
 
     display: grid;
 
-    grid-template-columns: 1.45fr 1fr;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(240px, .85fr);
 
     gap: 16px;
 
@@ -762,9 +762,10 @@
 
     margin-top: 1px;
 
-    color: #94a3b8;
+    color: #64748b;
 
     font-size: 11px;
+    font-weight: 600;
 
 }
 
@@ -804,7 +805,7 @@
 
 }
 
-.dashboard-distribution--domain .dashboard-distribution-bar span {
+.dashboard-distribution--source .dashboard-distribution-bar span {
 
     background: linear-gradient(90deg, #60a5fa, #2563eb);
 
@@ -815,6 +816,8 @@
     background: linear-gradient(90deg, #a78bfa, #7c3aed);
 
 }
+
+.dashboard-category-icon { display: inline-block; width: 20px; margin-right: 6px; font-size: 15px; text-align: center; vertical-align: -1px; }
 
 .dashboard-distribution-empty {
 

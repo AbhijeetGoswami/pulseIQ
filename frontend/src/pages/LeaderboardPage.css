@@ -1,0 +1,7 @@
+.leaderboard-page { max-width: 1180px; margin: calc(28px - var(--content-padding-top)) auto 0; }
+.leaderboard-page-header { margin-bottom: 24px; }
+.leaderboard-page-header p { display: inline-flex; align-items: center; gap: 7px; margin: 0 0 8px; color: #1d4ed8; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.leaderboard-page-header--trend p { color: #6d28d9; }
+.leaderboard-page-header h1 { margin: 0; color: #0f172a; font-size: 30px; }
+.leaderboard-page-header span { display: block; margin-top: 7px; color: #64748b; }
+@media (max-width: 1050px) { .leaderboard-page { margin-top: 0; } }

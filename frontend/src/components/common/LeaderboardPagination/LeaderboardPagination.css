@@ -1,0 +1,6 @@
+.leaderboard-pagination { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; color: #64748b; font-size: 13px; font-weight: 600; }
+.leaderboard-pagination > div { display: flex; gap: 8px; }
+.leaderboard-pagination button { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--border-soft); border-radius: 8px; background: var(--surface); color: var(--text-body); cursor: pointer; font: inherit; font-size: 13px; font-weight: 700; padding: 8px 11px; }
+.leaderboard-pagination button:hover:not(:disabled) { border-color: #93c5fd; background: #eff6ff; color: #1d4ed8; }
+.leaderboard-pagination button:disabled { cursor: not-allowed; opacity: .45; }
+@media (max-width: 480px) { .leaderboard-pagination { align-items: flex-start; flex-direction: column; } }
