@@ -1,0 +1,226 @@
+sources:
+
+  - id: espn_cricinfo
+    name: ESPN Cricinfo
+    url: https://www.espncricinfo.com/rss/content/story/feeds/0.xml
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: ESPN
+    priority: 1
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+      - editorial
+      - international
+
+  - id: icc_news
+    name: ICC News
+    url: https://www.icc-cricket.com/rss/news
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: ICC
+    priority: 2
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+      - official
+
+  - id: cricbuzz
+    name: Cricbuzz
+    url: https://www.cricbuzz.com/rss/news
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: Cricbuzz
+    priority: 3
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+      - india
+
+  - id: wisden
+    name: Wisden Cricket
+    url: https://wisden.com/feed
+    source_type: rss
+    country: United Kingdom
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: Wisden
+    priority: 4
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+      - analysis
+
+  - id: cricket_australia
+    name: Cricket Australia
+    url: https://www.cricket.com.au/rss/news
+    source_type: rss
+    country: Australia
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: Cricket Australia
+    priority: 5
+    enabled: true
+    max_articles: 50
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+      - official
+
+  - id: england_cricket
+    name: England Cricket
+    url: https://www.ecb.co.uk/rss/news
+    source_type: rss
+    country: England
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: ECB
+    priority: 6
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+      - official
+
+  - id: cricket_south_africa
+    name: Cricket South Africa
+    url: https://cricket.co.za/feed/
+    source_type: rss
+    country: South Africa
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: CSA
+    priority: 7
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+
+  - id: pakistan_cricket
+    name: Pakistan Cricket Board
+    url: https://www.pcb.com.pk/rss/news
+    source_type: rss
+    country: Pakistan
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: PCB
+    priority: 8
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+      - official
+
+  - id: nz_cricket
+    name: New Zealand Cricket
+    url: https://www.nzc.nz/feed/
+    source_type: rss
+    country: New Zealand
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: NZC
+    priority: 9
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+
+  - id: windies_cricket
+    name: Cricket West Indies
+    url: https://www.windiescricket.com/feed/
+    source_type: rss
+    country: West Indies
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: Cricket West Indies
+    priority: 10
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+
+  - id: sri_lanka_cricket
+    name: Sri Lanka Cricket
+    url: https://srilankacricket.lk/feed/
+    source_type: rss
+    country: Sri Lanka
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: Sri Lanka Cricket
+    priority: 11
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+
+  - id: ireland_cricket
+    name: Cricket Ireland
+    url: https://www.cricketireland.ie/feed/
+    source_type: rss
+    country: Ireland
+    language: en
+    category: Sports
+    sport: Cricket
+    provider: Cricket Ireland
+    priority: 12
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket

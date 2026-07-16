@@ -1,0 +1,116 @@
+sources:
+
+  - id: bbc_football
+    name: BBC Football
+    url: https://feeds.bbci.co.uk/sport/football/rss.xml
+    source_type: rss
+    country: United Kingdom
+    language: en
+    category: Sports
+    sport: Football
+    provider: BBC
+    priority: 1
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - football
+      - editorial
+      - international
+
+  - id: sky_football
+    name: Sky Sports Football
+    url: https://www.skysports.com/rss/11661
+    source_type: rss
+    country: United Kingdom
+    language: en
+    category: Sports
+    sport: Football
+    provider: Sky Sports
+    priority: 2
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - football
+      - premier-league
+
+  - id: espn_fc
+    name: ESPN FC
+    url: https://www.espn.com/espn/rss/soccer/news
+    source_type: rss
+    country: United States
+    language: en
+    category: Sports
+    sport: Football
+    provider: ESPN
+    priority: 3
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - football
+      - international
+
+  - id: fifa_news
+    name: FIFA News
+    url: https://inside.fifa.com/rss
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Football
+    provider: FIFA
+    priority: 4
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - football
+      - fifa
+
+  - id: uefa_news
+    name: UEFA
+    url: https://www.uefa.com/rssfeed/news/rss.xml
+    source_type: rss
+    country: Europe
+    language: en
+    category: Sports
+    sport: Football
+    provider: UEFA
+    priority: 5
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - football
+      - europe
+
+  - id: world_soccer
+    name: World Soccer
+    url: https://www.worldsoccer.com/feed
+    source_type: rss
+    country: United Kingdom
+    language: en
+    category: Sports
+    sport: Football
+    provider: World Soccer
+    priority: 6
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - football
+      - editorial

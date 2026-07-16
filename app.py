@@ -16,7 +16,9 @@ from api.routers import (
     intelligence,
     attention,
     trends,
-)
+    )
+
+from api.routers.pipeline import router as pipeline_router
 
 from api.routers.auth import router as auth_router
 
@@ -64,6 +66,10 @@ app.include_router(entities.router, prefix="/api", tags=["Entities"])
 app.include_router(intelligence.router, prefix="/api", tags=["Intelligence"])
 app.include_router(attention.router,prefix="/api",tags=["Attention"])
 app.include_router(trends.router, prefix="/api", tags=["Trends"])
+app.include_router(
+    pipeline_router,
+    prefix="/api",
+)
 app.include_router(auth_router)
 
 

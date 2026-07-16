@@ -1,0 +1,196 @@
+sources:
+
+  - id: bbc_sport
+    name: BBC Sport
+    url: https://feeds.bbci.co.uk/sport/rss.xml
+    source_type: rss
+    country: United Kingdom
+    language: en
+    category: Sports
+    sport: Multi
+    provider: BBC
+    priority: 1
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+      - breaking-news
+      - international
+
+  - id: espn_top
+    name: ESPN Top Headlines
+    url: https://www.espn.com/espn/rss/news
+    source_type: rss
+    country: United States
+    language: en
+    category: Sports
+    sport: Multi
+    provider: ESPN
+    priority: 2
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+      - breaking-news
+      - international
+
+  - id: cbs_sports
+    name: CBS Sports
+    url: https://www.cbssports.com/rss/headlines/
+    source_type: rss
+    country: United States
+    language: en
+    category: Sports
+    sport: Multi
+    provider: CBS Sports
+    priority: 3
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+      - usa
+
+  - id: sky_sports
+    name: Sky Sports
+    url: https://www.skysports.com/rss/12040
+    source_type: rss
+    country: United Kingdom
+    language: en
+    category: Sports
+    sport: Multi
+    provider: Sky Sports
+    priority: 4
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+      - europe
+
+  - id: yahoo_sports
+    name: Yahoo Sports
+    url: https://sports.yahoo.com/rss/
+    source_type: rss
+    country: United States
+    language: en
+    category: Sports
+    sport: Multi
+    provider: Yahoo Sports
+    priority: 5
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+      - international
+
+  - id: guardian_sport
+    name: The Guardian Sport
+    url: https://www.theguardian.com/uk/sport/rss
+    source_type: rss
+    country: United Kingdom
+    language: en
+    category: Sports
+    sport: Multi
+    provider: The Guardian
+    priority: 6
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+      - opinion
+      - analysis
+
+  - id: sb_nation
+    name: SB Nation
+    url: https://www.sbnation.com/rss/index.xml
+    source_type: rss
+    country: United States
+    language: en
+    category: Sports
+    sport: Multi
+    provider: Vox Media
+    priority: 7
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+      - fan-media
+
+  - id: sportskeeda
+    name: Sportskeeda
+    url: https://www.sportskeeda.com/feed
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: Sportskeeda
+    priority: 8
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - india
+      - editorial
+      - trending
+
+  - id: sky_news_sport
+    name: Sky News Sports
+    url: http://feeds.skynews.com/feeds/rss/sports.xml
+    source_type: rss
+    country: United Kingdom
+    language: en
+    category: Sports
+    sport: Multi
+    provider: Sky News
+    priority: 9
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - breaking-news
+      - international
+
+  - id: fox_sports_top
+    name: FOX Sports
+    url: https://api.foxsports.com/bifrost/v1/rss?feed=top
+    source_type: rss
+    country: United States
+    language: en
+    category: Sports
+    sport: Multi
+    provider: FOX Sports
+    priority: 10
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - usa
+      - editorial
+      - breaking-news

@@ -1,0 +1,151 @@
+sources:
+
+  - id: formula1
+    name: Formula 1
+    url: https://www.formula1.com/en/latest/all.xml
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Formula 1
+    provider: Formula One
+    priority: 1
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - formula1
+      - official
+      - international
+
+  - id: motorsport_com
+    name: Motorsport.com
+    url: https://www.motorsport.com/rss/all/news/
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Motorsport
+    provider: Motorsport.com
+    priority: 2
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - motorsport
+      - editorial
+
+  - id: autosport
+    name: Autosport
+    url: https://www.autosport.com/rss/all/news/
+    source_type: rss
+    country: United Kingdom
+    language: en
+    category: Sports
+    sport: Motorsport
+    provider: Autosport
+    priority: 3
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - formula1
+      - motorsport
+
+  - id: fia
+    name: FIA
+    url: https://www.fia.com/rss.xml
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Motorsport
+    provider: FIA
+    priority: 4
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - official
+      - fia
+
+  - id: motogp
+    name: MotoGP
+    url: https://www.motogp.com/en/rss/news
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: MotoGP
+    provider: MotoGP
+    priority: 5
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - motogp
+      - official
+
+  - id: worldsbk
+    name: WorldSBK
+    url: https://www.worldsbk.com/en/rss/news
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Superbike
+    provider: WorldSBK
+    priority: 6
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - superbike
+
+  - id: indycar
+    name: IndyCar
+    url: https://www.indycar.com/rss/news
+    source_type: rss
+    country: United States
+    language: en
+    category: Sports
+    sport: IndyCar
+    provider: IndyCar
+    priority: 7
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - indycar
+
+  - id: nascar
+    name: NASCAR
+    url: https://www.nascar.com/feed/
+    source_type: rss
+    country: United States
+    language: en
+    category: Sports
+    sport: NASCAR
+    provider: NASCAR
+    priority: 8
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - nascar

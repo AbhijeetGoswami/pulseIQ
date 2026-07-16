@@ -1,53 +1,109 @@
-import time
-import feedparser
+from __future__ import annotations
 
-from config import RSS_FEEDS
-from models.news_article import NewsArticle
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+from config.source_registry import SourceRegistry
 from intelligence.classifier import classify_sport
+from models.news_article import NewsArticle
+from services.connector_factory import ConnectorFactory
+from services.source_health import SourceHealthService
+
+
+MAX_WORKERS = 8
 
 
 def fetch_news():
+    """
+    Fetch news from all configured sources in parallel.
+
+    Flow
+
+        Source Registry
+                │
+                ▼
+        Connector Factory
+                │
+                ▼
+        Thread Pool
+                │
+                ▼
+        Connectors
+                │
+                ▼
+        Fetch Results
+                │
+                ▼
+        News Articles
+    """
 
     articles = []
     metrics = []
+    results = []
 
-    for source, url in RSS_FEEDS.items():
+    registry = SourceRegistry()
+    factory = ConnectorFactory()
+    health_service = SourceHealthService()
 
-        start = time.perf_counter()
+    sources = registry.enabled_sources()
 
-        feed = feedparser.parse(url)
+    def fetch_source(source):
+        connector = factory.get(source)
+        result = connector.fetch(source)
+        return source, connector, result
 
-        end = time.perf_counter()
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
 
-        duration_ms = round((end - start) * 1000)
+        futures = [
+            executor.submit(fetch_source, source)
+            for source in sources
+        ]
 
-        status = getattr(feed, "status", None)
+        for future in as_completed(futures):
 
-        metrics.append({
-            "source": source,
-            "status": status,
-            "entries": len(feed.entries),
-            "duration_ms": duration_ms
-        })
+            source, connector, result = future.result()
+            results.append(result)
 
-        print(source)
-        print(f"Status : {status}")
-        print(f"Entries : {len(feed.entries)}")
-        print("----------------")
+            metrics.append(result.metric())
 
-        for entry in feed.entries:
+            print("=" * 80)
+            print(source.name)
+            print(f"Connector   : {connector.connector_type}")
+            print(f"Status      : {result.status}")
+            print(f"Articles    : {result.article_count}")
+            print(f"Duration    : {result.duration_ms} ms")
 
-            title = getattr(entry, "title", "")
+            if result.http_status:
+                print(f"HTTP        : {result.http_status}")
 
-            article = NewsArticle(
-                title=title,
-                source=source,
-                published_at=getattr(entry, "published", ""),
-                link=getattr(entry, "link", ""),
-                sport=classify_sport(title),
-                category=None
-            )
+            if result.parser_warning:
+                print(f"Warning     : {result.parser_warning}")
 
-            articles.append(article)
+            if result.error:
+                print(f"Error       : {result.error}")
+
+            print("=" * 80)
+
+            if not result.success:
+                continue
+
+            #
+            # Business logic remains unchanged
+            #
+            for entry in result.entries:
+
+                title = getattr(entry, "title", "")
+
+                article = NewsArticle(
+                    title=title,
+                    source=source.name,
+                    published_at=getattr(entry, "published", ""),
+                    link=getattr(entry, "link", ""),
+                    sport=classify_sport(title),
+                    category=None,
+                )
+
+                articles.append(article)
+
+        health_service.save(results)
 
     return articles, metrics

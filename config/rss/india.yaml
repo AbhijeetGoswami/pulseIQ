@@ -1,0 +1,226 @@
+sources:
+
+  - id: sportstar
+    name: Sportstar
+    url: https://sportstar.thehindu.com/rss
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: The Hindu Group
+    priority: 1
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+      - india
+      - premium
+
+  - id: the_bridge
+    name: The Bridge
+    url: https://thebridge.in/feed/
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: The Bridge
+    priority: 2
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - olympics
+      - football
+      - hockey
+      - india
+
+  - id: ndtv_sports
+    name: NDTV Sports
+    url: https://feeds.feedburner.com/ndtvsports-latest
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: NDTV
+    priority: 3
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+      - breaking-news
+
+  - id: indian_express_sports
+    name: Indian Express Sports
+    url: https://indianexpress.com/section/sports/feed/
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: Indian Express
+    priority: 4
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+      - analysis
+
+  - id: times_of_india_sports
+    name: Times of India Sports
+    url: https://timesofindia.indiatimes.com/rssfeeds/4719148.cms
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: Times of India
+    priority: 5
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+
+  - id: hindustan_times_sports
+    name: Hindustan Times Sports
+    url: https://www.hindustantimes.com/feeds/rss/sports/rssfeed.xml
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: Hindustan Times
+    priority: 6
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+
+  - id: sportskeeda_india
+    name: Sportskeeda
+    url: https://www.sportskeeda.com/feed
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: Sportskeeda
+    priority: 7
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+      - trending
+
+  - id: revsportz
+    name: RevSportz
+    url: https://revsportz.in/feed/
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: RevSportz
+    priority: 8
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cricket
+      - olympics
+
+  - id: sportscafe
+    name: SportsCafe
+    url: https://sportscafe.in/feed
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: SportsCafe
+    priority: 9
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+
+  - id: mykhel
+    name: myKhel
+    url: https://www.mykhel.com/rss/
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: OneIndia
+    priority: 10
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+
+  - id: firstpost_sports
+    name: Firstpost Sports
+    url: https://www.firstpost.com/sports/feed
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: Firstpost
+    priority: 11
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - editorial
+
+  - id: sports_tak
+    name: SportsTak
+    url: https://www.sportstak.com/rss
+    source_type: rss
+    country: India
+    language: en
+    category: Sports
+    sport: Multi
+    provider: SportsTak
+    priority: 12
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - breaking-news

@@ -1,0 +1,192 @@
+sources:
+
+  - id: olympics_news
+    name: Olympics News
+    url: https://olympics.com/ioc/news/rss
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Olympics
+    provider: IOC
+    priority: 1
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - olympics
+      - official
+      - international
+
+  - id: world_athletics
+    name: World Athletics
+    url: https://worldathletics.org/news/rss
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Athletics
+    provider: World Athletics
+    priority: 2
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - athletics
+      - official
+
+  - id: world_aquatics
+    name: World Aquatics
+    url: https://www.worldaquatics.com/rss/news
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Swimming
+    provider: World Aquatics
+    priority: 3
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - swimming
+      - official
+
+  - id: world_rugby
+    name: World Rugby
+    url: https://www.world.rugby/rss
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Rugby
+    provider: World Rugby
+    priority: 4
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - rugby
+      - official
+
+  - id: world_archery
+    name: World Archery
+    url: https://worldarchery.sport/rss.xml
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Archery
+    provider: World Archery
+    priority: 5
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - archery
+      - official
+
+  - id: uci_cycling
+    name: UCI Cycling
+    url: https://www.uci.org/rss/news
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Cycling
+    provider: UCI
+    priority: 6
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - cycling
+      - official
+
+  - id: world_rowing
+    name: World Rowing
+    url: https://worldrowing.com/feed/
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Rowing
+    provider: World Rowing
+    priority: 7
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - rowing
+      - official
+
+  - id: world_triathlon
+    name: World Triathlon
+    url: https://triathlon.org/rss/news
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Triathlon
+    provider: World Triathlon
+    priority: 8
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - triathlon
+      - official
+
+  - id: world_taekwondo
+    name: World Taekwondo
+    url: https://worldtaekwondo.org/rss/news
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Taekwondo
+    provider: World Taekwondo
+    priority: 9
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - taekwondo
+      - official
+
+  - id: ijf
+    name: International Judo Federation
+    url: https://www.ijf.org/feed
+    source_type: rss
+    country: Global
+    language: en
+    category: Sports
+    sport: Judo
+    provider: IJF
+    priority: 10
+    enabled: true
+    max_articles: 50
+    poll_interval: 300
+    timeout: 10
+    retry_count: 2
+    tags:
+      - judo
+      - official
