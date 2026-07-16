@@ -22,7 +22,7 @@ const EntityExplorer = () => {
     const [entities, setEntities] = useState([]);
 
     const [loading, setLoading] = useState(true);
-    const [search, setSearch] = useState("");
+    const [search, setSearch] = useState(() => new URLSearchParams(window.location.search).get("q") ?? "");
 
     const [selectedEntity, setSelectedEntity] = useState(null);
     const [articles, setArticles] = useState([]);

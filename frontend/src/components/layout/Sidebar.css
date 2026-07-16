@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
 
-    width: 250px;
+    width: 100%;
     height: 100vh;
 
     background: linear-gradient(
@@ -51,6 +51,8 @@
     flex: 0 0 auto;
     border-radius: 15px;
 }
+.sidebar-collapse-button { display: grid; width: 28px; height: 28px; place-items: center; margin-left: auto; border: 1px solid #334155; border-radius: 7px; background: transparent; color: #cbd5e1; cursor: pointer; }
+.sidebar-collapse-button:hover { background: #1e293b; color: #fff; }
 
 .sidebar-logo {
     width: 60px;
@@ -538,3 +540,17 @@ flex:0 0 auto;
 }
 
 }
+
+.app-layout--collapsed .sidebar-brand,
+.app-layout--collapsed .sidebar-nav-label,
+.app-layout--collapsed .sidebar-link span,
+.app-layout--collapsed .sidebar-user-details,
+.app-layout--collapsed .sidebar-user-menu,
+.app-layout--collapsed .sidebar-footer-status,
+.app-layout--collapsed .sidebar-version { display: none; }
+.app-layout--collapsed .sidebar-header { justify-content: center; padding: 20px 8px; }
+.app-layout--collapsed .sidebar-collapse-button { position: absolute; top: 7px; right: 7px; }
+.app-layout--collapsed .sidebar-nav { align-items: center; padding-inline: 10px; }
+.app-layout--collapsed .sidebar-link { justify-content: center; width: 46px; padding: 12px; }
+.app-layout--collapsed .sidebar-footer { padding-inline: 10px; }
+.app-layout--collapsed .sidebar-user-content { justify-content: center; padding: 8px; }

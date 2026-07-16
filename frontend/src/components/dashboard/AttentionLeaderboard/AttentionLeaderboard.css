@@ -36,7 +36,7 @@
 .attention-explanation ul { display: grid; gap: 4px; margin: 7px 0 0; padding: 0; list-style: none; }
 .attention-explanation li { color: #526276; font-size: 11px; font-weight: 600; }
 .attention-explorer-action, .leaderboard-view-more { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 0; border-radius: 7px; background: #eff6ff; color: #1d4ed8; cursor: pointer; font: inherit; font-size: 12px; font-weight: 700; padding: 7px 9px; text-decoration: none; white-space: nowrap; }
-.leaderboard-view-more { width: 30px; height: 30px; padding: 0; }
+.leaderboard-view-more { padding: 6px 8px; }
 .attention-explorer-action:hover, .leaderboard-view-more:hover { background: #dbeafe; }
 .attention-explorer-action:focus-visible, .leaderboard-view-more:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
 .attention-empty { margin: 20px 0; color: #94a3b8; font-size: 14px; text-align: center; }

@@ -1,4 +1,4 @@
-import { FiClock, FiFileText, FiGrid, FiTrendingUp, FiUsers, FiZap } from "react-icons/fi";
+import { FiFileText, FiGrid, FiTrendingUp, FiUsers, FiZap } from "react-icons/fi";
 
 import "./SnapshotSummary.css";
 
@@ -22,7 +22,7 @@ export default function SnapshotSummary({ generatedAt, summary, categories, tren
             <header>
                 <div>
                     <p><FiZap aria-hidden="true" /> Attention snapshot</p>
-                    <span><FiClock aria-hidden="true" /> {timeAgo(generatedAt)}</span>
+                    <span><i aria-hidden="true" /> Live · {timeAgo(generatedAt).replace("Updated ", "")}</span>
                 </div>
             </header>
             <div className="snapshot-summary-items">

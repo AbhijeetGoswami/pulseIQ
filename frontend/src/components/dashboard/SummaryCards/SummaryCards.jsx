@@ -1,4 +1,4 @@
-import { FiFileText, FiGlobe, FiGrid, FiUsers } from "react-icons/fi";
+import { FiArrowUpRight, FiFileText, FiGlobe, FiGrid, FiUsers } from "react-icons/fi";
 
 import "./SummaryCards.css";
 
@@ -9,7 +9,7 @@ const metrics = [
     { key: "categories", label: "Categories tracked", detail: "Topics in the current snapshot", icon: FiGrid, tone: "amber" },
 ];
 
-export default function SummaryCards({ summary, domains = [], categories = [] }) {
+export default function SummaryCards({ summary, domains = [], categories = [], trends = [] }) {
     if (!summary) return null;
 
     const values = {
@@ -17,6 +17,13 @@ export default function SummaryCards({ summary, domains = [], categories = [] })
         entities: summary.unique_entities ?? 0,
         domains: domains.length,
         categories: categories.length,
+    };
+    const newEntities = trends.filter((trend) => trend.trend?.toLowerCase() === "new").length;
+    const movements = {
+        articles: `${Number(summary.total_mentions || 0).toLocaleString()} signals today`,
+        entities: `${newEntities} new today`,
+        domains: `${domains.length} live source${domains.length === 1 ? "" : "s"}`,
+        categories: `${categories.length} active today`,
     };
 
     return (
@@ -37,6 +44,7 @@ export default function SummaryCards({ summary, domains = [], categories = [] })
                             <p>{label}</p>
                             <strong>{values[key].toLocaleString()}</strong>
                             <small>{detail}</small>
+                            <span className="summary-card-movement"><FiArrowUpRight aria-hidden="true" /> {movements[key]}</span>
                         </div>
                     </article>
                 ))}

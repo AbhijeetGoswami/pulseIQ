@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiChevronDown, FiCompass, FiPlus, FiZap } from "react-icons/fi";
+import { FiArrowRight, FiChevronDown, FiCompass, FiZap } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 
 import Panel from "../../common/Panel/Panel";
@@ -21,8 +21,8 @@ export default function AttentionLeaderboard({ entities = [], trends = [], limit
     const getEntityKey = (entity, index) => entity.entity_id ?? entity.id ?? `${entity.value}-${index}`;
 
     return (
-        <Panel title={<span className="attention-title"><FiZap aria-hidden="true" /> Top attentions</span>} action={showViewMore ? <Link className="leaderboard-view-more" to="/attention" aria-label="View all attentions" title="View all attentions"><FiPlus aria-hidden="true" /></Link> : null}>
-            <div className="attention-intro"><span>Entities ranked by attentions</span><span>Score</span></div>
+        <Panel title={<span className="attention-title"><FiZap aria-hidden="true" /> Top attentions</span>} action={showViewMore ? <Link className="leaderboard-view-more" to="/attention">View all <FiArrowRight aria-hidden="true" /></Link> : null}>
+            {/* <div className="attention-intro"><span>Entities ranked by attentions</span><span>Score</span></div> */}
             <div className="leaderboard-body">
                 {leaderboard.length ? leaderboard.map((entity, index) => {
                     const score = Math.round(Number(entity.attention_score || 0));

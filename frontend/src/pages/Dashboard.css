@@ -35,6 +35,13 @@
     right: 0;
 
 }
+.dashboard-utility-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 14px; }
+.dashboard-search { display: flex; align-items: center; gap: 8px; width: min(360px, 100%); padding: 8px 10px; border: 1px solid #e2e8f0; border-radius: 9px; background: rgba(255, 255, 255, .8); color: #64748b; }
+.dashboard-search:focus-within { border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(37, 99, 235, .1); }
+.dashboard-search input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: #1e293b; font: inherit; font-size: 13px; }
+.dashboard-search kbd { padding: 2px 5px; border: 1px solid #dbe3ed; border-radius: 4px; color: #64748b; font-size: 10px; font-family: inherit; }
+.dashboard-time-filter { display: inline-flex; align-items: center; gap: 7px; color: #526276; font-size: 12px; font-weight: 700; }
+.dashboard-time-filter select { border: 1px solid #dbe3ed; border-radius: 8px; background: #fff; color: #334155; font: inherit; font-size: 12px; font-weight: 700; padding: 7px 8px; }
 
 .dashboard-header {
 
@@ -289,6 +296,10 @@
 }
 
 @media (max-width: 768px) {
+
+    .dashboard-utility-bar { align-items: stretch; flex-direction: column; }
+    .dashboard-search { width: auto; }
+    .dashboard-time-filter { justify-content: space-between; }
 
     .dashboard-content {
 

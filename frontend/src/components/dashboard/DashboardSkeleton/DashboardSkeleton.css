@@ -1,0 +1,10 @@
+.dashboard-skeleton { display: grid; gap: 16px; padding: 16px 0; }
+.skeleton { overflow: hidden; border-radius: 13px; background: linear-gradient(90deg, #eef2f7 20%, #f7f9fc 50%, #eef2f7 80%); background-size: 200% 100%; animation: skeleton-shimmer 1.4s infinite; }
+.skeleton-hero { height: 138px; }
+.skeleton-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.skeleton-kpi { height: 82px; }
+.skeleton-grid--widgets { grid-template-columns: 1.25fr 1fr .85fr; }
+.skeleton-widget { height: 290px; }
+@keyframes skeleton-shimmer { to { background-position: -200% 0; } }
+@media (max-width: 900px) { .skeleton-grid--widgets, .skeleton-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .skeleton-grid, .skeleton-grid--widgets { grid-template-columns: 1fr; } }

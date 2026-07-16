@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiChevronDown, FiCompass, FiPlus, FiTrendingUp } from "react-icons/fi";
+import { FiArrowRight, FiChevronDown, FiCompass, FiTrendingUp } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 
 import Panel from "../../common/Panel/Panel";
@@ -25,11 +25,11 @@ export default function TrendLeaderboard({ trends = [], limit = 7, showViewMore 
     };
 
     return (
-        <Panel title={<span className="trend-title"><FiTrendingUp aria-hidden="true" /> Trending now</span>} action={showViewMore ? <Link className="leaderboard-view-more leaderboard-view-more--trend" to="/trends" aria-label="View all trends" title="View all trends"><FiPlus aria-hidden="true" /></Link> : null}>
-            <div className="trend-intro">
+        <Panel title={<span className="trend-title"><FiTrendingUp aria-hidden="true" /> Trending now</span>} action={showViewMore ? <Link className="leaderboard-view-more leaderboard-view-more--trend" to="/trends">View all <FiArrowRight aria-hidden="true" /></Link> : null}>
+            {/* <div className="trend-intro">
                 <span>Topics currently trending</span>
                 <span>Movement</span>
-            </div>
+            </div> */}
 
             <div className="trend-list">
                 {trends.length ? trends.slice(0, limit).map((trend, index) => {
