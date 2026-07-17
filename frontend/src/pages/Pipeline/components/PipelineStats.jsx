@@ -1,10 +1,65 @@
+import {
+    FiDatabase,
+    FiFileText,
+    FiRefreshCw,
+    FiClock,
+    FiCheckCircle,
+} from "react-icons/fi";
+
 import "./PipelineStats.css";
 
 const PipelineStats = ({ data }) => {
+
+    if (!data) {
+
+        return null;
+
+    }
+
+    const stats = [
+
+        {
+            title: "Sources",
+            value: data.sources,
+            color: "#2563eb",
+            icon: <FiDatabase />,
+        },
+
+        {
+            title: "Articles Today",
+            value: data.articles,
+            color: "#10b981",
+            icon: <FiFileText />,
+        },
+
+        {
+            title: "Runs Today",
+            value: data.runs_today,
+            color: "#f59e0b",
+            icon: <FiRefreshCw />,
+        },
+
+        {
+            title: "Avg Runtime",
+            value: `${data.avg_runtime} ms`,
+            color: "#8b5cf6",
+            icon: <FiClock />,
+        },
+
+        {
+            title: "Success Rate",
+            value: `${data.success_rate}%`,
+            color: "#06b6d4",
+            icon: <FiCheckCircle />,
+        },
+
+    ];
+
     return (
+
         <div className="pipeline-stats">
 
-            {data.map((item) => (
+            {stats.map((item) => (
 
                 <div
                     key={item.title}
@@ -13,7 +68,9 @@ const PipelineStats = ({ data }) => {
 
                     <div
                         className="stat-icon"
-                        style={{ background: item.color }}
+                        style={{
+                            background: item.color,
+                        }}
                     >
                         {item.icon}
                     </div>
@@ -35,7 +92,9 @@ const PipelineStats = ({ data }) => {
             ))}
 
         </div>
+
     );
+
 };
 
 export default PipelineStats;

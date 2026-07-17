@@ -1,4 +1,11 @@
+import { useEffect, useState } from "react";
+
 import "./Pipeline.css";
+
+import {
+    getPipelineDashboard,
+    runPipeline as runPipelineApi,
+} from "../../services/api";
 
 import PipelineStatus from "./components/PipelineStatus";
 import PipelineStats from "./components/PipelineStats";
@@ -7,36 +14,137 @@ import SourceHealth from "./components/SourceHealth";
 import PipelineRuns from "./components/PipelineRuns";
 import PipelineLogs from "./components/PipelineLogs";
 
-import {
-    pipelineStatus,
-    pipelineStats,
-    sourceHealth,
-    pipelineRuns,
-    pipelineLogs,
-} from "./data/mockPipelineData";
-
 const Pipeline = () => {
-    return (
-        <div className="pipeline-page">
 
-            {/* Header */}
+    const [dashboard, setDashboard] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [running, setRunning] = useState(false);
+    const [error, setError] = useState(null);
+
+    const loadDashboard = async () => {
+
+        try {
+
+            setLoading(true);
+
+            const response = await getPipelineDashboard();
+
+            setDashboard(response);
+
+            setError(null);
+
+        } catch (err) {
+
+            console.error(err);
+
+            setError("Unable to load Pipeline Dashboard.");
+
+        } finally {
+
+            setLoading(false);
+
+        }
+
+    };
+
+    const handleRunPipeline = async () => {
+
+        try {
+
+            setRunning(true);
+
+            await runPipelineApi();
+
+            await loadDashboard();
+
+        } catch (err) {
+
+            console.error(err);
+
+            alert("Pipeline execution failed.");
+
+        } finally {
+
+            setRunning(false);
+
+        }
+
+    };
+
+    useEffect(() => {
+
+        loadDashboard();
+
+    }, []);
+
+    if (loading) {
+
+        return (
+
+            <div className="pipeline-page">
+
+                <h2>Loading Pipeline Dashboard...</h2>
+
+            </div>
+
+        );
+
+    }
+
+    if (error) {
+
+        return (
+
+            <div className="pipeline-page">
+
+                <h2>{error}</h2>
+
+                <button
+                    className="primary-btn"
+                    onClick={loadDashboard}
+                >
+                    Retry
+                </button>
+
+            </div>
+
+        );
+
+    }
+
+    return (
+
+        <div className="pipeline-page">
 
             <div className="pipeline-header">
 
                 <div>
+
                     <h1>Pipeline Operations</h1>
+
                     <p>
                         Monitor and manage the Continuous Intelligence Pipeline.
                     </p>
+
                 </div>
 
                 <div className="pipeline-actions">
 
-                    <button className="primary-btn">
-                        ▶ Run Pipeline
+                    <button
+                        className="primary-btn"
+                        disabled={running}
+                        onClick={handleRunPipeline}
+                    >
+                        {running
+                            ? "Running..."
+                            : "▶ Run Pipeline"}
                     </button>
 
-                    <button className="secondary-btn">
+                    <button
+                        className="secondary-btn"
+                        disabled={loading || running}
+                        onClick={loadDashboard}
+                    >
                         ↻ Refresh
                     </button>
 
@@ -44,30 +152,36 @@ const Pipeline = () => {
 
             </div>
 
-            <PipelineStatus data={pipelineStatus} />
+            <PipelineStatus
+                data={dashboard?.status ?? {}}
+            />
 
-            <PipelineStats data={pipelineStats} />
+            <PipelineStats
+                data={dashboard?.stats ?? {}}
+            />
 
             <PipelineFlow />
 
             <div className="pipeline-grid">
 
                 <SourceHealth
-                    sources={sourceHealth}
+                    sources={dashboard?.sources ?? []}
                 />
 
                 <PipelineRuns
-                    runs={pipelineRuns}
+                    runs={dashboard?.runs ?? []}
                 />
 
             </div>
 
             <PipelineLogs
-                logs={pipelineLogs}
+                logs={dashboard?.logs ?? []}
             />
 
         </div>
+
     );
+
 };
 
 export default Pipeline;

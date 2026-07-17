@@ -70,6 +70,7 @@ app.include_router(
     pipeline_router,
     prefix="/api",
 )
+
 app.include_router(auth_router)
 
 

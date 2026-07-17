@@ -1,28 +1,46 @@
 import "./SourceHealth.css";
 
 const getStatusClass = (status) => {
-    switch (status) {
-        case "Healthy":
+
+    switch (status?.toLowerCase()) {
+
+        case "healthy":
+        case "online":
+        case "success":
             return "healthy";
 
-        case "Warning":
+        case "warning":
             return "warning";
 
-        case "Failed":
+        case "failed":
+        case "offline":
+        case "error":
             return "failed";
 
         default:
             return "";
     }
+
 };
 
-const SourceHealth = ({ sources }) => {
+const SourceHealth = ({ sources = [] }) => {
+
     return (
+
         <div className="source-health-card">
 
             <div className="section-header">
-                <h2>Source Health</h2>
-                <p>Current status of configured ingestion sources.</p>
+
+                <div>
+
+                    <h2>Source Health</h2>
+
+                    <p>
+                        Current status of configured ingestion sources.
+                    </p>
+
+                </div>
+
             </div>
 
             <div className="source-table">
@@ -36,37 +54,63 @@ const SourceHealth = ({ sources }) => {
 
                 </div>
 
-                {sources.map((source) => (
+                {sources.length === 0 ? (
 
-                    <div
-                        className="table-row"
-                        key={source.source}
-                    >
+                    <div className="table-row">
 
-                        <span className="source-name">
-                            {source.source}
-                        </span>
-
-                        <span className={`status-pill ${getStatusClass(source.status)}`}>
-                            {source.status}
-                        </span>
-
-                        <span>
-                            {source.articles}
-                        </span>
-
-                        <span className="last-success">
-                            {source.lastSuccess}
-                        </span>
+                        <span>No sources found.</span>
 
                     </div>
 
-                ))}
+                ) : (
+
+                    sources.map((source, index) => (
+
+                        <div
+                            className="table-row"
+                            key={`${source.source}-${source.status}-${index}`}
+                        >
+
+                            <span className="source-name">
+
+                                {source.source}
+
+                            </span>
+
+                            <span
+                                className={`status-pill ${getStatusClass(
+                                    source.status
+                                )}`}
+                            >
+
+                                {source.status}
+
+                            </span>
+
+                            <span>
+
+                                {source.articles}
+
+                            </span>
+
+                            <span className="last-success">
+
+                                {source.last_success || "N/A"}
+
+                            </span>
+
+                        </div>
+
+                    ))
+
+                )}
 
             </div>
 
         </div>
+
     );
+
 };
 
 export default SourceHealth;

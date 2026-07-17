@@ -1,82 +1,108 @@
-from __future__ import annotations
+from fastapi import APIRouter, HTTPException
 
-from fastapi import APIRouter
-from fastapi.responses import JSONResponse
-
-from services.source_health import SourceHealthService
+from services.pipeline_service import (
+    get_pipeline_dashboard,
+    get_pipeline_logs,
+    get_pipeline_runs,
+    get_pipeline_status,
+    get_source_health,
+    run_pipeline,
+)
 
 router = APIRouter(
     prefix="/pipeline",
     tags=["Pipeline"],
 )
 
-health_service = SourceHealthService()
 
 
-@router.get("/health")
-def pipeline_health():
-    """
-    Returns the latest pipeline/source health report.
-    """
 
-    report = health_service.latest()
+@router.get("/dashboard")
+def pipeline_dashboard():
 
-    if not report:
-        return JSONResponse(
-            status_code=404,
-            content={
-                "status": "error",
-                "message": "No source health report found.",
-            },
+    try:
+
+        return get_pipeline_dashboard()
+
+    except Exception as ex:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(ex),
+        )
+    
+
+
+
+@router.get("/status")
+def pipeline_status():
+
+    try:
+
+        return get_pipeline_status()
+
+    except Exception as ex:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(ex),
         )
 
-    return {
-        "status": "success",
-        "data": report,
-    }
 
+@router.get("/runs")
+def pipeline_runs(limit: int = 10):
 
-@router.get("/summary")
-def pipeline_summary():
-    """
-    Returns only the summary section.
-    """
+    try:
 
-    report = health_service.latest()
+        return get_pipeline_runs(limit)
 
-    if not report:
-        return JSONResponse(
-            status_code=404,
-            content={
-                "status": "error",
-                "message": "No source health report found.",
-            },
+    except Exception as ex:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(ex),
         )
-
-    return {
-        "status": "success",
-        "summary": report["summary"],
-    }
 
 
 @router.get("/sources")
 def pipeline_sources():
-    """
-    Returns the list of all configured source health records.
-    """
 
-    report = health_service.latest()
+    try:
 
-    if not report:
-        return JSONResponse(
-            status_code=404,
-            content={
-                "status": "error",
-                "message": "No source health report found.",
-            },
+        return get_source_health()
+
+    except Exception as ex:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(ex),
         )
 
-    return {
-        "status": "success",
-        "sources": report["sources"],
-    }
+
+@router.get("/logs")
+def pipeline_logs(limit: int = 25):
+
+    try:
+
+        return get_pipeline_logs(limit)
+
+    except Exception as ex:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(ex),
+        )
+    
+@router.post("/run")
+def pipeline_run():
+
+    try:
+
+        return run_pipeline()
+
+    except Exception as ex:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(ex),
+        )    

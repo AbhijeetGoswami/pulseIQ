@@ -68,4 +68,93 @@ api.interceptors.response.use(
 
 );
 
+
+/*
+|--------------------------------------------------------------------------
+| Pipeline APIs
+|--------------------------------------------------------------------------
+*/
+
+export const getPipelineDashboard = async () => {
+
+    const response = await api.get(
+        "/pipeline/dashboard"
+    );
+
+    return response.data;
+
+};
+
+
+export const getPipelineStatus = async () => {
+
+    const response = await api.get(
+        "/pipeline/status"
+    );
+
+    return response.data;
+
+};
+
+
+export const getPipelineRuns = async (limit = 10) => {
+
+    const response = await api.get(
+        "/pipeline/runs",
+        {
+            params: {
+                limit,
+            },
+        }
+    );
+
+    return response.data;
+
+};
+
+
+export const getPipelineSources = async () => {
+
+    const response = await api.get(
+        "/pipeline/sources"
+    );
+
+    return response.data;
+
+};
+
+
+export const getPipelineLogs = async (limit = 25) => {
+
+    const response = await api.get(
+        "/pipeline/logs",
+        {
+            params: {
+                limit,
+            },
+        }
+    );
+
+    return response.data;
+
+};
+
+
+/*
+|--------------------------------------------------------------------------
+| Pipeline Actions
+|--------------------------------------------------------------------------
+*/
+
+export const runPipeline = async () => {
+
+    const response = await api.post(
+        "/pipeline/run"
+    );
+
+    return response.data;
+
+};
+
+
 export default api;

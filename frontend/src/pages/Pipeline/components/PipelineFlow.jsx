@@ -1,3 +1,5 @@
+import React from "react";
+
 import "./PipelineFlow.css";
 
 import {
@@ -7,7 +9,7 @@ import {
     FiActivity,
     FiTrendingUp,
     FiDatabase,
-    FiMonitor
+    FiMonitor,
 } from "react-icons/fi";
 
 const stages = [
@@ -16,50 +18,50 @@ const stages = [
         icon: FiRss,
         status: "Online",
         metric: "18 Sources",
-        duration: "Live"
+        duration: "Live",
     },
     {
         title: "Collector",
         icon: FiDownloadCloud,
         status: "Success",
         metric: "342 Articles",
-        duration: "8 sec"
+        duration: "8 sec",
     },
     {
         title: "Intelligence",
         icon: FiCpu,
         status: "Success",
         metric: "97 Entities",
-        duration: "3 sec"
+        duration: "3 sec",
     },
     {
         title: "Attention",
         icon: FiActivity,
         status: "Success",
         metric: "31 Signals",
-        duration: "1 sec"
+        duration: "1 sec",
     },
     {
         title: "Trend Engine",
         icon: FiTrendingUp,
         status: "Success",
         metric: "12 Trends",
-        duration: "1 sec"
+        duration: "1 sec",
     },
     {
         title: "Snapshot Store",
         icon: FiDatabase,
         status: "Healthy",
         metric: "2 Snapshots",
-        duration: "Ready"
+        duration: "Ready",
     },
     {
         title: "Dashboard APIs",
         icon: FiMonitor,
         status: "Serving",
         metric: "6 APIs",
-        duration: "<100 ms"
-    }
+        duration: "<100 ms",
+    },
 ];
 
 const PipelineFlow = () => {
@@ -72,7 +74,9 @@ const PipelineFlow = () => {
 
                 <div>
 
-                    <h2>Continuous Intelligence Pipeline</h2>
+                    <h2>
+                        Continuous Intelligence Pipeline
+                    </h2>
 
                     <p>
                         Live execution path from ingestion to dashboard delivery.
@@ -84,78 +88,69 @@ const PipelineFlow = () => {
 
             <div className="pipeline-track">
 
-                {
+                {stages.map((stage, index) => {
 
-                    stages.map((stage, index) => {
+                    const Icon = stage.icon;
 
-                        const Icon = stage.icon;
+                    return (
 
-                        return (
+                        <React.Fragment
+                            key={stage.title}
+                        >
 
-                            <>
+                            <div className="pipeline-stage">
 
-                                <div
-                                    className="pipeline-stage"
-                                    key={stage.title}
-                                >
+                                <div className="stage-icon">
 
-                                    <div className="stage-icon">
-
-                                        <Icon />
-
-                                    </div>
-
-                                    <h3>
-
-                                        {stage.title}
-
-                                    </h3>
-
-                                    <span className="stage-status">
-
-                                        {stage.status}
-
-                                    </span>
-
-                                    <div className="stage-divider" />
-
-                                    <div className="stage-metric">
-
-                                        {stage.metric}
-
-                                    </div>
-
-                                    <small>
-
-                                        {stage.duration}
-
-                                    </small>
+                                    <Icon />
 
                                 </div>
 
-                                {
+                                <h3>
 
-                                    index < stages.length - 1 && (
+                                    {stage.title}
 
-                                        <div className="pipeline-connector">
+                                </h3>
 
-                                            <div className="connector-line" />
+                                <span className="stage-status">
 
-                                            <div className="connector-dot" />
+                                    {stage.status}
 
-                                        </div>
+                                </span>
 
-                                    )
+                                <div className="stage-divider" />
 
-                                }
+                                <div className="stage-metric">
 
-                            </>
+                                    {stage.metric}
 
-                        );
+                                </div>
 
-                    })
+                                <small>
 
-                }
+                                    {stage.duration}
+
+                                </small>
+
+                            </div>
+
+                            {index < stages.length - 1 && (
+
+                                <div className="pipeline-connector">
+
+                                    <div className="connector-line" />
+
+                                    <div className="connector-dot" />
+
+                                </div>
+
+                            )}
+
+                        </React.Fragment>
+
+                    );
+
+                })}
 
             </div>
 
