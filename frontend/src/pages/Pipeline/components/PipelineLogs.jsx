@@ -1,12 +1,13 @@
+import "../../../components/dashboard/SummaryCards/SummaryCards.css";
 import "./PipelineLogs.css";
 
 const PipelineLogs = ({ logs = [] }) => {
 
     return (
 
-        <div className="pipeline-logs-card">
+        <section className="summary-section pipeline-logs-card">
 
-            <div className="section-header">
+            <div className="summary-section-heading">
 
                 <div>
 
@@ -65,7 +66,7 @@ const PipelineLogs = ({ logs = [] }) => {
 
             </div>
 
-        </div>
+        </section>
 
     );
 

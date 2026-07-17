@@ -7,7 +7,6 @@ import {
     runPipeline as runPipelineApi,
 } from "../../services/api";
 
-import PipelineStatus from "./components/PipelineStatus";
 import PipelineStats from "./components/PipelineStats";
 import PipelineFlow from "./components/PipelineFlow";
 import SourceHealth from "./components/SourceHealth";
@@ -72,44 +71,35 @@ const Pipeline = () => {
     };
 
     useEffect(() => {
-
         loadDashboard();
-
     }, []);
 
+    const shouldShowPipelineStatus = Boolean(
+        dashboard?.status &&
+        (dashboard.status.lastRun || dashboard.status.last_run)
+    );
+
     if (loading) {
-
         return (
-
             <div className="pipeline-page">
-
-                <h2>Loading Pipeline Dashboard...</h2>
-
+                <div className="pipeline-loading-card">
+                    <h2>Loading Pipeline Dashboard...</h2>
+                </div>
             </div>
-
         );
-
     }
 
     if (error) {
-
         return (
-
             <div className="pipeline-page">
-
-                <h2>{error}</h2>
-
-                <button
-                    className="primary-btn"
-                    onClick={loadDashboard}
-                >
-                    Retry
-                </button>
-
+                <div className="pipeline-loading-card">
+                    <h2>{error}</h2>
+                    <button className="primary-btn" onClick={loadDashboard}>
+                        Retry
+                    </button>
+                </div>
             </div>
-
         );
-
     }
 
     return (
@@ -151,10 +141,6 @@ const Pipeline = () => {
                 </div>
 
             </div>
-
-            <PipelineStatus
-                data={dashboard?.status ?? {}}
-            />
 
             <PipelineStats
                 data={dashboard?.stats ?? {}}

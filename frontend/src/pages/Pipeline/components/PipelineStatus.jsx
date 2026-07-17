@@ -10,45 +10,31 @@ import {
 } from "react-icons/fi";
 
 const PipelineStatus = ({ data }) => {
+    const statusLabel = data?.status || "Operational";
+    const lastRun = data?.lastRun ?? data?.last_run;
+    const nextRun = data?.nextRun ?? data?.next_run;
+    const scheduler = data?.scheduler;
+    const autoRefresh = data?.autoRefresh ?? data?.auto_refresh;
 
     return (
-
         <div className="pipeline-overview">
-
             <div className="overview-left">
-
                 <div className="overview-title">
-
                     <FiCheckCircle />
-
                     <div>
-
-                        <h2>System Operational</h2>
-
-                        <p>
-                            Continuous Intelligence Pipeline is running normally.
-                        </p>
-
+                        <h2>{statusLabel}</h2>
+                        <p>Continuous Intelligence Pipeline is running normally.</p>
                     </div>
-
                 </div>
-
             </div>
-
             <div className="overview-right">
 
                 <div className="overview-item">
-
                     <FiClock />
-
                     <div>
-
                         <span>Last Run</span>
-
-                        <strong>{data.lastRun}</strong>
-
+                        <strong>{lastRun ?? "—"}</strong>
                     </div>
-
                 </div>
 
                 <div className="overview-item">
@@ -56,13 +42,9 @@ const PipelineStatus = ({ data }) => {
                     <FiRefreshCw />
 
                     <div>
-
                         <span>Next Run</span>
-
-                        <strong>{data.nextRun}</strong>
-
+                        <strong>{nextRun ?? "—"}</strong>
                     </div>
-
                 </div>
 
                 <div className="overview-item">
@@ -70,13 +52,9 @@ const PipelineStatus = ({ data }) => {
                     <FiServer />
 
                     <div>
-
                         <span>Scheduler</span>
-
-                        <strong>{data.scheduler}</strong>
-
+                        <strong>{scheduler ?? "—"}</strong>
                     </div>
-
                 </div>
 
                 <div className="overview-item">
@@ -84,13 +62,9 @@ const PipelineStatus = ({ data }) => {
                     <FiActivity />
 
                     <div>
-
                         <span>Auto Refresh</span>
-
-                        <strong>{data.autoRefresh}</strong>
-
+                        <strong>{autoRefresh ?? "—"}</strong>
                     </div>
-
                 </div>
 
                 <div className="overview-item">

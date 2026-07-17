@@ -1,146 +1,131 @@
 .pipeline-page {
-
-    padding: 30px;
-
+    min-height: 100vh;
+    padding: clamp(24px, 2vw, 36px) var(--content-padding-right, 32px) var(--content-padding-bottom, 32px) var(--content-padding-left, 32px);
     display: flex;
     flex-direction: column;
     gap: 24px;
-
+    background: var(--bg-primary, #f5f7fb);
+    color: var(--text-primary, #111827);
     animation: fadeIn .3s ease;
 }
 
-.pipeline-header {
+.pipeline-loading-card,
+.pipeline-header,
+.pipeline-flow-card,
+.source-health-card,
+.pipeline-runs-card,
+.pipeline-logs-card,
+.pipeline-stats {
+    background: var(--surface, #ffffff);
+    border: 1px solid var(--border-soft, #e9eef5);
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, .08);
+}
 
+.pipeline-loading-card {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.pipeline-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
+    padding: 32px;
 }
 
 .pipeline-header h1 {
-
     margin: 0;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: clamp(2rem, 2.4vw, 2.4rem);
+    font-weight: 800;
 }
 
 .pipeline-header p {
-
-    margin-top: 6px;
-    color: var(--text-secondary);
+    margin: 8px 0 0;
+    color: var(--text-secondary, #64748b);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 680px;
 }
 
 .pipeline-actions {
-
     display: flex;
+    align-items: center;
     gap: 12px;
-}
-
-.primary-btn {
-
-    background: #2563eb;
-    color: white;
-
-    border: none;
-
-    padding: 10px 18px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    font-weight: 600;
-
-    transition: .2s;
-}
-
-.primary-btn:hover {
-
-    transform: translateY(-2px);
-}
-
-.secondary-btn {
-
-    background: transparent;
-
-    border: 1px solid var(--border-color);
-
-    padding: 10px 18px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    color: var(--text-primary);
-
-    transition: .2s;
-}
-
-.secondary-btn:hover {
-
-    background: var(--surface-hover);
-}
-
-.pipeline-grid {
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 20px;
-}
-
-@keyframes fadeIn {
-
-    from {
-
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media(max-width:1000px){
-
-.pipeline-header{
-
-flex-direction:column;
-align-items:flex-start;
-
-}
-
-.pipeline-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-@media(max-width:700px){
-
-.pipeline-page{
-
-padding:20px;
-
-}
-
-.pipeline-actions{
-
-width:100%;
-
+    flex-wrap: wrap;
 }
 
 .primary-btn,
-.secondary-btn{
-
-flex:1;
-
+.secondary-btn {
+    min-width: 140px;
+    padding: 12px 20px;
+    border-radius: 14px;
+    font-weight: 700;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
 }
 
+.primary-btn {
+    background: #2563eb;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.primary-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background: #1d4ed8;
+}
+
+.secondary-btn {
+    background: var(--surface, #ffffff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    color: var(--text-primary, #111827);
+}
+
+.secondary-btn:hover:not(:disabled) {
+    background: var(--surface-hover, #f8fafc);
+}
+
+.pipeline-card,
+.pipeline-stats {
+    padding: 26px;
+}
+
+.pipeline-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+@media (max-width: 1100px) {
+    .pipeline-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .pipeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 700px) {
+    .pipeline-page {
+        padding: 20px 16px 24px;
+    }
+
+    .pipeline-actions {
+        width: 100%;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        justify-content: center;
+    }
 }

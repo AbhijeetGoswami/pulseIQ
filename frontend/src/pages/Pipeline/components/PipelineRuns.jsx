@@ -1,3 +1,4 @@
+import "../../../components/dashboard/SummaryCards/SummaryCards.css";
 import "./PipelineRuns.css";
 
 const getStatusClass = (status) => {
@@ -44,9 +45,9 @@ const PipelineRuns = ({ runs = [] }) => {
 
     return (
 
-        <div className="pipeline-runs-card">
+        <section className="summary-section pipeline-runs-card">
 
-            <div className="section-header">
+            <div className="summary-section-heading">
 
                 <div>
 
@@ -74,92 +75,36 @@ const PipelineRuns = ({ runs = [] }) => {
 
                     runs.map((run, index) => (
 
-                        <div
-                            className="run-card"
+                        <article
+                            className="summary-card run-card"
                             key={`${run.run_id}-${index}`}
                         >
-
-                            <div className="run-top">
-
-                                <div>
-
-                                    <h3>
-
-                                        Run #{run.run_id}
-
-                                    </h3>
-
-                                    <span className="run-time">
-
-                                        Started {run.started_at}
-
-                                    </span>
-
-                                </div>
-
-                                <span
-                                    className={`run-status ${getStatusClass(run.status)}`}
-                                >
-
-                                    {getStatusIcon(run.status)} {run.status}
-
+                            <div className="summary-card-icon">
+                                <span className="run-status-icon">{getStatusIcon(run.status)}</span>
+                            </div>
+                            <div className="summary-card-content">
+                                <p>Run #{run.run_id}</p>
+                                <strong>{run.total_articles} articles</strong>
+                                <small>Started {run.started_at}</small>
+                                <span className={`run-status ${getStatusClass(run.status)}`}>
+                                    {run.status}
                                 </span>
-
+                                <div className="run-details">
+                                    <div>
+                                        <small>Duration</small>
+                                        <strong>{run.duration_ms} ms</strong>
+                                    </div>
+                                    <div>
+                                        <small>Inserted</small>
+                                        <strong>{run.inserted}</strong>
+                                    </div>
+                                    <div>
+                                        <small>Duplicates</small>
+                                        <strong>{run.duplicates}</strong>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div className="run-details">
-
-                                <div>
-
-                                    <small>Duration</small>
-
-                                    <strong>
-
-                                        {run.duration_ms} ms
-
-                                    </strong>
-
-                                </div>
-
-                                <div>
-
-                                    <small>Articles</small>
-
-                                    <strong>
-
-                                        {run.total_articles}
-
-                                    </strong>
-
-                                </div>
-
-                                <div>
-
-                                    <small>Inserted</small>
-
-                                    <strong>
-
-                                        {run.inserted}
-
-                                    </strong>
-
-                                </div>
-
-                                <div>
-
-                                    <small>Duplicates</small>
-
-                                    <strong>
-
-                                        {run.duplicates}
-
-                                    </strong>
-
-                                </div>
-
-                            </div>
-
-                        </div>
+                        </article>
 
                     ))
 
@@ -167,7 +112,7 @@ const PipelineRuns = ({ runs = [] }) => {
 
             </div>
 
-        </div>
+        </section>
 
     );
 

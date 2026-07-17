@@ -1,5 +1,6 @@
 import React from "react";
 
+import "../../../components/dashboard/SummaryCards/SummaryCards.css";
 import "./PipelineFlow.css";
 
 import {
@@ -64,13 +65,31 @@ const stages = [
     },
 ];
 
+const getStageStatusClass = (status) => {
+    switch ((status || "").toLowerCase()) {
+        case "online":
+        case "serving":
+            return "online";
+        case "healthy":
+        case "success":
+            return "success";
+        case "warning":
+            return "warning";
+        case "error":
+        case "failed":
+            return "failed";
+        default:
+            return "";
+    }
+};
+
 const PipelineFlow = () => {
 
     return (
 
-        <div className="pipeline-flow-card">
+        <section className="summary-section pipeline-flow-card">
 
-            <div className="section-header">
+            <div className="summary-section-heading">
 
                 <div>
 
@@ -98,40 +117,16 @@ const PipelineFlow = () => {
                             key={stage.title}
                         >
 
-                            <div className="pipeline-stage">
-
-                                <div className="stage-icon">
-
+                            <div className="summary-card pipeline-stage">
+                                <div className="summary-card-icon">
                                     <Icon />
-
                                 </div>
-
-                                <h3>
-
-                                    {stage.title}
-
-                                </h3>
-
-                                <span className="stage-status">
-
-                                    {stage.status}
-
-                                </span>
-
-                                <div className="stage-divider" />
-
-                                <div className="stage-metric">
-
-                                    {stage.metric}
-
+                                <div className="summary-card-content">
+                                    <p>{stage.title}</p>
+                                    <strong>{stage.metric}</strong>
+                                    <small>{stage.duration}</small>
+                                    <span className={`stage-status ${getStageStatusClass(stage.status)}`}>{stage.status}</span>
                                 </div>
-
-                                <small>
-
-                                    {stage.duration}
-
-                                </small>
-
                             </div>
 
                             {index < stages.length - 1 && (
@@ -154,7 +149,7 @@ const PipelineFlow = () => {
 
             </div>
 
-        </div>
+        </section>
 
     );
 

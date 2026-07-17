@@ -1,3 +1,4 @@
+import "../../../components/dashboard/SummaryCards/SummaryCards.css";
 import "./SourceHealth.css";
 
 const getStatusClass = (status) => {
@@ -27,9 +28,9 @@ const SourceHealth = ({ sources = [] }) => {
 
     return (
 
-        <div className="source-health-card">
+        <section className="summary-section source-health-card">
 
-            <div className="section-header">
+            <div className="summary-section-heading">
 
                 <div>
 
@@ -43,7 +44,7 @@ const SourceHealth = ({ sources = [] }) => {
 
             </div>
 
-            <div className="source-table">
+            <div className="source-list">
 
                 <div className="table-header">
 
@@ -56,7 +57,7 @@ const SourceHealth = ({ sources = [] }) => {
 
                 {sources.length === 0 ? (
 
-                    <div className="table-row">
+                    <div className="summary-card source-row no-data">
 
                         <span>No sources found.</span>
 
@@ -67,7 +68,7 @@ const SourceHealth = ({ sources = [] }) => {
                     sources.map((source, index) => (
 
                         <div
-                            className="table-row"
+                            className="summary-card source-row"
                             key={`${source.source}-${source.status}-${index}`}
                         >
 
@@ -107,7 +108,7 @@ const SourceHealth = ({ sources = [] }) => {
 
             </div>
 
-        </div>
+        </section>
 
     );
 
