@@ -1,0 +1,142 @@
+.source-health-card {
+
+    background: var(--surface-color, #ffffff);
+
+    border: 1px solid var(--border-color, #e5e7eb);
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+
+.source-table {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.table-header,
+.table-row {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1.3fr 1fr 1.5fr;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+.table-header {
+
+    font-weight: 700;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+
+    color: var(--text-secondary, #6b7280);
+}
+
+.table-row {
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    transition: .2s;
+
+    background: var(--card-muted, #fafafa);
+}
+
+.table-row:hover {
+
+    transform: translateX(3px);
+
+    background: rgba(59,130,246,.05);
+}
+
+.source-name {
+
+    font-weight: 600;
+}
+
+.last-success {
+
+    color: var(--text-secondary, #6b7280);
+}
+
+.status-pill {
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: fit-content;
+
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.status-pill.healthy {
+
+    background: rgba(34,197,94,.15);
+
+    color: #15803d;
+}
+
+.status-pill.warning {
+
+    background: rgba(245,158,11,.15);
+
+    color: #b45309;
+}
+
+.status-pill.failed {
+
+    background: rgba(239,68,68,.15);
+
+    color: #dc2626;
+}
+
+@media (max-width:900px){
+
+.table-header{
+
+display:none;
+
+}
+
+.table-row{
+
+grid-template-columns:1fr;
+
+gap:8px;
+
+}
+
+.table-row span{
+
+display:block;
+
+}
+
+.status-pill{
+
+margin-top:4px;
+
+}
+
+}

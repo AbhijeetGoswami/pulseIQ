@@ -13,6 +13,7 @@ import Attention from "./pages/Attention";
 import Articles from "./pages/Articles";
 import EntityExplorer from "./pages/EntityExplorer";
 import Trends from "./pages/Trends";
+import Pipeline from "./pages/Pipeline/Pipeline";
 import Login from "./pages/Login";
 import VerifyOtp from "./pages/VerifyOtp";
 import NotFound from "./pages/NotFound";
@@ -86,6 +87,11 @@ function App() {
                         <Route path="/attention" element={<Attention />} />
 
                         <Route path="/trends" element={<Trends />} />
+
+                        <Route
+                            path="/pipeline"
+                            element={<Pipeline />}
+                        />
 
                         <Route
                             path="/entities"
