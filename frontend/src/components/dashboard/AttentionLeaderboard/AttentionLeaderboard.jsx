@@ -15,7 +15,12 @@ export default function AttentionLeaderboard({ entities = [], trends = [], limit
 
     const handleEntityClick = (entity) => {
         const normalized = normalizeEntity(entity);
-        navigate(`/entities?id=${normalized.entity_id}`, { state: { entity: normalized } });
+        navigate(`/attention/${normalized.entity_id}`, {
+            state: {
+                entity: normalized,
+                from: "dashboard",
+            },
+        });
     };
 
     const getEntityKey = (entity, index) => entity.entity_id ?? entity.id ?? `${entity.value}-${index}`;
@@ -54,7 +59,7 @@ export default function AttentionLeaderboard({ entities = [], trends = [], limit
                                 </>}
                                 <FiChevronDown className={`attention-chevron${isExpanded ? " attention-chevron--open" : ""}`} aria-hidden="true" />
                             </button>
-                            {isExpanded && <div id={`attention-details-${entityKey}`} className="attention-details"><div className="attention-explanation"><strong>Why is {entity.value} drawing attention?</strong><ul>{reasons.map((reason) => <li key={reason}>✓ {reason}</li>)}</ul></div><button type="button" className="attention-explorer-action" onClick={() => handleEntityClick(entity)}>Open in Explorer <FiCompass aria-hidden="true" /></button></div>}
+                            {isExpanded && <div id={`attention-details-${entityKey}`} className="attention-details"><div className="attention-explanation"><strong>Why is {entity.value} drawing attention?</strong><ul>{reasons.map((reason) => <li key={reason}>✓ {reason}</li>)}</ul></div><button type="button" className="attention-explorer-action" onClick={() => handleEntityClick(entity)}>Open in Attention Report <FiCompass aria-hidden="true" /></button></div>}
                         </article>
                     );
                 }) : <p className="attention-empty">No attention data is available yet.</p>}

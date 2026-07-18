@@ -10,6 +10,7 @@ import Layout from "./components/layout/Layout";
 
 import Dashboard from "./pages/Dashboard";
 import Attention from "./pages/Attention";
+import AttentionReport from "./pages/AttentionReport";
 import Articles from "./pages/Articles";
 import EntityExplorer from "./pages/EntityExplorer";
 import Trends from "./pages/Trends";
@@ -85,7 +86,7 @@ function App() {
                         />
 
                         <Route path="/attention" element={<Attention />} />
-
+                        <Route path="/attention/:entityId" element={<AttentionReport />} />
                         <Route path="/trends" element={<Trends />} />
 
                         <Route

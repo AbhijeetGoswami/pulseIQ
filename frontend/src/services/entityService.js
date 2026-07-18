@@ -56,26 +56,6 @@ export const searchEntities = async (text) => {
 };
 
 export const getEntityArticles = async (entityId) => {
-
-    const response = await axios.get(
-        `${API_BASE}/lookup/${entityId}`
-    );
-
-    // return response.data;
-    return response.data.map(entity => ({
-
-            id: entity.entity_id,
-
-            value: entity.display_name,
-
-            type: entity.entity_type,
-
-            sport: entity.sport,
-
-            mentions: entity.mentions,
-
-            ...entity
-
-        }));
-
+    const response = await axios.get(`${API_BASE}/lookup/${entityId}`);
+    return response.data;
 };

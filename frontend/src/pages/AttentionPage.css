@@ -1,0 +1,198 @@
+.attention-page {
+    max-width: 1180px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.attention-page-header {
+    margin-bottom: 24px;
+}
+
+.attention-page-header p {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0 0 8px;
+    color: #1d4ed8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.attention-page-header h1 {
+    margin: 0;
+    color: #0f172a;
+    font-size: clamp(32px, 3vw, 42px);
+}
+
+.attention-page-header span {
+    display: block;
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 15px;
+}
+
+.attention-toolbar {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 22px;
+    grid-template-columns: 1fr;
+}
+
+.attention-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #dbeafe;
+}
+
+.attention-search svg {
+    color: #2563eb;
+    flex-shrink: 0;
+}
+
+.attention-search input {
+    flex: 1;
+    border: 0;
+    font-size: 15px;
+    padding: 8px 0;
+    background: transparent;
+    color: #0f172a;
+}
+
+.attention-search input:focus {
+    outline: none;
+}
+
+.attention-filters {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr)) auto;
+    gap: 12px;
+}
+
+.attention-filters label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    color: #475569;
+}
+
+.attention-filters select {
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 10px 12px;
+    background: #fff;
+    color: #0f172a;
+}
+
+.sort-direction {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #0f172a;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.sort-direction svg {
+    transition: transform 0.2s ease;
+}
+
+.sort-direction .rotate {
+    transform: rotate(-180deg);
+}
+
+.attention-table-wrapper {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+}
+
+.attention-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 960px;
+}
+
+.attention-table th,
+.attention-table td {
+    padding: 16px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.attention-table th {
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.attention-table td {
+    color: #334155;
+    font-size: 14px;
+}
+
+.attention-table tr:hover {
+    background: #f8fafc;
+}
+
+.attention-table button {
+    border: none;
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 8px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.attention-table button:hover {
+    background: #dbeafe;
+}
+
+.entity-meta {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.attention-empty-row {
+    text-align: center;
+    color: #64748b;
+    padding: 24px;
+}
+
+@media (max-width: 900px) {
+    .attention-filters {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .attention-page {
+        padding: 0 12px;
+    }
+
+    .attention-search {
+        padding: 10px 12px;
+    }
+
+    .attention-table th,
+    .attention-table td {
+        padding: 12px 10px;
+    }
+}
