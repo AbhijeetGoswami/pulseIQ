@@ -35,7 +35,7 @@
 .pipeline-loading-card p { margin: 6px 0 0; color: #64748b; font-size: 13px; }
 
 .pipeline-hero {
-    margin: 0;
+    margin-bottom: 16px;
     padding: 20px 22px;
     border: 1px solid #dbe7f5;
     border-radius: 14px;

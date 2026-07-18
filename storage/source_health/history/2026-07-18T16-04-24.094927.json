@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T16:32:58.860351",
+  "generated_at": "2026-07-18T16:04:24.094927",
   "summary": {
     "sources": 58,
     "healthy": 29,
@@ -17,22 +17,7 @@
       "priority": 1,
       "status": "HEALTHY",
       "articles": 10,
-      "duration_ms": 5622,
-      "http_status": 200,
-      "parser_warning": null,
-      "error": null
-    },
-    {
-      "id": "espn_cricinfo",
-      "name": "ESPN Cricinfo",
-      "connector": "rss",
-      "country": "Global",
-      "sport": "Cricket",
-      "provider": "ESPN",
-      "priority": 1,
-      "status": "HEALTHY",
-      "articles": 50,
-      "duration_ms": 6112,
+      "duration_ms": 5338,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -47,7 +32,22 @@
       "priority": 1,
       "status": "HEALTHY",
       "articles": 50,
-      "duration_ms": 6753,
+      "duration_ms": 6675,
+      "http_status": 200,
+      "parser_warning": null,
+      "error": null
+    },
+    {
+      "id": "espn_cricinfo",
+      "name": "ESPN Cricinfo",
+      "connector": "rss",
+      "country": "Global",
+      "sport": "Cricket",
+      "provider": "ESPN",
+      "priority": 1,
+      "status": "HEALTHY",
+      "articles": 50,
+      "duration_ms": 7103,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -62,7 +62,7 @@
       "priority": 1,
       "status": "HEALTHY",
       "articles": 50,
-      "duration_ms": 7341,
+      "duration_ms": 7528,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -77,7 +77,7 @@
       "priority": 1,
       "status": "FAILED",
       "articles": 0,
-      "duration_ms": 8938,
+      "duration_ms": 8413,
       "http_status": 200,
       "parser_warning": "SAXParseException",
       "error": null
@@ -92,7 +92,7 @@
       "priority": 1,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 10884,
+      "duration_ms": 9716,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.olympics.com/courtesy/error/404.html"
@@ -107,7 +107,7 @@
       "priority": 2,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 5849,
+      "duration_ms": 5620,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.icc-cricket.com/rss/news"
@@ -122,7 +122,7 @@
       "priority": 2,
       "status": "HEALTHY",
       "articles": 20,
-      "duration_ms": 6366,
+      "duration_ms": 6272,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -137,22 +137,7 @@
       "priority": 2,
       "status": "HEALTHY",
       "articles": 50,
-      "duration_ms": 4938,
-      "http_status": 200,
-      "parser_warning": null,
-      "error": null
-    },
-    {
-      "id": "world_athletics",
-      "name": "World Athletics",
-      "connector": "rss",
-      "country": "Global",
-      "sport": "Athletics",
-      "provider": "World Athletics",
-      "priority": 2,
-      "status": "HEALTHY",
-      "articles": 50,
-      "duration_ms": 5624,
+      "duration_ms": 4256,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -167,7 +152,22 @@
       "priority": 2,
       "status": "HEALTHY",
       "articles": 31,
-      "duration_ms": 5511,
+      "duration_ms": 4026,
+      "http_status": 200,
+      "parser_warning": null,
+      "error": null
+    },
+    {
+      "id": "world_athletics",
+      "name": "World Athletics",
+      "connector": "rss",
+      "country": "Global",
+      "sport": "Athletics",
+      "provider": "World Athletics",
+      "priority": 2,
+      "status": "HEALTHY",
+      "articles": 50,
+      "duration_ms": 4956,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -182,7 +182,7 @@
       "priority": 2,
       "status": "HEALTHY",
       "articles": 14,
-      "duration_ms": 7293,
+      "duration_ms": 6252,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -197,7 +197,7 @@
       "priority": 3,
       "status": "EMPTY",
       "articles": 0,
-      "duration_ms": 4344,
+      "duration_ms": 3759,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -212,7 +212,7 @@
       "priority": 3,
       "status": "HEALTHY",
       "articles": 22,
-      "duration_ms": 4780,
+      "duration_ms": 4418,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -227,7 +227,7 @@
       "priority": 3,
       "status": "HEALTHY",
       "articles": 20,
-      "duration_ms": 5130,
+      "duration_ms": 4094,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -242,7 +242,7 @@
       "priority": 3,
       "status": "HEALTHY",
       "articles": 50,
-      "duration_ms": 5363,
+      "duration_ms": 4358,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -257,7 +257,7 @@
       "priority": 3,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 6123,
+      "duration_ms": 5497,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.worldaquatics.com/rss/news"
@@ -272,7 +272,7 @@
       "priority": 3,
       "status": "HEALTHY",
       "articles": 36,
-      "duration_ms": 6185,
+      "duration_ms": 7125,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -287,7 +287,7 @@
       "priority": 4,
       "status": "HEALTHY",
       "articles": 20,
-      "duration_ms": 382,
+      "duration_ms": 262,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -302,7 +302,7 @@
       "priority": 4,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 5077,
+      "duration_ms": 4518,
       "http_status": null,
       "parser_warning": null,
       "error": "520 Server Error: <none> for url: https://wisden.com/feed"
@@ -317,7 +317,7 @@
       "priority": 4,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 5241,
+      "duration_ms": 4344,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://inside.fifa.com/rss"
@@ -332,7 +332,7 @@
       "priority": 4,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 4549,
+      "duration_ms": 5014,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.world.rugby/rss"
@@ -347,7 +347,7 @@
       "priority": 4,
       "status": "HEALTHY",
       "articles": 50,
-      "duration_ms": 7442,
+      "duration_ms": 5953,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -362,25 +362,10 @@
       "priority": 4,
       "status": "HEALTHY",
       "articles": 10,
-      "duration_ms": 18218,
+      "duration_ms": 17009,
       "http_status": 200,
       "parser_warning": null,
       "error": null
-    },
-    {
-      "id": "cricket_australia",
-      "name": "Cricket Australia",
-      "connector": "rss",
-      "country": "Australia",
-      "sport": "Cricket",
-      "provider": "Cricket Australia",
-      "priority": 5,
-      "status": "HTTP_ERROR",
-      "articles": 0,
-      "duration_ms": 4774,
-      "http_status": null,
-      "parser_warning": null,
-      "error": "404 Client Error: Not Found for url: https://www.cricket.com.au/rss/news"
     },
     {
       "id": "motogp",
@@ -392,7 +377,7 @@
       "priority": 5,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 5221,
+      "duration_ms": 3851,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.motogp.com/en/rss/news"
@@ -407,10 +392,25 @@
       "priority": 5,
       "status": "HEALTHY",
       "articles": 20,
-      "duration_ms": 6136,
+      "duration_ms": 4221,
       "http_status": 200,
       "parser_warning": null,
       "error": null
+    },
+    {
+      "id": "cricket_australia",
+      "name": "Cricket Australia",
+      "connector": "rss",
+      "country": "Australia",
+      "sport": "Cricket",
+      "provider": "Cricket Australia",
+      "priority": 5,
+      "status": "HTTP_ERROR",
+      "articles": 0,
+      "duration_ms": 5751,
+      "http_status": null,
+      "parser_warning": null,
+      "error": "404 Client Error: Not Found for url: https://www.cricket.com.au/rss/news"
     },
     {
       "id": "uefa_news",
@@ -422,7 +422,7 @@
       "priority": 5,
       "status": "FAILED",
       "articles": 0,
-      "duration_ms": 7705,
+      "duration_ms": 5816,
       "http_status": 200,
       "parser_warning": "SAXParseException",
       "error": null
@@ -437,7 +437,7 @@
       "priority": 5,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 8181,
+      "duration_ms": 7621,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.worldarchery.sport/rss.xml"
@@ -452,7 +452,7 @@
       "priority": 5,
       "status": "HEALTHY",
       "articles": 50,
-      "duration_ms": 12848,
+      "duration_ms": 11552,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -467,40 +467,10 @@
       "priority": 6,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 5924,
+      "duration_ms": 5344,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.ecb.co.uk/rss/news"
-    },
-    {
-      "id": "world_soccer",
-      "name": "World Soccer",
-      "connector": "rss",
-      "country": "United Kingdom",
-      "sport": "Football",
-      "provider": "World Soccer",
-      "priority": 6,
-      "status": "HEALTHY",
-      "articles": 11,
-      "duration_ms": 4641,
-      "http_status": 200,
-      "parser_warning": null,
-      "error": null
-    },
-    {
-      "id": "hindustan_times_sports",
-      "name": "Hindustan Times Sports",
-      "connector": "rss",
-      "country": "India",
-      "sport": "Multi",
-      "provider": "Hindustan Times",
-      "priority": 6,
-      "status": "HEALTHY",
-      "articles": 50,
-      "duration_ms": 4816,
-      "http_status": 200,
-      "parser_warning": null,
-      "error": null
     },
     {
       "id": "worldsbk",
@@ -512,10 +482,25 @@
       "priority": 6,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 4077,
+      "duration_ms": 4591,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.worldsbk.com/en/rss/news"
+    },
+    {
+      "id": "hindustan_times_sports",
+      "name": "Hindustan Times Sports",
+      "connector": "rss",
+      "country": "India",
+      "sport": "Multi",
+      "provider": "Hindustan Times",
+      "priority": 6,
+      "status": "HEALTHY",
+      "articles": 50,
+      "duration_ms": 5634,
+      "http_status": 200,
+      "parser_warning": null,
+      "error": null
     },
     {
       "id": "uci_cycling",
@@ -527,10 +512,25 @@
       "priority": 6,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 4768,
+      "duration_ms": 4313,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.uci.org/rss/news"
+    },
+    {
+      "id": "world_soccer",
+      "name": "World Soccer",
+      "connector": "rss",
+      "country": "United Kingdom",
+      "sport": "Football",
+      "provider": "World Soccer",
+      "priority": 6,
+      "status": "HEALTHY",
+      "articles": 11,
+      "duration_ms": 6162,
+      "http_status": 200,
+      "parser_warning": null,
+      "error": null
     },
     {
       "id": "guardian_sport",
@@ -542,7 +542,7 @@
       "priority": 6,
       "status": "HEALTHY",
       "articles": 50,
-      "duration_ms": 7331,
+      "duration_ms": 6184,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -557,10 +557,25 @@
       "priority": 7,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 3753,
+      "duration_ms": 3546,
       "http_status": null,
       "parser_warning": null,
       "error": "403 Client Error: Forbidden for url: https://cricket.co.za/feed/"
+    },
+    {
+      "id": "sb_nation",
+      "name": "SB Nation",
+      "connector": "rss",
+      "country": "United States",
+      "sport": "Multi",
+      "provider": "Vox Media",
+      "priority": 7,
+      "status": "HEALTHY",
+      "articles": 10,
+      "duration_ms": 4714,
+      "http_status": 200,
+      "parser_warning": null,
+      "error": null
     },
     {
       "id": "world_rowing",
@@ -572,7 +587,7 @@
       "priority": 7,
       "status": "HEALTHY",
       "articles": 10,
-      "duration_ms": 4873,
+      "duration_ms": 5466,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -587,24 +602,9 @@
       "priority": 7,
       "status": "FAILED",
       "articles": 0,
-      "duration_ms": 7071,
+      "duration_ms": 6972,
       "http_status": 200,
       "parser_warning": "SAXParseException",
-      "error": null
-    },
-    {
-      "id": "sb_nation",
-      "name": "SB Nation",
-      "connector": "rss",
-      "country": "United States",
-      "sport": "Multi",
-      "provider": "Vox Media",
-      "priority": 7,
-      "status": "HEALTHY",
-      "articles": 10,
-      "duration_ms": 5169,
-      "http_status": 200,
-      "parser_warning": null,
       "error": null
     },
     {
@@ -617,7 +617,7 @@
       "priority": 7,
       "status": "HEALTHY",
       "articles": 50,
-      "duration_ms": 9337,
+      "duration_ms": 8379,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -632,7 +632,7 @@
       "priority": 8,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 3539,
+      "duration_ms": 4655,
       "http_status": null,
       "parser_warning": null,
       "error": "403 Client Error: Forbidden for url: https://www.pcb.com.pk/rss/news"
@@ -647,7 +647,7 @@
       "priority": 8,
       "status": "HEALTHY",
       "articles": 10,
-      "duration_ms": 5341,
+      "duration_ms": 5484,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -662,7 +662,7 @@
       "priority": 8,
       "status": "HEALTHY",
       "articles": 50,
-      "duration_ms": 4561,
+      "duration_ms": 4381,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -677,7 +677,7 @@
       "priority": 8,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 5607,
+      "duration_ms": 5896,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://triathlon.org/rss/news"
@@ -692,7 +692,7 @@
       "priority": 8,
       "status": "FAILED",
       "articles": 0,
-      "duration_ms": 9594,
+      "duration_ms": 8979,
       "http_status": 200,
       "parser_warning": "SAXParseException",
       "error": null
@@ -707,7 +707,7 @@
       "priority": 9,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 3835,
+      "duration_ms": 2540,
       "http_status": null,
       "parser_warning": null,
       "error": "403 Client Error: Forbidden for url: https://sportscafe.in/feed"
@@ -722,7 +722,7 @@
       "priority": 9,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 5408,
+      "duration_ms": 4481,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.nzc.nz/feed/"
@@ -737,7 +737,7 @@
       "priority": 9,
       "status": "HEALTHY",
       "articles": 8,
-      "duration_ms": 3847,
+      "duration_ms": 4077,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -752,7 +752,7 @@
       "priority": 9,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 6318,
+      "duration_ms": 8554,
       "http_status": null,
       "parser_warning": null,
       "error": "400 Client Error: 400 for url: https://www.worldtaekwondo.org//rss/news"
@@ -767,7 +767,7 @@
       "priority": 10,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 2712,
+      "duration_ms": 4153,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.windiescricket.com/feed/"
@@ -782,7 +782,7 @@
       "priority": 10,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 1156,
+      "duration_ms": 3594,
       "http_status": null,
       "parser_warning": null,
       "error": "401 Client Error: Unauthorized for url: https://api.foxsports.com/bifrost/v1/rss?feed=top"
@@ -797,7 +797,7 @@
       "priority": 10,
       "status": "HTTP_ERROR",
       "articles": 0,
-      "duration_ms": 2011,
+      "duration_ms": 4255,
       "http_status": null,
       "parser_warning": null,
       "error": "404 Client Error: Not Found for url: https://www.ijf.org/feed"
@@ -812,7 +812,7 @@
       "priority": 10,
       "status": "FAILED",
       "articles": 0,
-      "duration_ms": 2423,
+      "duration_ms": 4705,
       "http_status": 200,
       "parser_warning": "SAXParseException",
       "error": null
@@ -827,7 +827,7 @@
       "priority": 11,
       "status": "HEALTHY",
       "articles": 10,
-      "duration_ms": 3931,
+      "duration_ms": 7472,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -842,7 +842,7 @@
       "priority": 11,
       "status": "FAILED",
       "articles": 0,
-      "duration_ms": 3659,
+      "duration_ms": 6433,
       "http_status": 200,
       "parser_warning": "SAXParseException",
       "error": null
@@ -857,7 +857,7 @@
       "priority": 12,
       "status": "EMPTY",
       "articles": 0,
-      "duration_ms": 1047,
+      "duration_ms": 2693,
       "http_status": 200,
       "parser_warning": null,
       "error": null
@@ -872,7 +872,7 @@
       "priority": 12,
       "status": "HEALTHY",
       "articles": 10,
-      "duration_ms": 3492,
+      "duration_ms": 6195,
       "http_status": 200,
       "parser_warning": null,
       "error": null

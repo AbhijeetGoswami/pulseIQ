@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { FiRss, FiSearch, FiTag } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { FiRss, FiTag } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 import ErrorCard from "../components/ErrorCard/ErrorCard";
@@ -60,22 +60,10 @@ function DistributionList({ items, label, tone, nameKey = "name", valueKey = "me
 
 export default function Dashboard() {
     const navigate = useNavigate();
-    const searchRef = useRef(null);
-    const [search, setSearch] = useState("");
     const [timeRange, setTimeRange] = useState("Today");
     const { data, loading, error } = useAttention();
     const { data: trendData, loading: trendsLoading, error: trendsError } = useTrends();
     const topSources = useTopSources();
-    useEffect(() => {
-        const handleShortcut = (event) => {
-            if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
-                event.preventDefault();
-                searchRef.current?.focus();
-            }
-        };
-        window.addEventListener("keydown", handleShortcut);
-        return () => window.removeEventListener("keydown", handleShortcut);
-    }, []);
 
     if (loading || trendsLoading) return <Loader />;
     if (error || trendsError || !data?.attention) return <ErrorCard />;
@@ -90,10 +78,7 @@ export default function Dashboard() {
     return (
         <div className="dashboard">
             <div className="dashboard-content">
-                <div className="dashboard-utility-bar">
-                    <label className="dashboard-search"><FiSearch aria-hidden="true" /><input ref={searchRef} value={search} onChange={(event) => setSearch(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter" && search.trim()) navigate(`/entities?q=${encodeURIComponent(search.trim())}`); }} placeholder="Search entities" aria-label="Search entities" /><kbd>Ctrl K</kbd></label>
-                    <label className="dashboard-time-filter">Snapshot period<select value={timeRange} onChange={(event) => setTimeRange(event.target.value)}><option>Last Hour</option><option>Today</option><option>7 Days</option><option>30 Days</option><option>Custom</option></select></label>
-                </div>
+                <div className="dashboard-utility-bar" />
                 <SnapshotSummary generatedAt={data.generated_at} summary={attention.summary} categories={categories} trends={trendData?.trends || []} />
 
                 <SummaryCards
