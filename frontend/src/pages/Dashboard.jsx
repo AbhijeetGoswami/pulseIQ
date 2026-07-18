@@ -10,7 +10,7 @@ import TrendLeaderboard from "../components/dashboard/TrendLeaderboard/TrendLead
 import SnapshotSummary from "../components/dashboard/SnapshotSummary/SnapshotSummary";
 import BiggestMovers from "../components/dashboard/BiggestMovers/BiggestMovers";
 import AiHighlights from "../components/dashboard/AiHighlights/AiHighlights";
-import DashboardSkeleton from "../components/dashboard/DashboardSkeleton/DashboardSkeleton";
+import Loader from "../components/Loader/Loader";
 import useAttention from "../hooks/useAttention";
 import useTrends from "../hooks/useTrends";
 import useTopSources from "../hooks/useTopSources";
@@ -77,7 +77,7 @@ export default function Dashboard() {
         return () => window.removeEventListener("keydown", handleShortcut);
     }, []);
 
-    if (loading || trendsLoading) return <DashboardSkeleton />;
+    if (loading || trendsLoading) return <Loader />;
     if (error || trendsError || !data?.attention) return <ErrorCard />;
 
     const attention = data.attention;

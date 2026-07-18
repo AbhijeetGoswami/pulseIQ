@@ -33,7 +33,6 @@
 
 .pipeline-loading-card h2 { margin: 0; color: #0f172a; font-size: 18px; }
 .pipeline-loading-card p { margin: 6px 0 0; color: #64748b; font-size: 13px; }
-.pipeline-loading-icon { width: 24px; height: 24px; color: #2563eb; animation: pipeline-spin 1s linear infinite; }
 
 .pipeline-hero {
     margin: 0;
@@ -67,8 +66,6 @@
 .primary-btn:focus-visible, .secondary-btn:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
 
 .pipeline-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-
-@keyframes pipeline-spin { to { transform: rotate(360deg); } }
 
 @media (max-width: 1100px) { .pipeline-grid { grid-template-columns: 1fr; } }
 @media (max-width: 900px) { .pipeline-hero-heading { align-items: flex-start; flex-direction: column; } .pipeline-hero-controls { justify-content: flex-start; } }

@@ -4,8 +4,6 @@ import {
     FiActivity,
     FiBarChart2,
     FiChevronDown,
-    FiChevronsLeft,
-    FiChevronsRight,
     FiChevronUp,
     FiCompass,
     FiHome,
@@ -35,7 +33,7 @@ const roleLabels = {
     viewer: "Viewer"
 };
 
-export default function Sidebar({ collapsed = false, onToggle }) {
+export default function Sidebar() {
 
     const navigate = useNavigate();
 
@@ -154,10 +152,6 @@ export default function Sidebar({ collapsed = false, onToggle }) {
                     </p>
 
                 </div>
-
-                <button type="button" className="sidebar-collapse-button" onClick={onToggle} aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"} title={collapsed ? "Expand sidebar" : "Collapse sidebar"}>
-                    {collapsed ? <FiChevronsRight aria-hidden="true" /> : <FiChevronsLeft aria-hidden="true" />}
-                </button>
 
             </div>
 

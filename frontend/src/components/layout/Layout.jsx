@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import Sidebar from "./Sidebar";
@@ -6,11 +5,9 @@ import Sidebar from "./Sidebar";
 import "./Layout.css";
 
 const Layout = () => {
-    const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-
     return (
-    <div className={`app-layout${sidebarCollapsed ? " app-layout--collapsed" : ""}`}>
-        <Sidebar collapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed((collapsed) => !collapsed)} />
+    <div className="app-layout">
+        <Sidebar />
         <a className="skip-to-content" href="#main-content">Skip to content</a>
         <main id="main-content" className="main-content" tabIndex="-1">
             <div className="main-content-inner">

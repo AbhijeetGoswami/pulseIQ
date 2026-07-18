@@ -4,6 +4,7 @@ import { FiActivity, FiGitBranch, FiPlay, FiRefreshCw } from "react-icons/fi";
 import "../../components/dashboard/SummaryCards/SummaryCards.css";
 import "./Pipeline.css";
 import { getPipelineDashboard, runPipeline as runPipelineApi } from "../../services/api";
+import Loader from "../../components/Loader/Loader";
 import PipelineStats from "./components/PipelineStats";
 import PipelineFlow from "./components/PipelineFlow";
 import SourceHealth from "./components/SourceHealth";
@@ -52,17 +53,7 @@ const Pipeline = () => {
     }, []);
 
     if (loading) {
-        return (
-            <div className="pipeline-page">
-                <div className="pipeline-loading-card" role="status">
-                    <FiRefreshCw className="pipeline-loading-icon" aria-hidden="true" />
-                    <div>
-                        <h2>Loading pipeline operations</h2>
-                        <p>Retrieving the latest delivery health and run activity.</p>
-                    </div>
-                </div>
-            </div>
-        );
+        return <Loader />;
     }
 
     if (error) {

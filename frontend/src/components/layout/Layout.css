@@ -7,8 +7,6 @@
     background: var(--bg-primary);
     transition: background .25s ease;
 }
-.app-layout--collapsed { --sidebar-width: 76px; }
-
 .main-content {
     --content-padding-top: clamp(20px, 2.5vw, 40px);
     --content-padding-right: clamp(20px, 2.5vw, 40px);
