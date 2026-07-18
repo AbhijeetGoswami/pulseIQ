@@ -1,0 +1,32 @@
+.report-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.report-full {
+    width: 100%;
+}
+
+.report-two-column {
+    display: grid;
+    grid-template-columns:
+        var(--left-width)
+        minmax(0, 1fr);
+
+    gap: 24px;
+
+    align-items: start;
+}
+
+.report-column-left,
+.report-column-right {
+    min-width: 0;
+}
+
+@media (max-width: 1024px) {
+    .report-two-column {
+        grid-template-columns: 1fr;
+    }
+}

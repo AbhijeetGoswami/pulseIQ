@@ -1,0 +1,21 @@
+.metadata-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+.metadata-item strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.metadata-item p {
+    margin: 0;
+    opacity: 0.75;
+    line-height: 1.5;
+    word-break: break-word;
+}

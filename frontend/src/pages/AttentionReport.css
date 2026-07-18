@@ -1,7 +1,27 @@
 .attention-report-page {
-    max-width: 1180px;
-    margin: 24px auto;
-    padding: 0 16px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 34px 26px 48px;
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 62%);
+    position: relative;
+}
+
+.attention-report-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1040px, calc(100% - 52px));
+    height: 240px;
+    background: radial-gradient(circle at top center, rgba(37, 99, 235, 0.18), transparent 68%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.attention-report-page > * {
+    position: relative;
+    z-index: 1;
 }
 
 .attention-report-header {
@@ -13,14 +33,21 @@
 .attention-report-back {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    border: 1px solid #cbd5e1;
-    background: #fff;
-    color: #1d4ed8;
+    gap: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: #ffffff;
+    color: #2563eb;
     border-radius: 999px;
-    padding: 10px 16px;
+    padding: 12px 18px;
     font-weight: 700;
     cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.attention-report-back:hover {
+    transform: translateY(-1px);
+    background: rgba(59, 130, 246, 0.08);
+    box-shadow: 0 12px 22px rgba(37, 99, 235, 0.12);
 }
 
 .attention-report-title {
@@ -30,54 +57,56 @@
 
 .attention-report-eyebrow {
     margin: 0;
-    color: #1d4ed8;
+    color: #2563eb;
     font-size: 12px;
     font-weight: 800;
-    letter-spacing: .06em;
+    letter-spacing: .08em;
     text-transform: uppercase;
 }
 
 .attention-report-title h1 {
     margin: 0;
     color: #0f172a;
-    font-size: clamp(32px, 3vw, 42px);
+    font-size: clamp(2.6rem, 4vw, 3.6rem);
 }
 
 .attention-report-tagline {
     margin: 0;
     color: #475569;
-    font-size: 15px;
+    font-size: 1rem;
     max-width: 780px;
+    line-height: 1.7;
 }
 
 .attention-report-stats {
     display: grid;
     grid-template-columns: repeat(4, minmax(140px, 1fr));
-    gap: 12px;
+    gap: 16px;
 }
 
 .attention-report-stats div {
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 18px 20px;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.04);
 }
 
 .attention-report-stats strong {
     display: block;
-    font-size: 24px;
-    margin-bottom: 6px;
+    font-size: 2rem;
+    margin-bottom: 8px;
     color: #0f172a;
 }
 
 .attention-report-stats span {
     color: #64748b;
-    font-size: 13px;
+    font-size: 0.95rem;
 }
 
 .attention-report-grid {
     display: grid;
-    gap: 20px;
+    gap: 28px;
     grid-template-columns: repeat(12, 1fr);
 }
 
@@ -88,7 +117,7 @@
 .attention-report-cards {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 20px;
+    gap: 24px;
 }
 
 .attention-report-cards .panel {
@@ -101,95 +130,55 @@
 
 .attention-report-metadata {
     display: grid;
-    gap: 12px;
-}
-
-.attention-report-metadata div {
-    display: grid;
-    gap: 6px;
+    gap: 14px;
 }
 
 .attention-report-metadata dt {
     color: #64748b;
-    font-size: 12px;
+    font-size: 0.78rem;
     text-transform: uppercase;
-    letter-spacing: .05em;
+    letter-spacing: .08em;
 }
 
 .attention-report-metadata dd {
     margin: 0;
     color: #0f172a;
-    font-size: 15px;
+    font-size: 0.95rem;
 }
 
 .kpi-grid {
     display: grid;
-    gap: 14px;
+    gap: 16px;
 }
 
 .kpi-grid div {
     background: #f8fafc;
-    border-radius: 14px;
-    padding: 18px;
+    border-radius: 18px;
+    padding: 20px;
 }
 
 .kpi-grid strong {
     display: block;
-    font-size: 22px;
+    font-size: 1.45rem;
     margin-bottom: 6px;
 }
 
-.attention-report-reasons {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 10px;
-    color: #334155;
-}
-
-.attention-report-reasons li {
-    padding: 14px 16px;
-    border-radius: 14px;
-    background: #f8fafc;
-}
-
-.source-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.source-list li {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 14px 16px;
-    border-radius: 14px;
-    background: #fff;
-    border: 1px solid #e2e8f0;
-}
-
-.source-pill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.source-pill {
-    padding: 10px 14px;
-    background: #eff6ff;
-    border-radius: 999px;
-    font-size: 13px;
-    color: #1d4ed8;
-}
-
+.attention-report-reasons,
+.source-list,
 .related-entities-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
-    gap: 10px;
+    gap: 12px;
+}
+
+.attention-report-reasons li,
+.source-list li,
+.related-entities-list .related-entity {
+    padding: 16px;
+    border-radius: 18px;
+    background: #f8fafc;
 }
 
 .topic-cloud {
@@ -205,35 +194,43 @@
     padding: 10px 16px;
     border-radius: 999px;
     background: #eff6ff;
-    color: #1d4ed8;
+    color: #2563eb;
     font-weight: 700;
 }
 
 .timeline-placeholder,
 .relationship-graph-placeholder {
-    min-height: 180px;
-    display: grid;
-    place-content: center;
-    padding: 28px;
-    border-radius: 16px;
-    background: #f8fafc;
-    color: #475569;
+    min-height: 200px;
+    padding: 36px 28px;
+    border-radius: 22px;
+    background: rgba(37, 99, 235, 0.05);
+    border: 1px dashed rgba(37, 99, 235, 0.17);
+    color: #334155;
     text-align: center;
+    display: grid;
+    place-items: center;
+    gap: 14px;
 }
 
 .coverage-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 18px;
 }
 
 .coverage-card {
-    border-radius: 18px;
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    padding: 18px;
+    border-radius: 22px;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 24px;
     display: grid;
-    gap: 12px;
+    gap: 16px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.coverage-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.1);
 }
 
 .coverage-card-header {
@@ -246,12 +243,12 @@
 
 .coverage-source {
     font-weight: 700;
-    color: #1d4ed8;
+    color: #2563eb;
 }
 
 .coverage-card h3 {
     margin: 0;
-    font-size: 16px;
+    font-size: 1.05rem;
     color: #0f172a;
 }
 
@@ -261,58 +258,75 @@
     text-decoration: none;
 }
 
-.attention-report-footer {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
+.coverage-card a:hover {
+    text-decoration: underline;
+}
+
+.metric-list {
+    display: flex;
+    flex-direction: column;
     gap: 18px;
-    margin-top: 24px;
 }
 
-.attention-report-footer div {
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 18px;
+.metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.attention-report-footer strong {
-    display: block;
-    font-size: 14px;
-    color: #0f172a;
-    margin-bottom: 8px;
+.evidence-list {
+    margin-top: 12px;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.attention-report-footer p {
-    margin: 0;
-    color: #64748b;
-    font-size: 14px;
+.related-entity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-@media (max-width: 1100px) {
-    .attention-report-grid,
+.related-entity {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.relationship-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-height: 220px;
+}
+
+.network-node {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    background: var(--accent-color);
+    color: #fff;
+}
+
+@media (max-width: 980px) {
     .attention-report-stats,
-    .attention-report-footer {
-        grid-template-columns: 1fr;
-    }
-
     .attention-report-cards {
         grid-template-columns: 1fr;
     }
+}
 
-    .coverage-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 640px) {
+    .attention-report-page {
+        padding: 22px 16px 32px;
     }
 }
 
-@media (max-width: 620px) {
-    .attention-report-page,
-    .attention-page {
-        padding: 0 12px;
-    }
-
-    .attention-report-header,
-    .attention-report-stats,
-    .attention-report-footer {
-        gap: 14px;
-    }
-}

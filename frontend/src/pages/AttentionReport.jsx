@@ -1,14 +1,27 @@
-import { useEffect, useMemo, useState, Suspense, lazy } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { FiArrowLeft, FiClock } from "react-icons/fi";
-import Panel from "../components/common/Panel/Panel";
 import Loader from "../components/Loader/Loader";
 import ErrorCard from "../components/ErrorCard/ErrorCard";
 import useAttention from "../hooks/useAttention";
 import { getEntityArticles, searchEntities } from "../services/entityService";
 import "./AttentionReport.css";
+import HeroSection from "../components/attention/report/Hero";
+import AIAnalysisCard from "../components/attention/report/AI";
+import CoverageFeed from "../components/attention/report/Coverage";
+import TimelineSection from "../components/attention/report/Timeline";
+import MetadataFooter from "../components/common/MetadataFooter";
 
-const RelationshipGraph = lazy(() => import("../components/attention/RelationshipGraph"));
+import {
+    ReportStack,
+    ReportFull,
+    ReportTwoColumn,
+} from "../components/common/ReportLayout";
+
+import SnapshotMetrics from "../components/attention/report/Evidence/SnapshotMetrics";
+import KeyEvidence from "../components/attention/report/Evidence/KeyEvidence";
+
+import RelationshipNetwork from "../components/attention/report/Knowledge/RelationshipNetwork";
+import RelatedEntities from "../components/attention/report/Knowledge/RelatedEntities";
 
 const formatDateTime = (value) => {
     if (!value) return "Unknown";
@@ -169,194 +182,77 @@ export default function AttentionReport() {
 
     return (
         <main className="attention-report-page">
-            <section className="attention-report-header">
-                <button type="button" className="attention-report-back" onClick={() => {
-                    const from = location.state?.from;
-                    if (from === "attention") {
-                        navigate("/attention");
-                    } else if (from === "dashboard") {
-                        navigate("/");
-                    } else {
-                        navigate(-1);
-                    }
-                }}>
-                    <FiArrowLeft aria-hidden="true" /> Back
-                </button>
-                <div className="attention-report-title">
-                    <p className="attention-report-eyebrow">Attention Intelligence Report</p>
-                    <h1>{entity.value}</h1>
-                    <p className="attention-report-tagline">A deep investigation into why this entity is drawing attention and which sources are driving it.</p>
-                </div>
-                <div className="attention-report-stats">
-                    <div>
-                        <strong>{formatNumber(entity.attention_score ?? entity.scores?.mention ?? 0)}</strong>
-                        <span>Attention Score</span>
-                    </div>
-                    <div>
-                        <strong>{formatNumber(entity.mentions)}</strong>
-                        <span>Mentions</span>
-                    </div>
-                    <div>
-                        <strong>{formatNumber(articles.length)}</strong>
-                        <span>Latest Coverage</span>
-                    </div>
-                    <div>
-                        <strong>{formatDateTime(generatedAt)}</strong>
-                        <span>Snapshot Updated</span>
-                    </div>
-                </div>
-            </section>
+            <HeroSection
+                entity={entity}
+                generatedAt={generatedAt}
+                location={location}
+                navigate={navigate}
+                formatDateTime={formatDateTime}
+                formatNumber={formatNumber}
+            />
 
-            <section className="attention-report-grid">
-                <Panel title="Executive summary">
-                    <p>
-                        {entity.value} is currently in focus because it appears repeatedly in the latest attention snapshot and is associated with significant media activity. This report pulls together the top indicators, sources, and recent coverage that explain why this entity is on the radar.
-                    </p>
-                </Panel>
+            <ReportStack>
 
-                <div className="attention-report-cards">
-                    <Panel title="Entity profile">
-                        <dl className="attention-report-metadata">
-                            <div>
-                                <dt>Entity ID</dt>
-                                <dd>{entity.id ?? entity.entity_id}</dd>
-                            </div>
-                            <div>
-                                <dt>Type</dt>
-                                <dd>{entity.type || "Unknown"}</dd>
-                            </div>
-                            <div>
-                                <dt>Sport / Domain</dt>
-                                <dd>{entity.sport || "N/A"}</dd>
-                            </div>
-                            <div>
-                                <dt>Data source</dt>
-                                <dd>{sourceCounts.length ? sourceCounts[0].source : "Coverage feed"}</dd>
-                            </div>
-                        </dl>
-                    </Panel>
+            <ReportFull>
+                <AIAnalysisCard
+                    entity={entity}
+                    articles={articles}
+                    sourceCounts={sourceCounts}
+                    formatNumber={formatNumber}
+                />
+            </ReportFull>
 
-                    <Panel title="Snapshot KPIs">
-                        <div className="kpi-grid">
-                            <div>
-                                <strong>{formatNumber(entity.mentions)}</strong>
-                                <span>Total mentions</span>
-                            </div>
-                            <div>
-                                <strong>{Math.round(entity.attention_score ?? entity.scores?.mention ?? 0)}</strong>
-                                <span>Attention score</span>
-                            </div>
-                            <div>
-                                <strong>{formatNumber(articles.length)}</strong>
-                                <span>Latest coverage items</span>
-                            </div>
-                        </div>
-                    </Panel>
-                </div>
+            <ReportTwoColumn
+                left={
+                    <SnapshotMetrics
+                        entity={entity}
+                        articles={articles}
+                        formatNumber={formatNumber}
+                    />
+                }
+                right={
+                    <KeyEvidence
+                        entity={entity}
+                        reasons={reasons}
+                        sourceCounts={sourceCounts}
+                        formatNumber={formatNumber}
+                    />
+                }
+            />
 
-                <Panel title="Why this entity is receiving attention">
-                    <ul className="attention-report-reasons">
-                        {reasons.length ? reasons.map((reason) => <li key={reason}>{reason}</li>) : <li>Attention signals are still being computed.</li>}
-                    </ul>
-                </Panel>
+            <ReportTwoColumn
+                left={
+                    <RelationshipNetwork
+                        entity={entity}
+                    />
+                }
+                right={
+                    <RelatedEntities
+                        entity={entity}
+                        relatedEntities={relatedEntities}
+                    />
+                }
+            />
 
-                <Panel title="Top contributors">
-                    {sourceCounts.length ? (
-                        <ol className="source-list">
-                            {sourceCounts.map((source) => (
-                                <li key={source.source}>
-                                    <span>{source.source}</span>
-                                    <strong>{source.count} coverage items</strong>
-                                </li>
-                            ))}
-                        </ol>
-                    ) : (
-                        <p>No contributors available yet.</p>
-                    )}
-                </Panel>
+            <ReportFull>
+                <TimelineSection />
+            </ReportFull>
 
-                <Panel title="Source contribution">
-                    {sourceCounts.length ? (
-                        <div className="source-pill-list">
-                            {sourceCounts.map((item) => (
-                                <span key={item.source} className="source-pill">
-                                    {item.source} · {item.count}
-                                </span>
-                            ))}
-                        </div>
-                    ) : (
-                        <p>Waiting for coverage data.</p>
-                    )}
-                </Panel>
+            <ReportFull>
+                <CoverageFeed
+                    articles={articles}
+                    articlesLoading={articlesLoading}
+                    formatDateTime={formatDateTime}
+                />
+            </ReportFull>
 
-                <Panel title="Related entities">
-                    {relatedEntities.length ? (
-                        <ul className="related-entities-list">
-                            {relatedEntities.map((item) => (
-                                <li key={item.id ?? item.entity_id}>{item.value} · {item.type || "Entity"}</li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p>Related entities are not available for this snapshot.</p>
-                    )}
-                </Panel>
+            </ReportStack>
 
-                <Panel title="Topic cloud">
-                    <div className="topic-cloud">
-                        {[entity.sport, entity.type, entity.value].filter(Boolean).map((topic) => (
-                            <span key={topic} className="topic-chip">{topic}</span>
-                        ))}
-                        <span className="topic-chip">Latest coverage</span>
-                        <span className="topic-chip">Mentions</span>
-                    </div>
-                </Panel>
-
-                <Panel title="Attention timeline">
-                    <div className="timeline-placeholder">
-                        <FiClock aria-hidden="true" /> Timeline snapshots are available in the attention engine, and this view will be enhanced in a future release.
-                    </div>
-                </Panel>
-
-                <Suspense fallback={<Panel title="Relationship network"><p>Loading network view…</p></Panel>}>
-                    <RelationshipGraph />
-                </Suspense>
-
-                <Panel title="Latest coverage">
-                    {articlesLoading ? (
-                        <Loader />
-                    ) : articles.length ? (
-                        <div className="coverage-grid">
-                            {articles.slice(0, 8).map((article) => (
-                                <article key={article.article_id} className="coverage-card">
-                                    <div className="coverage-card-header">
-                                        <span className="coverage-source">{article.source || "Source"}</span>
-                                        <time>{formatDateTime(article.published_at)}</time>
-                                    </div>
-                                    <h3>{article.title}</h3>
-                                    <a href={article.link} target="_blank" rel="noreferrer">Read article</a>
-                                </article>
-                            ))}
-                        </div>
-                    ) : (
-                        <p>No coverage articles are available for this entity yet.</p>
-                    )}
-                </Panel>
-            </section>
-
-            <footer className="attention-report-footer">
-                <div>
-                    <strong>Snapshot generated</strong>
-                    <p>{formatDateTime(generatedAt)}</p>
-                </div>
-                <div>
-                    <strong>Report source</strong>
-                    <p>Attention snapshot + entity coverage lookup</p>
-                </div>
-                <div>
-                    <strong>Entity metadata</strong>
-                    <p>{entity.id ?? entity.entity_id}</p>
-                </div>
-            </footer>
+            <MetadataFooter
+                generatedAt={generatedAt}
+                entity={entity}
+                formatDateTime={formatDateTime}
+            />
         </main>
     );
 }

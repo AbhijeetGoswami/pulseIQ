@@ -1,0 +1,22 @@
+.timeline-placeholder {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 8px 0;
+}
+
+.timeline-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.timeline-placeholder strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.timeline-placeholder p {
+    margin: 0;
+    opacity: 0.75;
+    line-height: 1.6;
+}
