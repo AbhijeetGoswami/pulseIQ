@@ -19,9 +19,7 @@ const PipelineLogs = ({ logs = [] }) => {
 
                 </div>
 
-                <button className="clear-log-btn">
-                    Clear
-                </button>
+                <span className="logs-live-indicator"><i aria-hidden="true" /> Live feed</span>
 
             </div>
 

@@ -1,5 +1,10 @@
+import { useState } from "react";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+
 import "../../../components/dashboard/SummaryCards/SummaryCards.css";
 import "./SourceHealth.css";
+
+const INITIAL_SOURCE_LIMIT = 10;
 
 const getStatusClass = (status) => {
 
@@ -25,6 +30,9 @@ const getStatusClass = (status) => {
 };
 
 const SourceHealth = ({ sources = [] }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const hasMoreSources = sources.length > INITIAL_SOURCE_LIMIT;
+    const visibleSources = isExpanded ? sources : sources.slice(0, INITIAL_SOURCE_LIMIT);
 
     return (
 
@@ -44,7 +52,7 @@ const SourceHealth = ({ sources = [] }) => {
 
             </div>
 
-            <div className="source-list">
+            <div id="source-health-list" className={`source-list${sources.length ? " source-list--populated" : ""}`}>
 
                 <div className="table-header">
 
@@ -65,7 +73,7 @@ const SourceHealth = ({ sources = [] }) => {
 
                 ) : (
 
-                    sources.map((source, index) => (
+                    visibleSources.map((source, index) => (
 
                         <div
                             className="summary-card source-row"
@@ -107,6 +115,19 @@ const SourceHealth = ({ sources = [] }) => {
                 )}
 
             </div>
+
+            {hasMoreSources && (
+                <button
+                    className="pipeline-view-more"
+                    type="button"
+                    aria-controls="source-health-list"
+                    aria-expanded={isExpanded}
+                    onClick={() => setIsExpanded((expanded) => !expanded)}
+                >
+                    {isExpanded ? <FiChevronUp aria-hidden="true" /> : <FiChevronDown aria-hidden="true" />}
+                    {isExpanded ? "Show less" : `View ${sources.length - INITIAL_SOURCE_LIMIT} more`}
+                </button>
+            )}
 
         </section>
 
